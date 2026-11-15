@@ -41,3 +41,7 @@ Before computing pulse-HRV, independently validate PPG peaks against the *same p
 Sources: [Samsung SDK](https://developer.samsung.com/health/sensor/guide/introduction.html), [Samsung specifications](https://developer.samsung.com/health/sensor/guide/data-specifications.html), [WESAD UCI](https://archive.ics.uci.edu/dataset/465/wesad%2Awearable%2Astress%2Aand%2Aaffect%2Adetection).
 
 **Privacy:** The only committed outputs are aggregate diagnostics of artificial signals. Do not upload clinical waveforms, personal IDs, or restricted outcome records.
+
+## External clinical-reference accuracy layer
+
+The specialist measurements selected by the founder (MSNA, cardiac sympathetic imaging, peripheral small-fibre and sweat-gland morphology, corneal nerves, skin alpha-synuclein pathology, gastrointestinal, urinary, and tear/salivary function) are documented under [clinical_reference/](clinical_reference/README.md). These are **external, disease-/domain-specific comparison outcomes**, NOT wrist sensors or validated general ANS labels. Only same-person paired studies can establish whether wearable features predict them. The existing WATCH-SIM-001 remains synthetic-only.
