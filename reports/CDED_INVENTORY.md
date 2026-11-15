@@ -1,6 +1,6 @@
 # CDED-ANS-001 stage 1 — dataset structure (no outcome analysis)
 
-Generated UTC: 2026-11-15T17:04:15.367783+00:00  
+Generated UTC: 2026-11-15T17:11:41.199611+00:00  
 Source: https://physionet.org/files/cded/1.0.1/ (CC BY 4.0, DOI 10.13026/00bm-0x81)
 
 - Files: 347; WFDB records: 157 ({'labview_visit2': 69, 'labview_visit8': 41, 'ecg_24h': 47})
@@ -8,7 +8,7 @@ Source: https://physionet.org/files/cded/1.0.1/ (CC BY 4.0, DOI 10.13026/00bm-0x
 - **Both lab visits (baseline + 2 years): 41**
 - 24-h ECG + baseline lab: 38; 24-h ECG + both lab visits: 23
 - Non-WFDB/annotation-like extensions: none
-- Header read failures: 2
+- Header read failures: 0
 
 ## Record types
 
@@ -24,11 +24,11 @@ Source: https://physionet.org/files/cded/1.0.1/ (CC BY 4.0, DOI 10.13026/00bm-0x
 - Duration (min): {'min': 28.5, 'median': 81.6, 'max': 94.3}
 - Channels: marker (41), ecg (41), abp (41), mcar (41), mcal (41), Radi (41), thermst (41), flow_rate (41), o2 (41), co2 (41)
 
-### ecg_24h (n=45)
+### ecg_24h (n=47)
 
-- Sampling rates: {'1000.0': 45}; multi-segment headers: 0
+- Sampling rates: {'1000.0': 47}; multi-segment headers: 0
 - Duration (min): {'min': 6.1, 'median': 6.3, 'max': 42.3}
-- Channels: emg_0 (45), emg_1 (45), emg_2 (24), emg_3 (24), emg_4 (24), emg_5 (24), emg_6 (24), emg_7 (24), ecg_0 (21), ecg_1 (21), sensor_0 (21), sensor_1 (21), accelerometer_0 (21), accelerometer_1 (21)
+- Channels: emg_0 (47), emg_1 (47), emg_2 (25), emg_3 (25), emg_4 (25), emg_5 (25), emg_6 (25), emg_7 (25), ecg_0 (22), ecg_1 (22), sensor_0 (22), sensor_1 (22), accelerometer_0 (22), accelerometer_1 (22)
 
 ## Summary-table variables matching autonomic/diabetes keywords
 
