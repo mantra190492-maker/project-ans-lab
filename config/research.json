@@ -1,0 +1,12 @@
+{
+  "project": "ANS-003",
+  "queries": [
+    "(inclusion body myositis) AND (early diagnosis OR biomarkers)",
+    "(limb girdle muscular dystrophy) AND (diagnosis OR biomarkers)",
+    "(amyotrophic lateral sclerosis) AND (differential diagnosis OR biomarkers)",
+    "(adult onset muscle weakness) AND (electromyography OR muscle MRI)"
+  ],
+  "max_results_per_query": 12,
+  "max_total_records": 48,
+  "timeout_seconds": 20
+}
