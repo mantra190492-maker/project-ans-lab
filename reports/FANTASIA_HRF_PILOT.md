@@ -1,7 +1,7 @@
 # ANS-001 — Fantasia revised HRF pilot (Costa-reference PIP)
 
 Dataset: [Fantasia v1.0.0](https://physionet.org/content/fantasia/1.0.0/), DOI 10.13026/C2RG61.
-Generated UTC: 2026-11-15T15:32:22.278532+00:00
+Generated UTC: 2026-11-15T16:05:31.303749+00:00
 
 **The original pilot's provisional PIP is NOT the author's official PIP definition.**
 Corrected PIP follows an independently written implementation that matched Costa's
@@ -10,10 +10,10 @@ This does NOT validate physiological interpretation, clinical autonomic deterior
 
 | Record | Age band | Annotated beats | QC normal NN | Costa-style PIP | Old provisional PIP | Difference (pp) | Status |
 |---|---|---:|---:|---:|---:|---:|---|
-| f1y01 | 21-34 | 388 | 100.0% | 43.90% (169/385) | 49.09% | +5.20 | Processed |
-| f1o01 | 68-85 | 309 | 100.0% | 55.74% (170/305) | 65.36% | +9.62 | Processed |
-| f2y01 | 21-34 | 350 | 100.0% | 63.48% (219/345) | 67.72% | +4.25 | Processed |
-| f2o01 | 68-85 | 338 | 88.7% | — | — | — | QC withheld |
+| f1y01 | — | — | — | — | — | — | Failure: ConnectTimeout |
+| f1o01 | — | — | — | — | — | — | Failure: ConnectTimeout |
+| f2y01 | — | — | — | — | — | — | Failure: ConnectTimeout |
+| f2o01 | — | — | — | — | — | — | Failure: ConnectTimeout |
 
 ## Gate decisions
 
