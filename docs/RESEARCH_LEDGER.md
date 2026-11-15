@@ -12,10 +12,12 @@ Purpose: one honest list of what has been tested, so a later "hit" can be judged
 
 | 6 | POOL-VR-001 stage A | Does an automated Valsalva ratio agree with the lab's values (GE-71)? | **Done — failed, stopped** | Best Spearman 0.37 (rule: ≥ 0.60). Automated values run about 0.5 higher than the lab's. Pooled test not run |
 | 7 | NAT-BREATH-001 | Heart-rate response to spontaneous large breaths as a passive deep-breathing test | **Dropped before any test** | Prior art: heart-rate variation with deep breathing is the established cardiovagal test, and respiratory sinus arrhythmia in diabetic neuropathy has been studied since the 1980s. With ~4 minutes of rest in ~35 people it could not show added value over RMSSD |
-| 8 | FUSION-001 | Do two autonomic domains together separate diabetes from controls better than one? (founder request, 2026-11-15) | Plan frozen in `wearable/experiments/FUSION_001_PLAN.md` | — |
+| 8 | FUSION-001 | Do two autonomic domains together separate diabetes from controls better than one? (founder request, 2026-11-15) | **Done — no demonstrated gain** | n = 46 (25 diabetes, 21 control), lab-scored values. Leave-one-out AUC: Valsalva 0.36, tilt pressure 0.56, both 0.52 (95% CI 0.35–0.69). Gain −0.05. The two domains are uncorrelated (ρ = −0.08) but neither separates diabetes from controls here. Report: `wearable/reports/FUSION_001.md` |
 | 9 | TILT-001 | Resting PIP vs lab-computed tilt response | Queued | — |
 
-Outcome-level hypothesis tests run so far: **1** (GE71-ANS-001). Candidates found: **0**.
+Outcome-level hypothesis tests run so far: **2** (GE71-ANS-001, FUSION-001). Candidates found: **0**.
+
+Practical note: physionet.org timed out from GitHub runners for ~45 minutes on 2026-11-15; open-access files are also served from `https://physionet-open.s3.amazonaws.com/<project>/<version>/...`.
 
 ## Notes from GE71-ANS-001 that must not be treated as findings
 

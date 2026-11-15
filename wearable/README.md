@@ -13,7 +13,7 @@ This folder is an **independent wearable engineering experiment**. It does not c
 | L2 | Artifacts | Seeded optical noise, motion-linked interference, missing PPG |
 | L3 | Quality checks | Stream consistency and data-coverage gate |
 | L4 | Measurements | EDA range, motion context, temperature context; no unverified HRV |
-| L5 | Fusion | Held until authentic cross-modal data and independent outcome labels |
+| L5 | Fusion | First real-data check done on **lab-scored clinic values, not watch signals**: [FUSION-001](reports/FUSION_001.md), 46 people, two domains, no demonstrated gain for separating diabetes from controls. Watch-signal fusion still held until cross-modal data and independent outcome labels exist |
 | L6 | Clinical validation | Held: no independent ANS disease/progression ground truth |
 
 ## Source device and caveats
