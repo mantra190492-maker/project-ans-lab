@@ -1,0 +1,612 @@
+{
+  "records": {
+    "42576697": {
+      "pmid": "42576697",
+      "title": "Neuroautonomic Adaptive Resilience (NAR): The Proposal of a New Mechanism in the Context of the Neuroscience of Cognitive and Affective Aging. Definition and Operationalization.",
+      "journal": "Wiley interdisciplinary reviews. Cognitive science",
+      "published": "2026 Jul-Aug",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42576697/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42526543": {
+      "pmid": "42526543",
+      "title": "Interaction between mental and cardiometabolic health in relation to telomere length among university staff in Australia.",
+      "journal": "Experimental gerontology",
+      "published": "2026 Oct 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42526543/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42524092": {
+      "pmid": "42524092",
+      "title": "High-salt intake alters autonomic maturation trajectories assessed by an HRV-based ANS Age Index in rats.",
+      "journal": "Frontiers in physiology",
+      "published": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42524092/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)",
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42406578": {
+      "pmid": "42406578",
+      "title": "Heart Rate Variability During Exercise-Heat Stress Following Seven Days of Passive Heat Acclimation in Older Males: A Secondary Analysis.",
+      "journal": "Medicine and science in sports and exercise",
+      "published": "2026 Nov 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42406578/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42323814": {
+      "pmid": "42323814",
+      "title": "[The role of attachment in healthy ageing].",
+      "journal": "Orvosi hetilap",
+      "published": "2026 Jun 21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42323814/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42209420": {
+      "pmid": "42209420",
+      "title": "Heart Rate Variability, Parental Stress, Child's Challenging Behaviour and Advanced Glycation End Products in Parents of Children With Chronic Conditions.",
+      "journal": "Stress and health : journal of the International Society for the Investigation of Stress",
+      "published": "2026 Jun",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42209420/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42147096": {
+      "pmid": "42147096",
+      "title": "A novel QTc-RR differential biomarker for the early assessment of autonomic dysfunction in type 2 diabetes.",
+      "journal": "Frontiers in endocrinology",
+      "published": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42147096/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42114050": {
+      "pmid": "42114050",
+      "title": "Neurovascular Resilience and Autonomic Inertia: The Impact of Age and Sex on Intracranial Dynamics During Stress.",
+      "journal": "Biological research for nursing",
+      "published": "2026 Oct",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42114050/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41902380": {
+      "pmid": "41902380",
+      "title": "Exploring heart rate variability as a biomarker for frailty: A narrative review.",
+      "journal": "European journal of clinical investigation",
+      "published": "2026 Apr",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41902380/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41863330": {
+      "pmid": "41863330",
+      "title": "Symptom-based indicators of autonomic dysfunction and their bidirectional associations with Parkinson's disease incidence and adverse outcomes.",
+      "journal": "The journals of gerontology. Series A, Biological sciences and medical sciences",
+      "published": "2026 Mar 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41863330/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41798245": {
+      "pmid": "41798245",
+      "title": "Study of cognitive functions and heart rate variability in reproductive-age group and post-menopausal women.",
+      "journal": "Indian journal of psychiatry",
+      "published": "2026 Feb",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41798245/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41792034": {
+      "pmid": "41792034",
+      "title": "The Immune-Autonomic Interface in Aging: Baseline Immune Profile Shapes Cardiac Autonomic Response to Exercise.",
+      "journal": "Aging cell",
+      "published": "2026 Mar",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41792034/",
+      "queries": [
+        "\"autonomic nervous system\" AND (aging OR ageing) AND (biomarkers OR resilience)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42664585": {
+      "pmid": "42664585",
+      "title": "Multisensory dysfunction across sleep disorders: A systematic review of 31 human modalities.",
+      "journal": "Sleep medicine reviews",
+      "published": "2026 Aug 26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42664585/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42640910": {
+      "pmid": "42640910",
+      "title": "The relation between physical activity and cardiac autonomic dysfunction in patients with chronic obstructive pulmonary disease.",
+      "journal": "PloS one",
+      "published": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42640910/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42526930": {
+      "pmid": "42526930",
+      "title": "Use of heart rate variability in prediction of clinical deterioration in critically ill hospitalised adults: a systematic review protocol.",
+      "journal": "BMJ open",
+      "published": "2026 Jul 29",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42526930/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42238536": {
+      "pmid": "42238536",
+      "title": "Building a framework for integrative longevity science: from rediscovery to innovation.",
+      "journal": "Frontiers in aging",
+      "published": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42238536/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41999484": {
+      "pmid": "41999484",
+      "title": "A multidomain sleep-brain vulnerability index predicts delirium and long-term cognitive decline in hospitalized older adults.",
+      "journal": "European geriatric medicine",
+      "published": "2026 Jun",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41999484/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41668724": {
+      "pmid": "41668724",
+      "title": "Autonomic neurotransmission in cardiovascular regulation and pathophysiology.",
+      "journal": "Frontiers in neuroscience",
+      "published": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41668724/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41579747": {
+      "pmid": "41579747",
+      "title": "Cognitive changes and emotional heart rate variability dynamics in subjective cognitive decline: An exploratory longitudinal neuropsychophysiological study.",
+      "journal": "Acta psychologica",
+      "published": "2026 Mar",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41579747/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41438235": {
+      "pmid": "41438235",
+      "title": "Heart rate variability and its modulation by nutrients: a narrative review on implications for cardiovascular aging.",
+      "journal": "Frontiers in neuroscience",
+      "published": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41438235/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41262961": {
+      "pmid": "41262961",
+      "title": "The impact of guided meditations and mindfulness on blood pressure regulation: analyzing the physiological impact of mental health techniques on cardiac biomarkers.",
+      "journal": "Cogent mental health",
+      "published": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41262961/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41252707": {
+      "pmid": "41252707",
+      "title": "Untangling the heart-brain connection in Parkinson's disease: emerging mechanisms and models.",
+      "journal": "Canadian journal of physiology and pharmacology",
+      "published": "2026 Jan 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41252707/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41209115": {
+      "pmid": "41209115",
+      "title": "Effects of Long-Term Moderate-Intensity Exercise on Autonomic Nervous System Dysfunction Induced by Cardiac Neurovascular Interface Deterioration.",
+      "journal": "Reviews in cardiovascular medicine",
+      "published": "2025 Oct",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41209115/",
+      "queries": [
+        "\"heart rate variability\" AND (aging OR ageing) AND (longitudinal OR mortality)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "43032128": {
+      "pmid": "43032128",
+      "title": "Differentiation of PD, MSA and PSP using clinical data from the prospective AIDP cohort.",
+      "journal": "Clinical parkinsonism & related disorders",
+      "published": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43032128/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "43030862": {
+      "pmid": "43030862",
+      "title": "Haemodynamic Vulnerability: An Integrative Physiological Framework for Understanding Hypotension in Older Adults.",
+      "journal": "Journal of clinical medicine",
+      "published": "2026 Nov 8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43030862/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42958062": {
+      "pmid": "42958062",
+      "title": "Orthostatic blood pressure fluctuations and risk of falls in community-dwelling older adults: the role of recovery time.",
+      "journal": "BMC geriatrics",
+      "published": "2026 Oct 28",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42958062/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42948965": {
+      "pmid": "42948965",
+      "title": "Environmental and psychosocial factors in hypertension: an emerging landscape of cardiovascular risk.",
+      "journal": "Blood pressure",
+      "published": "2026 Dec",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42948965/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42934266": {
+      "pmid": "42934266",
+      "title": "Key highlights of the 2026 Taiwan Hypertension Society guidelines for the management of hypertension in older adults.",
+      "journal": "Hypertension research : official journal of the Japanese Society of Hypertension",
+      "published": "2026 Oct 27",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42934266/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42926177": {
+      "pmid": "42926177",
+      "title": "2026 THS guidelines for the management of hypertension in older adults: Developed by the task force on the management of hypertension of the Taiwan Hypertension Society (THS) and endorsed by the Taiwan Society of Cardiology (TSOC), Taiwan Association of Gerontology and Geriatrics (TAGG), and Taiwan Society of Family Medicine (TSFM).",
+      "journal": "Journal of the Formosan Medical Association = Taiwan yi zhi",
+      "published": "2026 Oct 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42926177/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42867998": {
+      "pmid": "42867998",
+      "title": "Reduced total arterial compliance in frail older adults is associated with orthostatic blood pressure variability but not baroreflex sensitivity.",
+      "journal": "The Journal of frailty & aging",
+      "published": "2026 Oct 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42867998/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)",
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42851127": {
+      "pmid": "42851127",
+      "title": "Acute Effects of Automated Peripheral Stimulation on Autonomic and Functional Capacity in Parkinson's Disease.",
+      "journal": "Movement disorders clinical practice",
+      "published": "2026 Oct 9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42851127/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42850365": {
+      "pmid": "42850365",
+      "title": "Insulin resistance is potentially associated with 24-h blood pressure variability related to blunted sympathetic reactivity in older adults with hypertension.",
+      "journal": "Clinical autonomic research : official journal of the Clinical Autonomic Research Society",
+      "published": "2026 Oct 8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42850365/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42820774": {
+      "pmid": "42820774",
+      "title": "Effects of Anti-Hypertensive Agents on Orthostatic Changes: Secondary Analysis of the Treatment of Mild Hypertension Study (TOMHS).",
+      "journal": "American journal of hypertension",
+      "published": "2026 Oct 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42820774/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42807945": {
+      "pmid": "42807945",
+      "title": "Drug-Induced Orthostatic Hypotension in UK Primary Care: A Self-Controlled Case Series Study.",
+      "journal": "Clinical epidemiology",
+      "published": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42807945/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "42745127": {
+      "pmid": "42745127",
+      "title": "Orthostatic Hypertension: Clinical Spectrum and Gaps in Knowledge.",
+      "journal": "Current hypertension reports",
+      "published": "2026 Sep 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42745127/",
+      "queries": [
+        "\"orthostatic\" AND (aging OR ageing) AND (heart rate OR blood pressure)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "41264119": {
+      "pmid": "41264119",
+      "title": "Effects of Exercise on Autonomic Cardiovascular Function in Older Adults: A Systematic Review and Meta-Analysis.",
+      "journal": "Sports medicine (Auckland, N.Z.)",
+      "published": "2026 Feb",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41264119/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "40842651": {
+      "pmid": "40842651",
+      "title": "Hippocampal vascular supply and its mediating role in systemic physiological influences on hippocampal volume.",
+      "journal": "Frontiers in aging neuroscience",
+      "published": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40842651/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "39907405": {
+      "pmid": "39907405",
+      "title": "Relationship between resting augmentation index and spontaneous cardiac baroreflex sensitivity during handgrip exercise in postmenopausal women.",
+      "journal": "Brazilian journal of medical and biological research = Revista brasileira de pesquisas medicas e biologicas",
+      "published": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39907405/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "35881301": {
+      "pmid": "35881301",
+      "title": "Effect of simultaneous exercise and cognitive training on executive functions, baroreflex sensitivity, and pre-frontal cortex oxygenation in healthy older adults: a pilot study.",
+      "journal": "GeroScience",
+      "published": "2023 Feb",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35881301/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "35429292": {
+      "pmid": "35429292",
+      "title": "The impact of age, sex, cardio-respiratory fitness, and cardiovascular disease risk on dynamic cerebral autoregulation and baroreflex sensitivity.",
+      "journal": "European journal of applied physiology",
+      "published": "2022 Jun",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35429292/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "35288226": {
+      "pmid": "35288226",
+      "title": "Concurrent chemoradiation therapy is associated with an accelerated risk of cardiovascular autonomic dysfunction in patients with nasopharyngeal carcinoma: A 9-year prospective follow-up study.",
+      "journal": "Radiotherapy and oncology : journal of the European Society for Therapeutic Radiology and Oncology",
+      "published": "2022 May",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35288226/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "31721084": {
+      "pmid": "31721084",
+      "title": "Sex differences in baroreflex function in health and disease.",
+      "journal": "The journal of physiological sciences : JPS",
+      "published": "2019 Nov",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31721084/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "30965055": {
+      "pmid": "30965055",
+      "title": "Ovarian failure induced by 4-vinylcyclohexene diepoxide worsens the autonomic cardiovascular response to chronic unpredictable stress in rats.",
+      "journal": "Life sciences",
+      "published": "2019 Jun 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30965055/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "30401911": {
+      "pmid": "30401911",
+      "title": "Impaired nocturnal blood pressure dipping in patients with type 2 diabetes mellitus.",
+      "journal": "Hypertension research : official journal of the Japanese Society of Hypertension",
+      "published": "2019 Jan",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30401911/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "25641086": {
+      "pmid": "25641086",
+      "title": "Eight-year parallel change in baroreflex sensitivity and memory function in a sample of healthy older adults.",
+      "journal": "Journal of the American Geriatrics Society",
+      "published": "2015 Feb",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25641086/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    },
+    "25260611": {
+      "pmid": "25260611",
+      "title": "Endogenous leptin contributes to baroreflex suppression within the solitary tract nucleus of aged rats.",
+      "journal": "American journal of physiology. Heart and circulatory physiology",
+      "published": "2014 Dec 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25260611/",
+      "queries": [
+        "\"baroreflex sensitivity\" AND (aging OR ageing) AND (functional decline OR frailty)"
+      ],
+      "evidence_level": "bibliographic metadata only",
+      "first_seen_utc": "20261115T121225Z",
+      "review_status": "unreviewed"
+    }
+  },
+  "runs": [
+    {
+      "timestamp": "20261115T121225Z",
+      "retrieved": 46,
+      "new": 46,
+      "total_unique": 46
+    }
+  ]
+}
