@@ -10,11 +10,11 @@
 | Agent 1 (external LLM) | General longitudinal literature, datasets, biomarkers | Written submission; corrected errors in age dataset size, Framingham author/year, 2007 post-MI BRS and cognitions citations | [Evidence audit](AGENT_01_EVIDENCE_REVIEW.md) |
 | Agent 2 (external LLM) | Skeptical prediction, interventions and novel datasets | 19-page report supplied by founder; primary sources and datasets checked selectively | [Skeptical audit](AGENT_02_SKEPTICAL_ASSESSMENT_AUDIT.md) |
 | **Independent Project ANS review** | **All five tracks: biomarker, BRS, prediction, recovery and skepticism** | Primary papers and provider documentation; no new survival model fitted | [Full independent review](INDEPENDENT_BIOMARKER_REVIEW_2026-11-15.md) |
-| Agent 3 (external, pending) | Biomarker discovery | Awaiting user-provided evidence | Not assessed |
-| Agent 4 (external, pending) | BRS method validity | Awaiting user-provided evidence | Not assessed |
-| Agent 5 (external, pending) | Clinical outcome prediction | Awaiting user-provided evidence | Not assessed |
-| Agent 6 (external, pending) | Dynamic physiological recovery | Awaiting user-provided evidence | Not assessed |
-| Agent 7 (external, pending) | Prior art / critical falsification | Awaiting user-provided evidence | Not assessed |
+| Agent 3 (external, pending) | Biomarker discovery | Standalone submission not included in this four-PDF batch | Awaiting report |
+| Agent 4 (external PDF 2) | BRS method validity | BRS validation, 10-page report; BaroKit/PRCP identified; 90% yield gate proposed, not established | [Batch adjudication](EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md) |
+| Agent 5 (external PDF 3) | Clinical outcome prediction | MUSIC protocol, 9-page report; stronger deceleration-capacity comparator; transplant and drug assertions corrected | [Batch adjudication](EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md) |
+| Agent 6 (external PDF 4) | Dynamic physiological recovery | 9-page report; Panaite meta and PRCP accepted; 12-year TILDA 'preprint' claim obsolete | [Batch adjudication](EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md) |
+| Agent 7 (external PDF 5) | Prior art / critical falsification | 7-page red-team report; existing Polyscore and HRF patent application verified; originality remains unproven | [Batch adjudication](EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md) |
 
 ## Consensus, disagreement and decision
 
@@ -50,3 +50,14 @@
 7. **No patient-level data in research repo:** public aggregate counts only; observe provider access and usage agreements.
 
 **Current scientific status:** 0 validated ageing/longevity biomarkers, 0 Project ANS survival models, 0 demonstrated life-extending interventions.
+
+## 2026-11-15 follow-up: batch of four external reports
+
+All four are reviewed in [the combined evidence adjudication](EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md).
+
+- BRS: PRCP and BaroKit are legitimate references; 12/20 provisional output is not automatically a malfunction; xBRS variance-ratio confounding is demonstrated.
+- MUSIC: use deceleration capacity as an advanced comparison; **beta-blocker column already verified**, and **transplant must not be mislabeled a death**. Minimum event count and exact censoring remain open.
+- Dynamic recovery: 2015 prospective meta-analysis confirms an association, but the **12-year TILDA full-response article was published in December 2025**, not merely preprinted.
+- Red team: a plain HRV/BRS/HRF/recovery composite is not new. HRF patent application **US20200375480A1** exists; Google currently records that application as *abandoned*, not freedom-to-operate.
+
+**Invention gate:** prior-art differentiation and repeatable longitudinal human outcomes are prerequisites before an original autonomic biomarker can be claimed.
