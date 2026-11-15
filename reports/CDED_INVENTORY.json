@@ -2,7 +2,7 @@
   "study": "CDED-ANS-001 stage 1 inventory",
   "dataset": "https://physionet.org/files/cded/1.0.1/",
   "doi": "10.13026/00bm-0x81",
-  "generated_utc": "2026-11-15T17:00:11.978074+00:00",
+  "generated_utc": "2026-11-15T17:04:15.367783+00:00",
   "n_files": 347,
   "file_extensions": {
     ".dat": 157,
@@ -20,21 +20,21 @@
   },
   "header_summary": {
     "labview_visit2": {
-      "n": 68,
+      "n": 69,
       "sampling_hz": {
-        "500.0": 68
+        "500.0": 69
       },
       "channel_names": {
-        "marker": 68,
-        "ecg": 68,
-        "abp": 68,
-        "mcar": 68,
-        "mcal": 68,
-        "Radi": 68,
-        "thermst": 68,
-        "flow_rate": 68,
-        "o2": 68,
-        "co2": 68
+        "marker": 69,
+        "ecg": 69,
+        "abp": 69,
+        "mcar": 69,
+        "mcal": 69,
+        "Radi": 69,
+        "thermst": 69,
+        "flow_rate": 69,
+        "o2": 69,
+        "co2": 69
       },
       "multi_segment": 0,
       "duration_min": {
@@ -44,21 +44,21 @@
       }
     },
     "labview_visit8": {
-      "n": 39,
+      "n": 41,
       "sampling_hz": {
-        "500.0": 39
+        "500.0": 41
       },
       "channel_names": {
-        "marker": 39,
-        "ecg": 39,
-        "abp": 39,
-        "mcar": 39,
-        "mcal": 39,
-        "Radi": 39,
-        "thermst": 39,
-        "flow_rate": 39,
-        "o2": 39,
-        "co2": 39
+        "marker": 41,
+        "ecg": 41,
+        "abp": 41,
+        "mcar": 41,
+        "mcal": 41,
+        "Radi": 41,
+        "thermst": 41,
+        "flow_rate": 41,
+        "o2": 41,
+        "co2": 41
       },
       "multi_segment": 0,
       "duration_min": {
@@ -68,25 +68,25 @@
       }
     },
     "ecg_24h": {
-      "n": 46,
+      "n": 45,
       "sampling_hz": {
-        "1000.0": 46
+        "1000.0": 45
       },
       "channel_names": {
-        "emg_0": 46,
-        "emg_1": 46,
+        "emg_0": 45,
+        "emg_1": 45,
         "emg_2": 24,
         "emg_3": 24,
         "emg_4": 24,
         "emg_5": 24,
         "emg_6": 24,
         "emg_7": 24,
-        "ecg_0": 22,
-        "ecg_1": 22,
-        "sensor_0": 22,
-        "sensor_1": 22,
-        "accelerometer_0": 22,
-        "accelerometer_1": 22
+        "ecg_0": 21,
+        "ecg_1": 21,
+        "sensor_0": 21,
+        "sensor_1": 21,
+        "accelerometer_0": 21,
+        "accelerometer_1": 21
       },
       "multi_segment": 0,
       "duration_min": {
@@ -98,15 +98,7 @@
   },
   "header_failures": [
     {
-      "record_type": "labview_visit2",
-      "error": "HTTPError"
-    },
-    {
-      "record_type": "labview_visit8",
-      "error": "HTTPError"
-    },
-    {
-      "record_type": "labview_visit8",
+      "record_type": "ecg_24h",
       "error": "HTTPError"
     },
     {
@@ -617,10 +609,1710 @@
       ]
     },
     "Data_Description/GE-79_Summary_Table-Demographics-MRI-Part1.csv": {
-      "error": "HTTPError"
+      "rows": 121,
+      "columns": [
+        {
+          "name": "Patient ID",
+          "nonmissing": 121
+        },
+        {
+          "name": "study",
+          "nonmissing": 121
+        },
+        {
+          "name": "Visit",
+          "nonmissing": 121
+        },
+        {
+          "name": "Group",
+          "nonmissing": 121
+        },
+        {
+          "name": "Diabetes Duration",
+          "nonmissing": 64
+        },
+        {
+          "name": "HTN or not",
+          "nonmissing": 117
+        },
+        {
+          "name": "Race",
+          "nonmissing": 121
+        },
+        {
+          "name": "DM, Non-DM, STROKE",
+          "nonmissing": 121
+        },
+        {
+          "name": "HEIGHT (M)",
+          "nonmissing": 121
+        },
+        {
+          "name": "MASS (KG)",
+          "nonmissing": 121
+        },
+        {
+          "name": "BMI",
+          "nonmissing": 121
+        },
+        {
+          "name": "global GM vol",
+          "nonmissing": 115
+        },
+        {
+          "name": "global GM vol covered in template",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior frontal gyrus (#21) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior frontal gyrus (#22) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle frontal gyrus (#23) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle frontal gyrus (#24) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior frontal gyrus (#25) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior frontal gyrus (#26) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L precentral gyrus (#27) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R precentral gyrus (#28) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle orbitofrontal gyrus (#29) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle orbitofrontal gyrus (#30) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L lateral orbitofrontal gyrus (#31) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R lateral orbitofrontal gyrus (#32) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L gyrus rectus (#33) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R gyrus rectus (#34) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L postcentral gyrus (#41) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R postcentral gyrus (#42) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior parietal gyrus (#43) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior parietal gyrus (#44) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L supramarginal gyrus (#45) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R supramarginal gyurs (#46) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L angular gyrus (#47) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R angular gyrus (#48) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L precuneus (#49) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R precuneus (#50) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior occipital gyrus (#61) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior occipital gyrus (#62) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle occipital gyrus (#63) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle occipital gyrus (#64) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior occipital gyrus (#65) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior occipital gyrus (#66) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L cuneus (#67) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R cuneus (#68) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior temporal gyrus (#81) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior temporal gyrus (#82) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle temporal gyrus (#83) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle temporal gyrus (#84) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior temporal gyrus (#85) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior temporal gyrus (#86) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L parahippocampal gyrus (#87) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R parahippocampal gyrus (#88) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L lingual gyrus (#89) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R lingual gyrus (#90) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L fusiform gyrus (#91) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R fusiform gyrus (#92) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L insular cortex (#101) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R insular cortex (#102) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L cingulate gyrus (#121) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R cingulate gyrus (#122) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L caudate (#161) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R caudate (#162) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L putamen (#163) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R putamen (#164) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L hippocampus (#165) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R hippocampus (#166) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "cerebellum (#181) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "brain stem (#182) GM",
+          "nonmissing": 115
+        },
+        {
+          "name": "global WM vol",
+          "nonmissing": 115
+        },
+        {
+          "name": "global WM vol covered in template",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior frontal gyrus (#21) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior frontal gyrus (#22) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle frontal gyrus (#23) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle frontal gyrus (#24) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior frontal gyrus (#25) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior frontal gyrus (#26) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L precentral gyrus (#27) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R precentral gyrus (#28) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle orbitofrontal gyrus (#29) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle orbitofrontal gyrus (#30) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L lateral orbitofrontal gyrus (#31) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R lateral orbitofrontal gyrus (#32) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L gyrus rectus (#33) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R gyrus rectus (#34) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L postcentral gyrus (#41) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R postcentral gyrus (#42) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior parietal gyrus (#43) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior parietal gyrus (#44) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L supramarginal gyrus (#45) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R supramarginal gyurs (#46) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L angular gyrus (#47) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R angular gyrus (#48) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L precuneus (#49) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R precuneus (#50) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior occipital gyrus (#61) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior occipital gyrus (#62) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle occipital gyrus (#63) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle occipital gyrus (#64) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior occipital gyrus (#65) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior occipital gyrus (#66) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L cuneus (#67) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R cuneus (#68) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior temporal gyrus (#81) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior temporal gyrus (#82) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle temporal gyrus (#83) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle temporal gyrus (#84) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior temporal gyrus (#85)  WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior temporal gyrus (#86) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L parahippocampal gyrus (#87) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R parahippocampal gyrus (#88) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L lingual gyrus (#89) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R lingual gyrus (#90) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L fusiform gyrus (#91) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R fusiform gyrus (#92) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L insular cortex (#101) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R insular cortex (#102) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L cingulate gyrus (#121) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R cingulate gyrus (#122) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L caudate (#161) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R caudate (#162) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L putamen (#163) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R putamen (#164) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "L hippocampus (#165) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "R hippocampus (#166) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "cerebellum (#181) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "brain stem (#182) WM",
+          "nonmissing": 115
+        },
+        {
+          "name": "global CSF vol",
+          "nonmissing": 115
+        },
+        {
+          "name": "global CSF vol covered in template",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior frontal gyrus (#21) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior frontal gyrus (#22) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle frontal gyrus (#23) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle frontal gyrus (#24) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior frontal gyrus (#25) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior frontal gyrus (#26) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L precentral gyrus (#27) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R precentral gyrus (#28) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle orbitofrontal gyrus (#29) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle orbitofrontal gyrus (#30) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L lateral orbitofrontal gyrus (#31) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R lateral orbitofrontal gyrus (#32) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L gyrus rectus (#33) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R gyrus rectus (#34) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L postcentral gyrus (#41) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R postcentral gyrus (#42) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior parietal gyrus (#43) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior parietal gyrus (#44) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L supramarginal gyrus (#45) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R supramarginal gyurs (#46) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L angular gyrus (#47) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R angular gyrus (#48) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L precuneus (#49) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R precuneus (#50) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior occipital gyrus (#61) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior occipital gyrus (#62) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle occipital gyrus (#63) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle occipital gyrus (#64) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior occipital gyrus (#65) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior occipital gyrus (#66) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L cuneus (#67) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R cuneus (#68) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L superior temporal gyrus (#81) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R superior temporal gyrus (#82) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L middle temporal gyrus (#83) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R middle temporal gyrus (#84) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L inferior temporal gyrus (#85) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R inferior temporal gyrus (#86) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L parahippocampal gyrus (#87) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R parahippocampal gyrus (#88) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L lingual gyrus (#89) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R lingual gyrus (#90) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L fusiform gyrus (#91) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R fusiform gyrus (#92) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L insular cortex (#101) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R insular cortex (#102) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L cingulate gyrus (#121) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R cingulate gyrus (#122) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L caudate (#161) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R caudate (#162) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L putamen (#163) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R putamen (#164) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L hippocampus (#165) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "R hippocampus (#166) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "cerebellum (#181) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "brain stem (#182) CSF",
+          "nonmissing": 115
+        },
+        {
+          "name": "L ventricle (#1)",
+          "nonmissing": 73
+        },
+        {
+          "name": "R ventricle (#2)",
+          "nonmissing": 73
+        },
+        {
+          "name": "L superior frontal gyrus (#21) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R superior frontal gyrus (#22) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L middle frontal gyrus (#23) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R middle frontal gyrus (#24) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L inferior frontal gyrus (#25) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R inferior frontal gyrus (#26) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L precentral gyrus (#27) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R precentral gyrus (#28) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L middle orbitofrontal gyrus (#29) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R middle orbitofrontal gyrus (#30) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L lateral orbitofrontal gyrus (#31) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R lateral orbitofrontal gyrus (#32) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L gyrus rectus (#33) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R gyrus rectus (#34) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L postcentral gyrus (#41) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R postcentral gyrus (#42) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L superior parietal gyrus (#43) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R superior parietal gyrus (#44) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L supramarginal gyrus (#45) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R supramarginal gyrus (#46) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L angular gyrus (#47) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R angular gyrus (#48) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L precuneus (#49) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R precuneus (#50) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L superior occipital gyrus (#61) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R superior occipital gyrus (#62) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L middle occipital gyrus (#63) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R middle occipital gyrus (#64) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L inferior occipital gyrus (#65) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R inferior occipital gyrus (#66) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L cuneus (#67) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R cuneus (#68) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L superior temporal gyrus (#81) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R superior temporal gyrus (#82) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L middle temporal gyrus (#83) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R middle temporal gyrus (#84) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L inferior temporal gyrus (#85) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R inferior temporal gyrus (#86) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L parahippocampal gyrus (#87) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R parahippocampal gyrus (#88) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L lingual gyrus (#89) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R lingual gyrus (#90) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L fusiform gyrus (#91) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R fusiform gyrus (#92) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L insular cortex (#101) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R insular cortex (#102) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L cingulate gyrus (#121) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R cingulate gyrus (#122) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L caudate (#161) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R caudate (#162) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L putamen (#163) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R putamen (#164) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L hippocampus (#165) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R hippocampus (#166) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "cerebellum (#181) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "brainstem (#182) GM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L Frontal Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "R Frontal Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "L Parietal Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "R Parietal Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "L Occipital Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "R Occipital Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "L Temporal Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "R Temporal Lobe GM",
+          "nonmissing": 73
+        },
+        {
+          "name": "global GM covered in template/ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "L superior frontal gyrus (#21) WM / ICV",
+          "nonmissing": 73
+        },
+        {
+          "name": "R superior frontal gyrus (#22) WM / ICV",
+          "nonmissing": 73
+        }
+      ]
     },
     "Data_Description/GE-79_Summary_Table-Labs-BP-Ophthalmogic-Walk.csv": {
-      "error": "HTTPError"
+      "rows": 121,
+      "columns": [
+        {
+          "name": "patient ID",
+          "nonmissing": 121
+        },
+        {
+          "name": "Visit",
+          "nonmissing": 121
+        },
+        {
+          "name": "PREVIOUS TOBACCO USE",
+          "nonmissing": 107
+        },
+        {
+          "name": "CURRENT TOBACCO USE",
+          "nonmissing": 121
+        },
+        {
+          "name": "PackYears",
+          "nonmissing": 53
+        },
+        {
+          "name": "Years",
+          "nonmissing": 53
+        },
+        {
+          "name": "PREVIOUS ALCOHOL USE",
+          "nonmissing": 104
+        },
+        {
+          "name": "CURRENT ALCOHOL USE",
+          "nonmissing": 120
+        },
+        {
+          "name": "ALCOHOL Dose/Week",
+          "nonmissing": 115
+        },
+        {
+          "name": "Dizziness AUTONOMIC SYMPTOMS",
+          "nonmissing": 121
+        },
+        {
+          "name": "Numbness AUTONOMIC SYMPTOMS",
+          "nonmissing": 119
+        },
+        {
+          "name": "Painful feet AUTONOMIC SYMPTOMS",
+          "nonmissing": 121
+        },
+        {
+          "name": "Syncope AUTONOMIC SYMPTOMS",
+          "nonmissing": 120
+        },
+        {
+          "name": "OH AUTONOMIC SYMPTOMS",
+          "nonmissing": 121
+        },
+        {
+          "name": "cancer,# FAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "cancSpec FAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "HeartDisease FAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "Hdspecific FAMILY HISTORY",
+          "nonmissing": 119
+        },
+        {
+          "name": "HTN FAMILY HISTORY",
+          "nonmissing": 120
+        },
+        {
+          "name": "HTNspecific FAMILY HISTORY",
+          "nonmissing": 120
+        },
+        {
+          "name": "DM FAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "Dmspecific FAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "StrokeFAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "StrokeSpecific FAMILY HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "HTN YRS PATIENT MEDICAL HISTORY",
+          "nonmissing": 98
+        },
+        {
+          "name": "CANCER PATIENT MEDICAL HISTORY",
+          "nonmissing": 120
+        },
+        {
+          "name": "STROKE PATIENT MEDICAL HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "STROKE YR PATIENT MEDICAL HISTORY",
+          "nonmissing": 0
+        },
+        {
+          "name": "ATRIAL FIBTRILLATION PATIENT MEDICAL HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "HEART FAILURE =CHF /IFARCTION=-MI PATIENT MEDICAL HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "HYPERLIPIDEMIA PATIENT MEDICAL HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "DM PATIENT MEDICAL HISTORY",
+          "nonmissing": 121
+        },
+        {
+          "name": "OTHER",
+          "nonmissing": 103
+        },
+        {
+          "name": "DG2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Stroke Date 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "NIHSS 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "MRS 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Stroke Group 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Stroke Side 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Stroke Etiology 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Symptoms 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Lesions 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "Carotids",
+          "nonmissing": 0
+        },
+        {
+          "name": "Visit 2 date",
+          "nonmissing": 0
+        },
+        {
+          "name": "2nd Stroke 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "medication_old",
+          "nonmissing": 0
+        },
+        {
+          "name": "Medications",
+          "nonmissing": 115
+        },
+        {
+          "name": "Diabetic Medication Taken",
+          "nonmissing": 0
+        },
+        {
+          "name": "Meds for HTN Tapered",
+          "nonmissing": 0
+        },
+        {
+          "name": "Class of Meds Tapered",
+          "nonmissing": 0
+        },
+        {
+          "name": "Tapered Medications taken during Visit 2",
+          "nonmissing": 0
+        },
+        {
+          "name": "ANTIPLATELETS",
+          "nonmissing": 118
+        },
+        {
+          "name": "ANTICOAGULANTS",
+          "nonmissing": 120
+        },
+        {
+          "name": "ANTIHYPERLIPIDEMIC",
+          "nonmissing": 120
+        },
+        {
+          "name": "ANTIPARKINSONIAN",
+          "nonmissing": 120
+        },
+        {
+          "name": "STATINS",
+          "nonmissing": 120
+        },
+        {
+          "name": "ESTROGEN",
+          "nonmissing": 120
+        },
+        {
+          "name": "ACE INHIBITORS",
+          "nonmissing": 120
+        },
+        {
+          "name": "ARBS",
+          "nonmissing": 120
+        },
+        {
+          "name": "BETA BLOCKERS",
+          "nonmissing": 120
+        },
+        {
+          "name": "DIURETICS",
+          "nonmissing": 120
+        },
+        {
+          "name": "CA ++ BLOCKERS",
+          "nonmissing": 120
+        },
+        {
+          "name": "INSULIN(Yes_or_No)",
+          "nonmissing": 120
+        },
+        {
+          "name": "ORAL HYPOGLYCEMIC",
+          "nonmissing": 120
+        },
+        {
+          "name": "OTHER 2",
+          "nonmissing": 120
+        },
+        {
+          "name": "WBC K/uL",
+          "nonmissing": 120
+        },
+        {
+          "name": "RBC m/uL",
+          "nonmissing": 120
+        },
+        {
+          "name": "Hgb g/dL",
+          "nonmissing": 120
+        },
+        {
+          "name": "Hgb<12.5",
+          "nonmissing": 119
+        },
+        {
+          "name": "Hct %",
+          "nonmissing": 120
+        },
+        {
+          "name": "MCV fL",
+          "nonmissing": 120
+        },
+        {
+          "name": "MCH pg",
+          "nonmissing": 120
+        },
+        {
+          "name": "MCHC %",
+          "nonmissing": 120
+        },
+        {
+          "name": "RDW%",
+          "nonmissing": 120
+        },
+        {
+          "name": "Plt ct K/uL",
+          "nonmissing": 120
+        },
+        {
+          "name": "GLUCOSE mg/dL",
+          "nonmissing": 74
+        },
+        {
+          "name": "Insulin (uIU/mL)",
+          "nonmissing": 77
+        },
+        {
+          "name": "HOMA1_IR",
+          "nonmissing": 74
+        },
+        {
+          "name": "CHOLESTmg/dL",
+          "nonmissing": 72
+        },
+        {
+          "name": "TRIGLYCmg/dL",
+          "nonmissing": 72
+        },
+        {
+          "name": "HDL mg/dL",
+          "nonmissing": 72
+        },
+        {
+          "name": "LDL CALCmg/dL",
+          "nonmissing": 71
+        },
+        {
+          "name": "URINE CREAT mg/dL",
+          "nonmissing": 119
+        },
+        {
+          "name": "URINE ALBUMIN mg/dL",
+          "nonmissing": 119
+        },
+        {
+          "name": "Alb/Cre mg/g (URINE)",
+          "nonmissing": 118
+        },
+        {
+          "name": "ACR <5",
+          "nonmissing": 44
+        },
+        {
+          "name": "ACR >5",
+          "nonmissing": 74
+        },
+        {
+          "name": "ACR >10",
+          "nonmissing": 47
+        },
+        {
+          "name": "MA",
+          "nonmissing": 30
+        },
+        {
+          "name": "Hb A1C%",
+          "nonmissing": 120
+        },
+        {
+          "name": "Fasting Glucose (mg/dL) (Visit 2 for GE-75)",
+          "nonmissing": 116
+        },
+        {
+          "name": "Fasting Cholest (mg/dL) (Visit 2 for GE75)",
+          "nonmissing": 119
+        },
+        {
+          "name": "Fasting Triglyc (mg/dL) (Visit 2 for GE75)",
+          "nonmissing": 119
+        },
+        {
+          "name": "Fasting HDL (mg/dL) (Visit 2 for GE75)",
+          "nonmissing": 118
+        },
+        {
+          "name": "Fasting Chol/HD Ratio (Visit 2 for GE75)",
+          "nonmissing": 119
+        },
+        {
+          "name": "Fasting LDL calc (mg/dL) (Visit 2 for GE75)",
+          "nonmissing": 118
+        },
+        {
+          "name": "Lab_Results_Notes",
+          "nonmissing": 4
+        },
+        {
+          "name": "Cortisol (ug/dL)",
+          "nonmissing": 115
+        },
+        {
+          "name": "IGF-1 (ng/mL)",
+          "nonmissing": 77
+        },
+        {
+          "name": "Leptin (ng/mL)",
+          "nonmissing": 77
+        },
+        {
+          "name": "SICAM (pg/ml)",
+          "nonmissing": 121
+        },
+        {
+          "name": "SVCAM (ng/ml)",
+          "nonmissing": 121
+        },
+        {
+          "name": "CRP (mg/L)",
+          "nonmissing": 114
+        },
+        {
+          "name": "IL-6 (pg/ml)",
+          "nonmissing": 77
+        },
+        {
+          "name": "TNFa (pg/ml)",
+          "nonmissing": 120
+        },
+        {
+          "name": "CRP (mg/L) MGH",
+          "nonmissing": 55
+        },
+        {
+          "name": "E-Selectin (pg/mL) MGH",
+          "nonmissing": 38
+        },
+        {
+          "name": "ICAM-1 (ug/mL) MGH",
+          "nonmissing": 55
+        },
+        {
+          "name": "ICAM-1 (ng/mL) MGH",
+          "nonmissing": 55
+        },
+        {
+          "name": "ICAM-3 (ug/mL) MGH",
+          "nonmissing": 38
+        },
+        {
+          "name": "IFN-gamma (1) pg/mL MGH",
+          "nonmissing": 72
+        },
+        {
+          "name": "IL-10 (pg/mL) MGH",
+          "nonmissing": 66
+        },
+        {
+          "name": "IL-12p70 (pg/mL) MGH",
+          "nonmissing": 71
+        },
+        {
+          "name": "IL-13 (1) (pg/mL) MGH",
+          "nonmissing": 69
+        },
+        {
+          "name": "IL-1b (1) (pg/mL) MGH",
+          "nonmissing": 70
+        },
+        {
+          "name": "IL-2 (1) (pg/mL) MGH",
+          "nonmissing": 71
+        },
+        {
+          "name": "IL-4 (1) (pg/mL) MGH",
+          "nonmissing": 70
+        },
+        {
+          "name": "IL-6 (1) (pg/mL) MGH",
+          "nonmissing": 70
+        },
+        {
+          "name": "IL-8 (1) (pg/mL) MGH",
+          "nonmissing": 70
+        },
+        {
+          "name": "Insulin (uU/mL) MGH",
+          "nonmissing": 38
+        },
+        {
+          "name": "MMP-1 (ng/mL) MGH",
+          "nonmissing": 69
+        },
+        {
+          "name": "MMP-3 (ng/mL) MGH",
+          "nonmissing": 70
+        },
+        {
+          "name": "MMP-9 (ng/mL) MGH",
+          "nonmissing": 69
+        },
+        {
+          "name": "P-Selectin, MSD (pg/mL) MGH",
+          "nonmissing": 38
+        },
+        {
+          "name": "SAA, MSD (ug/mL) MGH",
+          "nonmissing": 55
+        },
+        {
+          "name": "Thrombomodulin (pg/mL) MGH",
+          "nonmissing": 38
+        },
+        {
+          "name": "TNF-alpha (1) (pg/mL) MGH",
+          "nonmissing": 70
+        },
+        {
+          "name": "VCAM-1, MSD (ug/mL) MGH",
+          "nonmissing": 55
+        },
+        {
+          "name": "VCAM-1, MSD (ng/mL) MGH",
+          "nonmissing": 55
+        },
+        {
+          "name": "24Hour-Daytime-SBP",
+          "nonmissing": 108
+        },
+        {
+          "name": "24Hour-Nighttime-SBP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-Daytime-DBP",
+          "nonmissing": 108
+        },
+        {
+          "name": "24Hour-Nighttime-DBP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-Daytime-MBP",
+          "nonmissing": 108
+        },
+        {
+          "name": "24Hour-Nightime-MBP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-Daytime-HR",
+          "nonmissing": 108
+        },
+        {
+          "name": "24Hour-Nightime-HR",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-Daytime-PP",
+          "nonmissing": 41
+        },
+        {
+          "name": "24Hour-Nightime-PP",
+          "nonmissing": 38
+        },
+        {
+          "name": "24Hour-SBPDIP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-SBPDIP%",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-DBPDIP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-DBPDIP%",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-MBPDIP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-MBPDIP%",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-HRDIP",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-HRDIP%",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-PPDIP",
+          "nonmissing": 38
+        },
+        {
+          "name": "24Hour-PPDIP%",
+          "nonmissing": 38
+        },
+        {
+          "name": "24Hour-SBPDIPPER",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-DBPDIPPER",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-MBPDIPPER",
+          "nonmissing": 104
+        },
+        {
+          "name": "24Hour-PPDIPPER",
+          "nonmissing": 38
+        },
+        {
+          "name": "Eye Scan (Y/N)",
+          "nonmissing": 121
+        },
+        {
+          "name": "Right Eye findings",
+          "nonmissing": 121
+        },
+        {
+          "name": "Left Eye findings",
+          "nonmissing": 121
+        },
+        {
+          "name": "Right Eye Diabetic Retinopathy",
+          "nonmissing": 121
+        },
+        {
+          "name": "Left Eye Diabetic Retinopathy",
+          "nonmissing": 121
+        },
+        {
+          "name": "Diabetic Retinopathy (more advanced eye)",
+          "nonmissing": 121
+        },
+        {
+          "name": "Right Eye Macular Edema",
+          "nonmissing": 121
+        },
+        {
+          "name": "Left Eye Macular Edema",
+          "nonmissing": 121
+        },
+        {
+          "name": "Macular Edema (more advanced eye)",
+          "nonmissing": 121
+        },
+        {
+          "name": "GAIT - Walk 1 distance (m)",
+          "nonmissing": 44
+        },
+        {
+          "name": "Gait (Normal) RPE Start (1-10)",
+          "nonmissing": 118
+        },
+        {
+          "name": "Gait (Normal) RPE End (1-10)",
+          "nonmissing": 116
+        },
+        {
+          "name": "Gait (DT) RPE Start (1-10)",
+          "nonmissing": 113
+        },
+        {
+          "name": "Gait (DT) RPE End (1-10)",
+          "nonmissing": 111
+        },
+        {
+          "name": "GAIT - Walk 1 speed (m/s)",
+          "nonmissing": 114
+        },
+        {
+          "name": "Gait (Dual Task) - Distance (m)",
+          "nonmissing": 114
+        },
+        {
+          "name": "Gait (Dual Task) - Speed (m/s)",
+          "nonmissing": 114
+        }
+      ]
     },
     "Data_Description/GE-79_Summary_Table-MRI-Part2.csv": {
       "rows": 121,
@@ -3992,12 +5684,23 @@
     }
   },
   "candidate_autonomic_variables": [
+    "24Hour-Daytime-DBP",
+    "24Hour-Daytime-HR",
+    "24Hour-Daytime-SBP",
+    "24Hour-Nightime-HR",
+    "24Hour-Nighttime-DBP",
+    "24Hour-Nighttime-SBP",
     "BETA BLOCKERS",
+    "Diabetes Duration",
     "Diabetic Medication Taken",
+    "Diabetic Retinopathy (more advanced eye)",
     "Dizziness AUTONOMIC SYMPTOMS",
+    "Hb A1C%",
+    "Left Eye Diabetic Retinopathy",
     "Numbness AUTONOMIC SYMPTOMS",
     "OH AUTONOMIC SYMPTOMS",
     "Painful feet AUTONOMIC SYMPTOMS",
+    "Right Eye Diabetic Retinopathy",
     "Syncope AUTONOMIC SYMPTOMS"
   ],
   "scope": "Structure only. No participant values, no associations, no outcome statistics."
