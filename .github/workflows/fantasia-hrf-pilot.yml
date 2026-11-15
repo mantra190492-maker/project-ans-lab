@@ -1,0 +1,79 @@
+name: ANS-001 Annotated HRF Pilot
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'anslab/heart_rate_fragmentation.py'
+      - 'scripts/fantasia_hrf_pilot.py'
+      - 'tests/test_heart_rate_fragmentation.py'
+      - 'tests/test_fantasia_hrf_pilot.py'
+      - '.github/workflows/fantasia-hrf-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-001-annotated-hrf-pilot
+  cancel-in-progress: false
+jobs:
+  annotated-hrf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test and annotation tools
+        run: python -m pip install 'numpy>=1.26,<3' 'wfdb>=4.1,<5' 'requests>=2.31,<3' 'pytest>=8,<10'
+      - name: Validate HRF numerical and ECG annotation guards
+        run: python -m pytest -q tests/test_heart_rate_fragmentation.py tests/test_fantasia_hrf_pilot.py
+      - name: Compute preliminary HRF from four real annotated records
+        run: python -m scripts.fantasia_hrf_pilot
+      - name: Publish a descriptive research report
+        if: always()
+        run: |
+          if [ -f reports/FANTASIA_HRF_PILOT.md ]; then
+            cat reports/FANTASIA_HRF_PILOT.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Archive current report without stale-branch merge conflicts
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ ! -f reports/FANTASIA_HRF_PILOT.md ] || [ ! -f reports/fantasia_hrf_pilot.json ]; then
+            echo "No computed HRF report"
+            exit 0
+          fi
+          scratch="$(mktemp -d)"
+          cp reports/FANTASIA_HRF_PILOT.md "$scratch/"
+          cp reports/fantasia_hrf_pilot.json "$scratch/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -f -B publish-fantasia-hrf origin/main
+            mkdir -p reports
+            cp "$scratch/FANTASIA_HRF_PILOT.md" reports/
+            cp "$scratch/fantasia_hrf_pilot.json" reports/
+            git add -f reports/FANTASIA_HRF_PILOT.md reports/fantasia_hrf_pilot.json
+            if git diff --cached --quiet; then
+              echo "HRF report already published"
+              exit 0
+            fi
+            git commit -m 'Archive annotated HRF feasibility report [skip ci]'
+            if git push origin HEAD:main; then
+              echo "Published HRF report"
+              exit 0
+            fi
+            sleep $((attempt*2))
+          done
+          echo "Could not publish after concurrent updates" >&2
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ans-001-fantasia-annotated-hrf-results
+          path: |
+            reports/FANTASIA_HRF_PILOT.md
+            reports/fantasia_hrf_pilot.json
+          if-no-files-found: warn
+          retention-days: 30
