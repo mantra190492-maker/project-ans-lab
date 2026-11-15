@@ -1,6 +1,6 @@
 # Project ANS Lab
 
-> **FOUNDER RESEARCH CHARTER — LOCKED:** [Read the mission and six evidence gates](docs/RESEARCH_GUARDRAILS.md) · [Machine-readable charter](config/research_charter.json) · [Open hypothesis and blocked gates](research/proposals/AFDV-001.json). Do **not** change the primary objective to ageing, mortality, a generic HRV product, or diabetic screening because an external agent recommends it. Only explicit founder approval can authorize a pivot. **No new clinically validated ANS biomarker exists yet.**
+> **FOUNDER RESEARCH CHARTER — LOCKED:** [Read the mission and six evidence gates](docs/RESEARCH_GUARDRAILS.md) · [Decision log](docs/RESEARCH_DECISION_LOG.md) · [Machine-readable charter](config/research_charter.json) · [Open hypothesis and blocked gates](research/proposals/AFDV-001.json). Do **not** change the primary objective to ageing, mortality, a generic HRV product, or diabetic screening because an external agent recommends it. Only explicit founder approval can authorize a pivot. **No new clinically validated ANS biomarker exists yet.**
 
 **Mission ANS-001:** Find and validate objective physiological markers that **detect emerging autonomic nervous system dysfunction, localize affected functional domains, and track deterioration over repeated tests**. The primary endpoints are independently assessed autonomic impairment/progression, **not biological age or lifespan**. Mortality and CVD prediction are secondary external relevance benchmarks.
 
