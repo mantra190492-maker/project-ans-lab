@@ -1,0 +1,54 @@
+{
+  "proposal_id": "SHHS-HRF-001",
+  "mission_id": "ANS-001",
+  "track": "discovery",
+  "candidate_name": "Baseline nighttime heart-rate fragmentation as predictor of longitudinal cardiovagal change",
+  "claim_level": "IDEA",
+  "scientific_claim": "Costa-reference PIP from SHHS visit 1 might predict visit-2 within-person deterioration in respiration-linked cardiac vagal modulation beyond age, sex, mean HR, standard HRV, baseline physiology and clinical covariates.",
+  "clinical_target": "Longitudinal change in cardiac autonomic physiological PROXY, not confirmed autonomic nerve damage or clinical ANS dysfunction. Requires independent clinical autonomic reference to advance diagnostic claim.",
+  "population": "SHHS participants with high-quality sinus-rhythm overnight ECG at both PSG visits, acceptable respiratory signal and comparable sleep stage; final eligible sample unknown and NSRR access not yet approved.",
+  "novelty_gap": "UNVERIFIED: prospective baseline HRF predicts longitudinal within-person change in respiration-coupled cardiac vagal regulation, conditional on full prior-art review and clinical validity.",
+  "reference_standard": "Two-visit objectively measured respiration-linked ECG cardiac vagal proxy for feasibility; independent clinical autonomic reflex/CASS reference absent.",
+  "available_data": [
+    "Public SHHS documentation confirms 6441 baseline enrolments and 3295 PSGs at visit 2, but study subject-level data are restricted and not accessed.",
+    "Costa official AWK reference tested with exact PIP/PNNSS/PNNLS integer matches on all three public test fixtures.",
+    "Public Fantasia pilot corrected for 3 quality-eligible annotated records; no longitudinal outcomes.",
+    "MrOS public NSRR descriptions indicate 1026 repeat overnight PSGs but same restricted data access and no confirmed independent autonomic clinical reference."
+  ],
+  "next_falsifiable_test": "After NSRR authorization: verify participant overlap, ECG annotation quality, visit-specific sampling frequency and respiratory/sleep-stage waveform feasibility; preregister predictor, a respiration-adjusted physiological change proxy, baseline controls and sample exclusions BEFORE outcome-visit analysis.",
+  "rejection_rule": "Stop biomarker claim if sampling-grid artifacts explain apparent change, no reproducible physiological proxy survives sensor/respiration/motion confounder sensitivity, or PIP adds no reliable held-out prediction above baseline physiological and clinical controls. A null PIP result must remain publishable.",
+  "monthly_budget_usd": 0,
+  "gates": {
+    "G1_TARGET": {
+      "status": "PARTIAL",
+      "evidence_ref": "docs/SHHS_HRF_LONGITUDINAL_HYPOTHESIS_001.md",
+      "note": "Within-person physiological proxy is definable; clinical disease deterioration not defined or independently anchored."
+    },
+    "G2_PRIOR_ART": {
+      "status": "OPEN",
+      "evidence_ref": "docs/NOVELTY_RESET_2026-11-15.md",
+      "note": "Specific longitudinal HRF to breathing-conditioned cardiac vagal proxy prior art not fully screened."
+    },
+    "G3_REFERENCE": {
+      "status": "BLOCKED",
+      "evidence_ref": "docs/SHHS_HRF_LONGITUDINAL_HYPOTHESIS_001.md",
+      "note": "SHHS restricted data unapproved; repeated clinical autonomic reflex/CASS not available."
+    },
+    "G4_ANALYTICAL": {
+      "status": "PARTIAL",
+      "evidence_ref": "reports/HRF_DIFFERENTIAL_TEST.md",
+      "note": "Official Costa three synthetic fixture counts match; not yet validated across sleep sampling frequencies, device changes or clinical populations."
+    },
+    "G5_INCREMENTAL": {
+      "status": "BLOCKED",
+      "evidence_ref": "docs/SHHS_HRF_LONGITUDINAL_HYPOTHESIS_001.md",
+      "note": "Longitudinal risk modeling not fitted; no independent clinical reference."
+    },
+    "G6_REPLICATION": {
+      "status": "BLOCKED",
+      "evidence_ref": "docs/SHHS_HRF_LONGITUDINAL_HYPOTHESIS_001.md",
+      "note": "MrOS repeat PSG feasibility and permission pending."
+    }
+  },
+  "founder_authorized_mission_change": false
+}
