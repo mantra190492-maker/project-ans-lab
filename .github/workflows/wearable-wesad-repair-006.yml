@@ -1,0 +1,49 @@
+name: WATCH REPAIR 006 Unseen 25Hz Interpolation Trial
+
+on:
+  push:
+    paths:
+      - 'wearable/experiments/wesad_repair_006.py'
+      - 'wearable/tests/test_wesad_repair_006.py'
+      - '.github/workflows/wearable-wesad-repair-006.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sampling_rate_fidelity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed independent detectors
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.12,<2' 'neurokit2>=0.2.10,<0.3' 'pytest>=8,<10' 'remotezip>=0.12,<1'
+      - name: Run all regression tests for corrected pipeline
+        run: python -m pytest -q wearable/tests/test_wesad_real_003.py wearable/tests/test_wesad_repair_005.py wearable/tests/test_wesad_repair_006.py
+      - name: Test 25Hz direct vs reconstructed on eight remaining original WESAD subjects
+        run: python -m wearable.experiments.wesad_repair_006
+      - name: Verify source, denominators and no clinical claims
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('wearable/reports/WATCH_REPAIR_006.json').read_text())
+          assert r['additional_untouched_subjects_attempted']==8
+          assert r['subject_offset']==7
+          assert r['clinical_ANS_or_EDS_labels']==0
+          assert r['clinical_accuracy'] is None
+          assert r['beat_alignment_accuracy'] is None
+          assert r['subject_data_shared'] is False
+          for x in r['results'].values():
+              assert x['n_valid']+x['n_withheld']==8
+              assert x['n_interpolated_less_error_than_direct25']+x['n_interpolated_more_error_than_direct25']+x['n_equal']==x['n_valid']
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: watch-repair-006-eight-unseen-aggregate
+          path: wearable/reports/WATCH_REPAIR_006.json
+          retention-days: 14
