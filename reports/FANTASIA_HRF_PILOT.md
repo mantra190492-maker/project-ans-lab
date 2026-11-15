@@ -1,26 +1,28 @@
-# ANS-001 — Real annotated heartbeat fragmentation feasibility
+# ANS-001 — Fantasia revised HRF pilot (Costa-reference PIP)
 
 Dataset: [Fantasia v1.0.0](https://physionet.org/content/fantasia/1.0.0/), DOI 10.13026/C2RG61.
-Generated UTC: 2026-11-15T13:49:57.510544+00:00
+Generated UTC: 2026-11-15T15:32:22.278532+00:00
 
-**Engineering-only results: these values do not predict disease, ageing rate, or longevity.**
-All subjects were screened healthy and recorded while resting and watching a film.
-Inputs are visually verified beat annotation files; no patient-level waveforms or identifiers were committed.
+**The original pilot's provisional PIP is NOT the author's official PIP definition.**
+Corrected PIP follows an independently written implementation that matched Costa's
+three official test cases in PIP, PNNSS and PNNLS integer counts.
+This does NOT validate physiological interpretation, clinical autonomic deterioration, or disease detection.
 
-| Record | Published age band | Annotated beats | QC eligible | PIP 4 ms | PIP 8 ms | W1 4 ms | RMSSD (ms) | Data status |
-|---|---|---:|---:|---:|---:|---:|---:|---|
-| f1y01 | 21-34 | 388 | 100.0% | 49.09% | 51.43% | 51.44% | 84.01 | Processed |
-| f1o01 | 68-85 | 309 | 100.0% | 65.36% | 53.59% | 19.41% | 13.53 | Processed |
-| f2y01 | 21-34 | 350 | 100.0% | 67.72% | 70.61% | 15.65% | 52.96 | Processed |
-| f2o01 | 68-85 | 338 | 88.7% | — | — | — | — | Withheld: Insufficient quality-screened sinus NN intervals |
+| Record | Age band | Annotated beats | QC normal NN | Costa-style PIP | Old provisional PIP | Difference (pp) | Status |
+|---|---|---:|---:|---:|---:|---:|---|
+| f1y01 | 21-34 | 388 | 100.0% | 43.90% (169/385) | 49.09% | +5.20 | Processed |
+| f1o01 | 68-85 | 309 | 100.0% | 55.74% (170/305) | 65.36% | +9.62 | Processed |
+| f2y01 | 21-34 | 350 | 100.0% | 63.48% (219/345) | 67.72% | +4.25 | Processed |
+| f2o01 | 68-85 | 338 | 88.7% | — | — | — | QC withheld |
 
-## Interpretive gates
-- Sampling-resolution sensitivity is reported because changing the ternary difference threshold changes PIP even with the same biology.
-- Beat types other than N are excluded without joining disconnected intervals across gaps.
-- Per-record preflight counts distinguish non-N beat annotations and implausible intervals. An excluded record is NOT reclassified as healthy by relaxing quality rules.
-- Fantasia labels are visually verified but this does not prove all sinus intervals are free of physiological complexity.
-- Four selected healthy participants cannot establish group difference, prognostic accuracy or a clinical cut-off.
-- This result **must not** be used to train an age score, infer disease or claim mortality prediction.
-- Actual next test: verified sinus Holters in MUSIC with clinical outcome and censoring controls.
+## Gate decisions
 
-Source PIP definition: [Costa et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6129761/).
+- **Primary reference:** the corrected Costa-style PIP, conditional on external sinus beat annotations and preserved QC.
+- **Legacy candidate:** prior symbol-transition PIP; retained for transparent difference reporting only, NOT used as official method.
+- Excluded records stay excluded: no retroactive relaxation of 95% normal-NN quality.
+- ECG sampling frequency is explicitly recorded; 125 versus 250 Hz longitudinal SHHS runs cannot be naively compared.
+- Costa's official source uses strict NN bounds (0.3, 1.8) seconds; previous candidate's bound reached 2.0 seconds.
+- Real Fantasia pilot is NOT author source differential proof on clinical populations and not ANS diagnosis.
+- No restricted data, future outcomes, or individual clinical records have been accessed.
+
+[Official Costa differential numerical test](HRF_DIFFERENTIAL_TEST.md).
