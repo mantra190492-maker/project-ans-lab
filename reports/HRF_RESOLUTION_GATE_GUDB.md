@@ -1,6 +1,6 @@
 # HRF-RES-001 — PIP stability from 250 Hz to 125 Hz (gudb)
 
-Generated UTC: 2026-11-15T16:59:22.004794+00:00
+Generated UTC: 2026-11-15T17:03:48.641530+00:00
 
 **Question:** SHHS visit-1 ECG was mostly 125 Hz. Is Costa-reference PIP measured at 125 Hz interchangeable with PIP at 250 Hz on the same heartbeats?
 

@@ -1,6 +1,6 @@
 # HRF-RES-001 — PIP stability from 250 Hz to 125 Hz (fantasia)
 
-Generated UTC: 2026-11-15T16:59:54.561912+00:00
+Generated UTC: 2026-11-15T17:04:54.684939+00:00
 
 **Question:** SHHS visit-1 ECG was mostly 125 Hz. Is Costa-reference PIP measured at 125 Hz interchangeable with PIP at 250 Hz on the same heartbeats?
 
@@ -14,14 +14,14 @@ Spearman is tie-corrected. Brackets are 95% CIs from resampling participants (ea
 
 | Metric | Tie rule | Recordings (people) | Spearman 250 vs 125 | Mean shift (pp) | Shift vs log RMSSD (ρ) | Decision |
 |---|---|---:|---:|---:|---:|---|
-| Costa PIP | random | 37 (37) | 0.95 [0.89, 0.98] | +5.1 [+4.3, +6.0] | -0.82 [-0.95, -0.61] | FAIL |
-| Costa PIP | floor | 37 (37) | 0.97 [0.91, 0.99] | +4.4 [+3.9, +5.0] | -0.77 [-0.90, -0.53] | FAIL |
-| Costa PIP | half_even | 37 (37) | 0.94 [0.87, 0.97] | +6.5 [+5.7, +7.4] | -0.75 [-0.91, -0.47] | FAIL |
-| Hard-inflection rate | random | 37 (37) | 0.97 [0.91, 0.98] | -3.0 [-3.6, -2.3] | +0.13 [-0.28, +0.55] | FAIL |
-| Hard-inflection rate | floor | 37 (37) | 0.96 [0.90, 0.99] | -4.2 [-4.8, -3.6] | +0.70 [+0.40, +0.88] | FAIL |
-| Hard-inflection rate | half_even | 37 (37) | 0.92 [0.82, 0.97] | -5.8 [-6.6, -5.0] | +0.62 [+0.26, +0.88] | FAIL |
+| Costa PIP | random | 38 (38) | 0.96 [0.89, 0.98] | +4.9 [+4.2, +5.7] | -0.82 [-0.94, -0.62] | FAIL |
+| Costa PIP | floor | 38 (38) | 0.97 [0.92, 0.99] | +4.2 [+3.7, +4.8] | -0.78 [-0.91, -0.56] | FAIL |
+| Costa PIP | half_even | 38 (38) | 0.94 [0.87, 0.97] | +6.3 [+5.5, +7.2] | -0.76 [-0.91, -0.53] | FAIL |
+| Hard-inflection rate | random | 38 (38) | 0.97 [0.90, 0.98] | -3.0 [-3.7, -2.4] | +0.26 [-0.16, +0.66] | FAIL |
+| Hard-inflection rate | floor | 38 (38) | 0.96 [0.90, 0.99] | -4.0 [-4.7, -3.5] | +0.73 [+0.46, +0.89] | FAIL |
+| Hard-inflection rate | half_even | 38 (38) | 0.92 [0.81, 0.97] | -5.6 [-6.4, -4.8] | +0.65 [+0.30, +0.90] | FAIL |
 
-Mean share of inflections that are 'soft' (a zero NN change): 20.5% at 250 Hz → 31.4% at 125 Hz.
+Mean share of inflections that are 'soft' (a zero NN change): 19.5% at 250 Hz → 30.3% at 125 Hz.
 
 ## Per recording (random tie rule)
 
@@ -30,12 +30,13 @@ Mean share of inflections that are 'soft' (a zero NN change): 20.5% at 250 Hz �
 | f1y01 | 2286 | 74.0 | 49.1 | 51.2 | +2.1 | 43.7 | 41.0 |
 | f1y02 | 1814 | 66.0 | 55.2 | 57.7 | +2.5 | 48.7 | 46.7 |
 | f1y03 | 1962 | 29.4 | 41.3 | 49.3 | +8.0 | 30.7 | 27.6 |
+| f1y04 | 1371 | 101.2 | 73.2 | 75.3 | +2.1 | 71.0 | 69.4 |
 | f1y05 | 1829 | 47.5 | 61.7 | 64.9 | +3.2 | 55.4 | 51.9 |
 | f1y06 | 1747 | 65.5 | 50.8 | 54.2 | +3.4 | 44.6 | 42.0 |
 | f1y07 | 1548 | 113.1 | 47.8 | 49.9 | +2.1 | 45.0 | 42.4 |
 | f1y08 | 1856 | 45.2 | 53.5 | 57.0 | +3.5 | 46.5 | 42.6 |
+| f1y09 | 2107 | 36.0 | 52.8 | 58.0 | +5.3 | 43.9 | 40.9 |
 | f1y10 | 2252 | 53.7 | 51.8 | 55.9 | +4.0 | 45.0 | 41.8 |
-| f1o01 | 1812 | 13.6 | 59.6 | 69.7 | +10.0 | 37.2 | 37.0 |
 | f1o02 | 1744 | 11.6 | 74.0 | 79.9 | +5.9 | 51.7 | 43.9 |
 | f1o03 | 1846 | 21.3 | 64.0 | 70.7 | +6.7 | 46.6 | 42.2 |
 | f1o04 | 1553 | 33.7 | 58.8 | 62.7 | +4.0 | 46.7 | 41.7 |
@@ -67,8 +68,7 @@ Mean share of inflections that are 'soft' (a zero NN change): 20.5% at 250 Hz �
 
 ## Excluded (reported, not hidden)
 
-- f1y04: HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f1y04.ecg
-- f1y09: HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f1y09.ecg
+- f1o01: HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f1o01.hea
 - f2y02: ValueError: Unexpected sampling rate 333
 
 ## Limits
