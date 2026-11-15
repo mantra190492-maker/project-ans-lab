@@ -26,10 +26,20 @@
 
 *Paired BP beats / (R-peaks - 1), derived from the experiment output.
 
+## Participant metadata (official PhysioNet subject-info.csv)
+
+| Record | Age-group code | Age range | Sex | BMI | Device category |
+|---|---:|---|---|---:|---:|
+| 0001 | 2 | 20–24 years | Female | 23 | 0 |
+| 0002 | 2 | 20–24 years | Female | 24 | 0 |
+| 0003 | 7 | 45–49 years | Female | 28 | 0 |
+
+Source: https://www.physionet.org/content/autonomic-aging-cardiovascular/1.0.0/subject-info.csv. Device code 0 = TFM (CNSystems). These are coded, generalized age ranges, not exact ages. The older participant's different HRV is **a within-sample observation only**, not an estimated age effect. 
+
 ## Quality and interpretation
 
 1. All three runs returned `processed`, indicating the signal-processing script completed without record-specific errors.
-2. Record 0003's SDNN/RMSSD are much lower than 0001 and 0002. **No interpretation about age, disease, or longevity is justified**, because participant age bins and manual signal QA were not examined.
+2. Record 0003's SDNN/RMSSD are much lower than 0001 and 0002. **No interpretation about age, disease, or longevity is justified**, although official age bins have now been verified, signal QA and confounder control have not been completed.
 3. Three recordings are too few for population inference.
 4. The algorithm's `plausible_rr_fraction=1.0` means 100% passed simple 0.4–1.5s interval bounds; **it does not validate beat detection or rule out artifacts**.
 5. BRS sample counts are sparse (11, 6, 0): results may be highly method-dependent. Null in 0003 is **not** proof of absent baroreflex.
@@ -38,7 +48,7 @@
 
 ## Next experiment gate
 
-- Read PhysioNet `subject-info.csv` and verify participant-age-group linkage, sex, BMI, and recording device; do not assume record ID encodes age.
+- **DONE:** Link PhysioNet `subject-info.csv` age-group, sex, BMI, and recording device for 0001–0003; do not infer age from record ID.
 - Independent R-peak detector cross-check, RR artifact counts, and 60–120 second ECG/BP alignment visualization per record.
 - Analyze contiguous clean segments of standardized length with documented exclusions.
 - BRS must have prespecified sequence criteria and reliability/bootstrapped uncertainty; reject/mark null when insufficient.
