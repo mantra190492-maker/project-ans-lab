@@ -1,0 +1,48 @@
+name: WATCH SYNC 007 Calibration and Quality Pilot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'wearable/experiments/wesad_sync_007.py'
+      - 'wearable/tests/test_wesad_sync_007.py'
+      - '.github/workflows/wearable-wesad-sync-007.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  blinded_time_split:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible signal dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.12,<2' 'neurokit2>=0.2.10,<0.3' 'pytest>=8,<10' 'remotezip>=0.12,<1'
+      - name: Test synthetic known-lag, held-out split, quality gate and overclaim protections
+        run: python -m pytest -q wearable/tests/test_wesad_sync_007.py
+      - name: Pilot wide clock alignment on two development WESAD recordings
+        run: python -m wearable.experiments.wesad_sync_007 --limit 2 --offset 0 --signal-rate 64
+      - name: Enforce data provenance and no clinical claims
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('wearable/reports/WATCH_SYNC_007.json').read_text())
+          assert r['participants_attempted']==2
+          assert r['subset_offset_in_prescribed_order']==0
+          assert r['clinical_ANS_or_EDS_labels']==0
+          assert r['clinical_accuracy'] is None
+          assert r['physical_pulse_transit_time_estimated'] is False
+          assert r['source_data_published'] is False
+          assert all(v['n_qc_processed']+v['n_wholly_withheld']==2 for v in r['results'].values())
+          PY
+      - name: Upload aggregate only
+        uses: actions/upload-artifact@v4
+        with:
+          name: watch-sync-007-two-development-aggregate
+          path: wearable/reports/WATCH_SYNC_007.json
+          retention-days: 14
