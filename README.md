@@ -1,8 +1,10 @@
 # Project ANS Lab
 
-**Mission ANS-001:** Determine whether reproducible autonomic physiology measurements can provide *incremental prediction* of future cardiovascular or functional deterioration beyond age, resting heart rate, standard HRV and established clinical risk factors.
+**Mission ANS-001:** Find and validate objective physiological markers that **detect emerging autonomic nervous system dysfunction, localize affected functional domains, and track deterioration over repeated tests**. The primary endpoints are independently assessed autonomic impairment/progression, **not biological age or lifespan**. Mortality and CVD prediction are secondary external relevance benchmarks.
 
-**Status: early research, NOT a clinical product or validated longevity biomarker.** No model has demonstrated extended lifespan, and no Project ANS outcome-prediction model has yet been fitted.
+**Status: early research, NOT a clinically validated autonomic dysfunction detector.** A validated clinical autonomic reflex screen and CASS already exist. ECG/BP measures only cardiovagal and adrenergic responses; sudomotor assessment needs additional tests. No predictive clinical-deterioration model has been validated.
+
+**[Primary research formulation — detect ANS functional deterioration](docs/FORMULATION_001_AUTONOMIC_FUNCTION_DETERIORATION.md)**. We propose domain-specific repeat-visit changes compared with clinical autonomic-reflex/CASS standards. This is a hypothesis, not a proven new marker.
 
 ## Research overview
 
@@ -26,10 +28,10 @@
 
 ## Core research decision
 
-1. **Candidate to test first:** HRF **PIP** compared with clinical baseline + mean HR + standard HRV in verified sinus-rhythm MUSIC Holters. This marker was already published; the opportunity is independent replication and potential incremental clinical value.
-2. **Second experimental direction:** HR/BP **recovery following challenge** (stand, stress) when properly labelled longitudinal data are available.
-3. **Parallel engineering validation:** Spontaneous cardiac **BRS** using methods, synchronization, respiration sensitivity, surrogate controls and actual BP/ECG reference measurements.
-4. **Do not combine them into an "Autonomic Resilience Index" yet**. Only measurements that survive analytical validity, prospective outcomes and external validation can contribute.
+1. **Primary discovery objective:** Detect genuine autonomic function deterioration across clinically assessed cardiovagal, adrenergic and (when measured) sudomotor domains. The target is **autonomic dysfunction/progression**, not biological age.
+2. **Proposed formulation:** An Autonomic Functional Deterioration Vector (AFDV) based on repeated standardized challenges, domain-specific impairment-oriented change and explicit measurement gaps; validate against CASS and disease-status progression, not self-declared autonomic health.
+3. **Supporting measurements:** Continue cardiovagal/adrenergic ECG+BP quality validation, HRF as a known comparator, and open PRCP stand/tilt tests. MUSIC cardiac mortality benchmarking remains **secondary** and does not establish ANS diagnosis.
+4. **Do not market a single ANS score.** Clinical gold-standard autonomic reflex and QSART tests cover domains unavailable in our current ECG/BP data; partner access is needed to measure disease progression and prove a new marker.
 
 ## Running and cost
 
