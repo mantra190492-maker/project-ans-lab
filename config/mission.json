@@ -1,0 +1,16 @@
+{
+  "mission": "Investigate autonomic nervous system regulation and ageing to identify and validate candidate physiological markers of resilience and deterioration.",
+  "primary_program": "ANS-001",
+  "secondary_program": "ANS-003",
+  "research_questions": [
+    "Do dynamic autonomic responses add predictive information beyond resting HRV and chronological age?",
+    "Are autonomic recovery dynamics associated with age-related functional decline?",
+    "Which candidate signals replicate across independent cohorts and devices?"
+  ],
+  "guardrails": [
+    "Do not equate HRV with biological age or longevity.",
+    "No clinical claims without independent validation.",
+    "Record dataset provenance, limitations and negative findings.",
+    "No patient-identifiable data or unauthorized access."
+  ]
+}
