@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "program": "ANS-001",
+  "objective": "Avoid conflating healthy adult autonomic ageing with developmental, reproductive, disease-related or fitness-related physiology.",
+  "current_dataset": {
+    "name": "PhysioNet Autonomic Aging v1.0.0",
+    "doi": "10.13026/2hsy-t491",
+    "healthy_volunteers": true,
+    "age_range_years": [
+      18,
+      92
+    ],
+    "documented_variables": [
+      "age_group",
+      "recorded_sex_code",
+      "BMI",
+      "recording_device",
+      "recording_duration",
+      "ECG",
+      "continuous_blood_pressure"
+    ],
+    "not_documented_individually": [
+      "pregnancy_status",
+      "gestational_week",
+      "postpartum_interval",
+      "menopause_stage",
+      "hormone_therapy",
+      "menstrual_cycle_phase",
+      "coronary_stent_history",
+      "coronary_artery_disease",
+      "prior_myocardial_infarction",
+      "cardiovascular_medications",
+      "athlete_status",
+      "sport_type",
+      "exercise_training_volume",
+      "pubertal_stage",
+      "pediatric_development",
+      "longitudinal_outcomes"
+    ],
+    "pediatric_participants": "absent",
+    "clinical_conditions": "excluded by published eligibility criteria; not individually coded in released metadata",
+    "limitations": "Any unrecorded clinical characteristic is UNKNOWN; never infer 'negative' from missing data, sex code, age or healthy-volunteer label."
+  },
+  "priority_populations": [
+    {
+      "id": "pregnancy",
+      "label": "pregnancy and postpartum",
+      "needed": [
+        "pregnancy_status",
+        "gestational_week",
+        "trimester",
+        "postpartum_weeks",
+        "blood_pressure_complications",
+        "medications",
+        "body_position"
+      ],
+      "protocol": "distinct obstetric cohort; trimester- and postpartum-specific reference ranges"
+    },
+    {
+      "id": "menopause",
+      "label": "pre-, peri- and postmenopause",
+      "needed": [
+        "menopause_stage",
+        "age_at_menopause",
+        "last_menstrual_period",
+        "cycle_phase_if_applicable",
+        "hormone_therapy",
+        "surgical_menopause",
+        "vasomotor_symptoms"
+      ],
+      "protocol": "stratify reproductive status without treating chronological age or sex code as a proxy"
+    },
+    {
+      "id": "coronary_disease",
+      "label": "coronary artery disease, PCI and stents",
+      "needed": [
+        "CAD_status",
+        "prior_MI",
+        "PCI_history",
+        "stent_date",
+        "left_ventricular_ejection_fraction",
+        "arrhythmia",
+        "beta_blocker_and_other_drugs",
+        "exercise_rehab_status"
+      ],
+      "protocol": "disease-specific external cohort; do not use as reference healthy ageing baseline"
+    },
+    {
+      "id": "pediatrics",
+      "label": "infants, children and adolescents",
+      "needed": [
+        "exact_age_or_months",
+        "puberty_stage",
+        "height_and_weight",
+        "developmental_conditions",
+        "pediatric_reference_protocol"
+      ],
+      "protocol": "separate developmental model and age-specific normative ranges; do not extrapolate adult model"
+    },
+    {
+      "id": "athletes",
+      "label": "endurance, strength and recreational athletes",
+      "needed": [
+        "sport_type",
+        "weekly_training_volume",
+        "years_training",
+        "recent_load",
+        "rest_day",
+        "resting_hr",
+        "fitness_or_VO2max"
+      ],
+      "protocol": "training-specific strata; avoid using low heart rate or high HRV as labels for athletic status"
+    }
+  ],
+  "shared_confounders": [
+    "age",
+    "sex_characteristics_and_reproductive_state_when_relevant",
+    "BMI",
+    "device",
+    "posture",
+    "respiration",
+    "sleep",
+    "caffeine",
+    "nicotine",
+    "medications",
+    "diabetes",
+    "hypertension",
+    "physical_fitness",
+    "arrhythmia",
+    "recording_duration"
+  ],
+  "guardrails": [
+    "No child, pregnant, postmenopausal, athlete, or stent subgroup claims from this dataset unless phenotype was independently ascertained.",
+    "No low HRV = accelerated ageing; no high HRV = longevity inference.",
+    "Coronary stent implantation is a treatment history, not a sex or gender category.",
+    "No pediatric claims from adult participants.",
+    "No population-specific diagnostic cutoffs without independent validation.",
+    "Longitudinal clinical outcomes required for longevity or risk prediction claims."
+  ]
+}
