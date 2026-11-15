@@ -5,11 +5,12 @@ from datetime import datetime, timezone
 import requests
 
 QUERIES = [
-    '"inclusion body myositis" AND (early diagnosis OR biomarkers)',
-    '"limb girdle muscular dystrophy" AND (diagnosis OR biomarkers)',
-    '"amyotrophic lateral sclerosis" AND (differential diagnosis OR biomarkers)',
-    '"adult onset muscle weakness" AND (electromyography OR muscle MRI)',
+    '"autonomic nervous system" AND (aging OR ageing) AND (biomarkers OR resilience)',
+    '"heart rate variability" AND (aging OR ageing) AND (longitudinal OR mortality)',
+    '"orthostatic" AND (aging OR ageing) AND (heart rate OR blood pressure)',
+    '"baroreflex sensitivity" AND (aging OR ageing) AND (functional decline OR frailty)',
 ]
+
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 HEADERS = {"User-Agent": "ProjectANS-Lab/0.1 (public research metadata)"}
 
