@@ -1,4 +1,4 @@
-"""Heart-rate fragmentation (HRF): reproducible research-only symbolic measurements.
+"""LEGACY/PROVISIONAL heart-rate fragmentation symbolic measurement.\n\n**NOT numerically equivalent to Costa 2024 official PIP.**\nFor reference-comparable PIP use `anslab.hrf_costa_reference.costa_fragmentation_from_peaks`\nwith original R-peak timestamps and beat-level rhythm labels.
 
 Research basis: Costa et al., Front Physiol 2018, DOI 10.3389/fphys.2018.01117.
 PIP counts transitions between ternary successive NN-difference symbols.
@@ -99,5 +99,5 @@ def fragmentation_features(
         "n_contiguous_triplets": eligible,
         "n_valid_4symbol_words": n_words,
         "input_assumption": "Upstream verified sinus NN labels and beat QC required",
-        "scope": "Research-only symbolic features; not a prognostic or longevity score",
+        "method_status": "LEGACY_PROVISIONAL_NOT_COSTA_REFERENCE_EQUIVALENT",\n        "reference_equivalent": False,\n        "scope": "Research-only symbolic features; not a prognostic or longevity score; NOT Costa 2024 reference PIP",
     }
