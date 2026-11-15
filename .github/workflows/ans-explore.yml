@@ -15,15 +15,28 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 2
+      - name: Run only when the newest commit changed scripts/explore.sh
+        id: gate
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -qx 'scripts/explore.sh' || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
         with:
           python-version: '3.11'
       - run: python -m pip install -r requirements.txt pytest
+        if: steps.gate.outputs.run == 'true'
       - run: python -m pytest -q
+        if: steps.gate.outputs.run == 'true'
       - name: Run the current exploration step
+        if: steps.gate.outputs.run == 'true'
         run: bash scripts/explore.sh
       - name: Push QC plots to scratch branch (not part of the PR)
-        if: always()
+        if: always() && steps.gate.outputs.run == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -38,7 +51,7 @@ jobs:
           git commit -q -m 'QC artifacts (scratch; open data)'
           git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:claude/qc-artifacts
       - name: Commit exploration reports to the PR branch
-        if: always() && github.event_name == 'pull_request'
+        if: always() && steps.gate.outputs.run == 'true' && github.event_name == 'pull_request'
         env:
           HEAD_REF: ${{ github.head_ref }}
         run: |
