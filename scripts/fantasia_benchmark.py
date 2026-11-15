@@ -34,7 +34,7 @@ def download(url, destination):
                     raise ValueError("Single-file download exceeded cap")
                 f.write(chunk)
 
-def match_peaks(predicted, reference, tolerance_samples):
+def match_peaks(predicted, reference, tolerance_samples, fs=250.0):
     """One-to-one nearest-match precision/recall; rejects duplicate matches."""
     predictions = np.sort(np.asarray(predicted, dtype=np.int64))
     truth = np.sort(np.asarray(reference, dtype=np.int64))
@@ -65,7 +65,7 @@ def match_peaks(predicted, reference, tolerance_samples):
         "precision":round(precision,5),
         "recall":round(recall,5),
         "f1":round(f1,5),
-        "median_abs_timing_error_ms":round(float(np.median(np.abs(offsets))),2) if offsets else None
+        "median_abs_timing_error_ms":round(float(np.median(np.abs(offsets))) * 1000.0 / float(fs),2) if offsets else None
     }
 
 def process(name, directory):
@@ -93,7 +93,7 @@ def process(name, directory):
     )
     if len(reference) < 100:
         raise ValueError(f"Too few human-reviewed beat annotations: {len(reference)}")
-    metrics = match_peaks(primary, reference, int(round(fs*TOLERANCE_SECONDS)))
+    metrics = match_peaks(primary, reference, int(round(fs*TOLERANCE_SECONDS)), fs=fs)
     return {
         "record":name,
         "status":"processed",
