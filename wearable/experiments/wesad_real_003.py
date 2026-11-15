@@ -210,9 +210,17 @@ def aggregate(subject_outputs,*,verified_source=False):
             return {"median":float(np.median(values)),"min":float(min(values)),
                     "max":float(max(values))} if values else None
         delta=[v["f1_change_watch_minus_raw"] for v in eligible]
+        failure_reasons={}
+        for subject in subject_outputs:
+            failure = subject[state] if subject[state].get("status") == "withheld" else None
+            if failure is not None:
+                reason = failure.get("reason","unspecified")
+                # Aggregate categorical counts only; no participant IDs.
+                failure_reasons[reason] = failure_reasons.get(reason,0)+1
         report["results"][state]={
             "n_valid_subjects":len(eligible),
             "n_withheld":len(subject_outputs)-len(eligible),
+            "withheld_reasons_aggregate":failure_reasons,
             "f1_bvp64":stat("raw_wrist_bvp_64hz"),
             "f1_bvp25":stat("watch_rate_bvp_25hz"),
             "median_25_minus_64_f1":float(np.median(delta)) if delta else None}
