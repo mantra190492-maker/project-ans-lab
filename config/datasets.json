@@ -55,7 +55,7 @@
         "Not pregnancy/menopause/stents/athletes/children cohort"
       ],
       "priority": "critical",
-      "status": "Primary candidate for independent ECG R-peak detection validation; not yet benchmarked"
+      "status": "Four selected 5-minute annotated ECG segments benchmarked: F1=1.000 at 150ms tolerance; corrected timing medians 4/8/12/8ms; BRS remains unvalidated"
     },
     {
       "id": "shhs-nsrr",
@@ -83,6 +83,157 @@
       ],
       "priority": "high",
       "status": "Candidate for prospective HRV outcome modelling, not yet approved/linked"
+    },
+    {
+      "id": "physionet-music-chf-v101",
+      "name": "MUSIC Sudden Cardiac Death in Chronic Heart Failure v1.0.1",
+      "url": "https://physionet.org/content/music-sudden-cardiac-death/1.0.1/",
+      "doi": "10.13026/z3m7-rf58",
+      "access": "open_licensed_ODbL_1_0",
+      "reported_sample_size": 992,
+      "signals": [
+        "24-hour Holter ECG on 936 subjects",
+        "short high-resolution ECG on 687 subjects"
+      ],
+      "demographics": [
+        "age",
+        "sex",
+        "BMI",
+        "NYHA class",
+        "left ventricular ejection fraction",
+        "prior MI",
+        "prior revascularization (none/percutaneous/surgical/both)",
+        "beta blockers and other medications",
+        "Holter rhythm",
+        "SDNN and RMSSD"
+      ],
+      "outcomes": [
+        "follow-up period in days",
+        "cause of death codes",
+        "sudden cardiac death",
+        "pump-failure death",
+        "noncardiac death",
+        "transplantation/loss to follow-up"
+      ],
+      "limitations": [
+        "Cohort has heart failure, not healthy ageing",
+        "Percutaneous revascularization does not confirm coronary stent",
+        "No continuous beat-to-beat BP waveforms for BRS",
+        "Approx 90.2 GB uncompressed total; metadata-only screening first",
+        "Event/censoring codes must be interpreted before survival analyses",
+        "Baseline HRV may be missing in non-Holter participants"
+      ],
+      "priority": "critical",
+      "status": "Official subject-info.csv and code dictionary inspected; run aggregate-only local metadata audit next; raw ECG and patient-level modeling not run"
+    },
+    {
+      "id": "icpsr-midus2-biomarker",
+      "name": "MIDUS 2 Biomarker Project 2004-2009",
+      "url": "https://www.icpsr.umich.edu/web/ICPSR/studies/29282",
+      "access": "ICPSR_request_or_registration_verify_files",
+      "reported_sample_size": 1255,
+      "signals": [
+        "summary HRV",
+        "reported beat-to-beat BP measurement",
+        "respiratory and cognitive/orthostatic challenge assessments"
+      ],
+      "demographics": [
+        "clinical and medication measurements",
+        "socio-behavioral assessments",
+        "reproductive-stage variables require codebook verification"
+      ],
+      "outcomes": [
+        "potential M2ID linkage to MIDUS mortality ICPSR 37237 through 2025, requires censoring and survivor roster"
+      ],
+      "limitations": [
+        "Per-stage time resolution and raw waveform availability not verified",
+        "Mortality file contains decedents and cannot alone supply denominator",
+        "Subject ID linkage and permitted analysis must be audited",
+        "Menopause status not yet confirmed"
+      ],
+      "priority": "high",
+      "status": "Data source and challenge protocol confirmed, codebook and join feasibility outstanding"
+    },
+    {
+      "id": "icpsr-midus-core-mortality",
+      "name": "MIDUS core mortality 1995-2025 (ICPSR 37237 v7)",
+      "url": "https://www.icpsr.umich.edu/web/NACDA/studies/37237/versions/V7",
+      "doi": "10.3886/ICPSR37237.v7",
+      "access": "public_ICPSR_terms_apply",
+      "reported_sample_size": 2822,
+      "signals": [],
+      "demographics": [
+        "M2ID cross-wave participant linkage"
+      ],
+      "outcomes": [
+        "decedent mortality information through December 2025"
+      ],
+      "limitations": [
+        "Contains known decedents, not full study population",
+        "Must link core survey for survivor status, ascertainment and censoring",
+        "No standalone ECG waveform"
+      ],
+      "priority": "high",
+      "status": "Official file checked; no individual-level linkage attempted"
+    },
+    {
+      "id": "physionet-cded-diabetes-v101",
+      "name": "Cerebromicrovascular Disease in Elderly with Diabetes",
+      "url": "https://physionet.org/content/cded/1.0.1/",
+      "doi": "10.13026/00bm-0x81",
+      "access": "open",
+      "reported_sample_size": 69,
+      "signals": [
+        "ECG",
+        "beat-to-beat blood pressure during challenges",
+        "respiration",
+        "cerebral blood flow",
+        "gait and balance"
+      ],
+      "demographics": [
+        "diabetes/control adult cohort aged 55-75"
+      ],
+      "outcomes": [
+        "41 participants with two-year follow-up; verify released outcome variable availability"
+      ],
+      "limitations": [
+        "Small cohort",
+        "Attrition to follow-up",
+        "Not a general healthy-ageing reference",
+        "Outcome variables require file inspection",
+        "Subgroup definitions and waveform parsing need verification"
+      ],
+      "priority": "high",
+      "status": "Official PhysioNet source verified; pilot on selected records after data dictionary audit"
+    },
+    {
+      "id": "physionet-cves-stroke-v100",
+      "name": "Cerebral Vasoregulation in Elderly with Stroke",
+      "url": "https://physionet.org/content/cves/1.0.0/",
+      "access": "open",
+      "reported_sample_size": 120,
+      "signals": [
+        "ECG",
+        "arterial blood pressure",
+        "CO2 and respiration",
+        "sit-stand and head-up tilt",
+        "cerebral blood-flow velocity"
+      ],
+      "demographics": [
+        "60 chronic stroke",
+        "60 controls"
+      ],
+      "outcomes": [
+        "cross-sectional movement, gait and balance responses; no confirmed long-term mortality linkage"
+      ],
+      "limitations": [
+        "Primarily cross-sectional",
+        "ECG/BP acquisition varies by task",
+        "No prospective longevity endpoint",
+        "Stroke patients not coronary-stent cases"
+      ],
+      "priority": "high",
+      "status": "Official waveform tasks verified; candidate for challenge-recovery pipeline QA"
     }
   ]
 }
