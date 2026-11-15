@@ -65,12 +65,19 @@ jobs:
              f"Generated UTC: {payload['generated_utc']}",
              "Source: https://physionet.org/content/heart-rate-fragmentation-code/1.0.0/",
              f"Source SHA256: `{payload['reference_source_sha256']}`",
-             "Software and example inputs downloaded only onto the runner. Source GPL code was **not** added to this repository.","",
+             "Software and example inputs were downloaded on the runner. The attributed author reference code below is retained for scientific audit under GPL-3.0; Project ANS Python code remains separate.","",
              "**Important:** PhysioNet's landing page contains internally inconsistent figures for its third case. The actual original AWK output is reproduced below rather than pretending one printed reference is definitive.","",
              "## Raw outputs from Costa's AWK",""]
           for key,result in results.items():
               lines.extend([f"### {key}", "","~~~text", result["stdout"],"~~~","",
                  f"Input rows: {result['n_rows']}, SHA256: `{result['data_sha256']}`", ""])
+          # GPLv3 source is retained here as a small attributed reference artifact,
+          # never imported into our Python package or treated as Project ANS original IP.
+          lines += ["## Reference algorithm source (audit only)","",
+             "The following author-owned code is © Madalena Costa, published under GPL-3.0;",
+             "provenance: https://physionet.org/content/heart-rate-fragmentation-code/1.0.0/",
+             "This appendix is for checking reference semantics; it is NOT a rewrite.","",
+             "~~~awk",script.read_text(encoding="utf-8"),"~~~",""]
           lines += ["## Gate","",
              "- Source program and checksums verified from PhysioNet at runtime.",
              "- These results are the numeric oracle for implementing a new independently written Python adapter.",
