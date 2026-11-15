@@ -20,8 +20,9 @@ jobs:
       - run: python -m pip install pytest
       - run: python -m pytest -q
       - run: python -m scripts.daily
+      - run: python -m scripts.dataset_inventory
       - uses: actions/upload-artifact@v4
         with:
-          name: ans-003-research-report
+          name: ans-001-research-report
           path: reports/
           retention-days: 14
