@@ -42,7 +42,7 @@ jobs:
           if [ -f reports/physionet_cohort.json ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add -f reports/COHORT_001_SUMMARY.md reports/physionet_cohort.json reports/physionet_cohort.csv
+            git add -f reports/COHORT_001_SUMMARY.md reports/physionet_cohort.json reports/physionet_cohort.csv reports/cohort_qc_*.png
             if ! git diff --cached --quiet; then
               git commit -m 'Record ANS-001 age-stratified physiological pilot results'
               git pull --rebase origin main
