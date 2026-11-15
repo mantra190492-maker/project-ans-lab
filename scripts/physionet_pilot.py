@@ -1,5 +1,7 @@
 """Small reproducible PhysioNet pilot: exploratory signal extraction, not clinical validation."""
 import json
+import csv
+from io import StringIO
 import tempfile
 from pathlib import Path
 import requests
@@ -11,6 +13,30 @@ from anslab.physiology import rr_features
 BASE="https://physionet.org/files/autonomic-aging-cardiovascular/1.0.0/"
 RECORDS=("0001","0002","0003")
 OUT=Path("reports/physionet_pilot.json")
+
+AGE_BANDS={1:"18-19",2:"20-24",3:"25-29",4:"30-34",5:"35-39",
+           6:"40-44",7:"45-49",8:"50-54",9:"55-59",10:"60-64",
+           11:"65-69",12:"70-74",13:"75-79",14:"80-84",15:"85-92"}
+
+def subject_metadata():
+    """Load official anonymized demographic metadata, not age inferred from record IDs."""
+    response=requests.get(BASE+"subject-info.csv",timeout=45)
+    response.raise_for_status()
+    rows=csv.DictReader(StringIO(response.text.lstrip("\ufeff")))
+    result={}
+    for row in rows:
+        identifier=row["ID"].strip().zfill(4)
+        age_raw=row.get("Age_group","").strip()
+        age_group=int(float(age_raw)) if age_raw and age_raw.lower()!="nan" else None
+        result[identifier]={
+            "age_group":age_group,
+            "age_range_years":AGE_BANDS.get(age_group),
+            "sex_code":row["Sex"].strip(),
+            "bmi":float(row["BMI"]) if row.get("BMI","").strip().lower() not in ("","nan") else None,
+            "device_code":row["Device"].strip(),
+        }
+    return result
+
 
 def fetch_record(record, folder):
     for suffix in (".hea",".dat"):
@@ -97,7 +123,15 @@ def main():
                 results.append({"record":name,"status":"processed",**extract(fetch_record(name,Path(temp)))})
             except Exception as exc:
                 results.append({"record":name,"status":"failed","error":str(exc)})
-    payload={"dataset":"PhysioNet Autonomic Aging v1.0.0","doi":"10.13026/2hsy-t491",
+    try:
+        demographics=subject_metadata()
+        for item in results:
+            item["participant_metadata"]=demographics.get(item["record"])
+        metadata_status="linked" if all(x.get("participant_metadata") for x in results) else "incomplete"
+    except Exception as error:
+        metadata_status=f"not_available: {type(error).__name__}"
+    payload={"metadata_status":metadata_status,"metadata_source":BASE+"subject-info.csv",
+             "dataset":"PhysioNet Autonomic Aging v1.0.0","doi":"10.13026/2hsy-t491",
              "analysis":"exploratory signal-processing feasibility; NOT clinical validation",
              "records":results}
     OUT.parent.mkdir(exist_ok=True)
