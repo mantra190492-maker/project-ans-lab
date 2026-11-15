@@ -1,0 +1,30 @@
+{
+  "datasets": [
+    {
+      "id": "physionet-autonomic-aging-v1",
+      "name": "Autonomic Aging: A dataset to quantify changes of cardiovascular autonomic function during healthy aging",
+      "url": "https://physionet.org/content/autonomic-aging-cardiovascular/1.0.0/",
+      "doi": "10.13026/2hsy-t491",
+      "license": "ODC-ODbL-1.0",
+      "access": "open",
+      "signals": [
+        "ECG",
+        "continuous noninvasive blood pressure"
+      ],
+      "demographics": [
+        "age bins",
+        "sex",
+        "BMI"
+      ],
+      "reported_sample_size": 1121,
+      "limitations": [
+        "Cross-sectional resting recordings",
+        "Age anonymized into bins",
+        "No directly measured MSNA",
+        "No longitudinal clinical outcomes"
+      ],
+      "priority": "high",
+      "status": "source identified; data analysis not yet run"
+    }
+  ]
+}
