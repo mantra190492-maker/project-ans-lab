@@ -1,0 +1,62 @@
+name: ANS-001 Stratified PhysioNet Cohort
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'anslab/physio_qc.py'
+      - 'scripts/physionet_cohort.py'
+      - 'tests/test_physio_cohort.py'
+      - 'requirements.txt'
+      - '.github/workflows/physionet-cohort.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-001-physionet-cohort
+  cancel-in-progress: false
+jobs:
+  cohort:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install scientific tools
+        run: python -m pip install -r requirements.txt pytest
+      - name: Run synthetic regression tests
+        run: python -m pytest -q
+      - name: Process 20 age-stratified PhysioNet recordings
+        run: python -m scripts.physionet_cohort
+      - name: Publish readable report to GitHub
+        if: always()
+        run: |
+          if [ -f reports/COHORT_001_SUMMARY.md ]; then
+            cat reports/COHORT_001_SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Save reproducible result summary in repository
+        if: always()
+        run: |
+          if [ -f reports/physionet_cohort.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -f reports/COHORT_001_SUMMARY.md reports/physionet_cohort.json reports/physionet_cohort.csv
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record ANS-001 age-stratified physiological pilot results'
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ans-001-cohort-20-qc
+          path: |
+            reports/COHORT_001_SUMMARY.md
+            reports/physionet_cohort.json
+            reports/physionet_cohort.csv
+            reports/cohort_qc_*.png
+          if-no-files-found: warn
+          retention-days: 30
