@@ -12,7 +12,7 @@
     "Follow-up period from enrollment (days)": 992,
     "Cause of death": 992,
     "Holter available": 992,
-    "Holter rhythm": 0,
+    "Holter rhythm": 933,
     "Betablockers (yes=1)": 992,
     "SDNN (ms)": 587,
     "RMSSD (ms)": 587
@@ -60,5 +60,5 @@
   "interpretation": "DESCRIPTIVE DATA READINESS ONLY. No predictive model fitted; do not infer stent implantation from percutaneous revascularization; death code 0 not automatically sufficient to prove censoring completeness.",
   "raw_data_saved": false,
   "patient_level_data_committed": false,
-  "generated_utc": "2026-11-15T13:25:52.365881+00:00"
+  "generated_utc": "2026-11-15T13:26:44.651139+00:00"
 }
