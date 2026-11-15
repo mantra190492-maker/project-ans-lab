@@ -6,6 +6,7 @@ on:
       - 'scripts/cded_inventory.py'
       - 'tests/test_cded_inventory.py'
       - '.github/workflows/cded-inventory.yml'
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: write
@@ -30,6 +31,7 @@ jobs:
         if: always()
         run: '[ -f reports/CDED_INVENTORY.md ] && cat reports/CDED_INVENTORY.md >> "$GITHUB_STEP_SUMMARY" || true'
       - name: Publish inventory
+        if: github.event_name != 'pull_request'
         run: |
           set -euo pipefail
           scratch="$(mktemp -d)"; cp reports/CDED_INVENTORY.* "$scratch/"
