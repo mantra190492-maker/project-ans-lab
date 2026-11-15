@@ -1,0 +1,103 @@
+{
+ "study": "TILT-001",
+ "plan": "docs/TILT_001_PLAN.md",
+ "generated_utc": "2026-11-15T18:40:45.747019+00:00",
+ "predictor_table_sha256": "d37fb39daf449c58ed0b4b09b288d71a8036b8ce2fd02acd7a55592ecd8aabde",
+ "flow": {
+  "day2_records": 57,
+  "ecg_qc_fail": 17,
+  "ok": 36,
+  "beat_shape_inconsistent": 3,
+  "no_breathing_gap": 1,
+  "in_summary_table": 30,
+  "missing_outcome_or_covariate": 1,
+  "analysed": 29
+ },
+ "primary": {
+  "n": 29,
+  "beta_per_sd": 0.36545007387377604,
+  "ci95": [
+   -3.6999490986324255,
+   4.430849246379978
+  ],
+  "p": 0.8538188935972209,
+  "partial_r2": 0.0015772692686894616,
+  "r2_base": 0.30360846995197366,
+  "r2_full": 0.304706866911294,
+  "bootstrap_ci95": [
+   -3.675655816879142,
+   3.8510816460879345
+  ],
+  "leave_one_out_range": [
+   -0.3082330280020996,
+   1.4708584142925498
+  ]
+ },
+ "candidate_signal": false,
+ "benchmarks_and_sensitivity": {
+  "deceleration_capacity_benchmark": {
+   "n": 29,
+   "beta_per_sd": 0.8306217860964509,
+   "ci95": [
+    -3.496112324627007,
+    5.157355896819909
+   ],
+   "p": 0.6943713714378329,
+   "partial_r2": 0.007153359541513359,
+   "r2_base": 0.30360846995197366,
+   "r2_full": 0.30859000894807165,
+   "bootstrap_ci95": [
+    -4.218385682748911,
+    5.396256023122119
+   ],
+   "leave_one_out_range": [
+    -0.3227020119676727,
+    1.881066586279345
+   ]
+  },
+  "hard_inflection_rate_sensitivity": {
+   "n": 29,
+   "beta_per_sd": -1.204298186494717,
+   "ci95": [
+    -3.985757032174193,
+    1.577160659184759
+   ],
+   "p": 0.3789439668829564,
+   "partial_r2": 0.035353517885088656,
+   "r2_base": 0.30360846995197366,
+   "r2_full": 0.3282283603645507,
+   "bootstrap_ci95": [
+    -4.692193862542073,
+    2.334776665911828
+   ],
+   "leave_one_out_range": [
+    -1.8243008298201489,
+    0.23725989002537118
+   ]
+  }
+ },
+ "spearman": {
+  "pip_vs_tilt_hr_change": [
+   0.11432796148607999,
+   0.5548322069315953
+  ],
+  "resting_hr_vs_tilt_hr_change": [
+   0.30060369183839997,
+   0.11308189850890393
+  ],
+  "log_rmssd_vs_tilt_hr_change": [
+   -0.020943699841199998,
+   0.9141259878588689
+  ],
+  "age_vs_tilt_hr_change": [
+   -0.028935489575097072,
+   0.8815543522011255
+  ],
+  "pip_vs_log_rmssd": [
+   -0.6546798029556649,
+   0.00011659109639127785
+  ]
+ },
+ "n_control": 15,
+ "n_diabetes": 14
+}
