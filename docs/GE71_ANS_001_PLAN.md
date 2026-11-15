@@ -30,3 +30,5 @@ In people with a usable Day-2 resting ECG and a recorded Valsalva ratio: is high
 ## Reporting
 
 Aggregates only (counts, coefficients, CIs, group medians) and an anonymous scatter plot. No participant-level rows are committed.
+
+*Implementation note added before the first run:* the ECG is centred and scaled to unit amplitude before peak detection (the detector's thresholds are relative, so this changes no beat times).
