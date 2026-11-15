@@ -1,0 +1,73 @@
+name: ANS-002 PRCP Posture Annotation Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/prcp_annotation_preflight.py'
+      - 'tests/test_prcp_annotation_preflight.py'
+      - '.github/workflows/prcp-annotation-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-002-prcp-annotations
+  cancel-in-progress: false
+jobs:
+  source-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install small waveform annotation reader
+        run: python -m pip install 'requests>=2.31,<3' 'wfdb>=4.1,<5' 'pytest>=8,<10'
+      - name: Test annotation vocabulary handling
+        run: python -m pytest -q tests/test_prcp_annotation_preflight.py
+      - name: Inventory public PRCP annotations; no waveform downloads
+        run: python -m scripts.prcp_annotation_preflight
+      - name: Annotated science gate summary
+        if: always()
+        run: |
+          if [ -f reports/PRCP_ANNOTATION_PREFLIGHT.md ]; then
+            cat reports/PRCP_ANNOTATION_PREFLIGHT.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Archive source data readiness only
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ ! -f reports/PRCP_ANNOTATION_PREFLIGHT.md ] || [ ! -f reports/prcp_annotation_preflight.json ]; then
+            exit 0
+          fi
+          scratch="$(mktemp -d)"
+          cp reports/PRCP_ANNOTATION_PREFLIGHT.md "$scratch/"
+          cp reports/prcp_annotation_preflight.json "$scratch/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -f -B publish-prcp-audit origin/main
+            mkdir -p reports
+            cp "$scratch/PRCP_ANNOTATION_PREFLIGHT.md" reports/
+            cp "$scratch/prcp_annotation_preflight.json" reports/
+            git add -f reports/PRCP_ANNOTATION_PREFLIGHT.md reports/prcp_annotation_preflight.json
+            if git diff --cached --quiet; then
+              exit 0
+            fi
+            git commit -m 'Archive PRCP posture annotation readiness [skip ci]'
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ans002-prcp-annotation-readiness
+          path: |
+            reports/PRCP_ANNOTATION_PREFLIGHT.md
+            reports/prcp_annotation_preflight.json
+          if-no-files-found: warn
+          retention-days: 30
