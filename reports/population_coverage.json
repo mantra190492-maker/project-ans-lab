@@ -1,0 +1,45 @@
+{
+  "study": "ANS-001 population coverage audit",
+  "dataset": "PhysioNet Autonomic Aging v1.0.0",
+  "participant_count": 20,
+  "observed_counts": {
+    "age_group": 20,
+    "sex_code": 20,
+    "bmi": 20,
+    "device_code": 20
+  },
+  "selected_age_strata": {
+    "18-34": 5,
+    "35-49": 5,
+    "50-64": 5,
+    "65+": 5
+  },
+  "children_under_18_included": false,
+  "children_status": "absent_by_study_eligibility_18_to_92_years",
+  "unmeasured_fields": {
+    "pregnancy_status": "unknown_not_measured",
+    "gestational_week": "unknown_not_measured",
+    "postpartum_interval": "unknown_not_measured",
+    "menopause_stage": "unknown_not_measured",
+    "hormone_therapy": "unknown_not_measured",
+    "menstrual_cycle_phase": "unknown_not_measured",
+    "coronary_stent_history": "unknown_not_measured",
+    "coronary_artery_disease": "unknown_not_measured",
+    "prior_myocardial_infarction": "unknown_not_measured",
+    "cardiovascular_medications": "unknown_not_measured",
+    "athlete_status": "unknown_not_measured",
+    "sport_type": "unknown_not_measured",
+    "exercise_training_volume": "unknown_not_measured",
+    "pubertal_stage": "unknown_not_measured",
+    "pediatric_development": "unknown_not_measured",
+    "longitudinal_outcomes": "unknown_not_measured"
+  },
+  "cannot_infer": [
+    "pregnancy/nonpregnancy",
+    "pre-/peri-/postmenopause",
+    "history of PCI or coronary stents",
+    "athlete/nonathlete",
+    "future health outcomes or longevity"
+  ],
+  "inference_status": "HOLD: adult resting engineering pilot only"
+}

@@ -1,6 +1,6 @@
 # ANS-001 — 20-participant age-stratified waveform feasibility
 
-Generated UTC: 2026-11-15T12:48:32.634260+00:00
+Generated UTC: 2026-11-15T12:52:40.578947+00:00
 Participants selected: 20
 Recordings computationally processed: 20
 Automatic ECG consistency checks passed: 19
