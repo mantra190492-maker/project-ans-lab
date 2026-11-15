@@ -36,3 +36,16 @@
 
 - **Would:** a cheap, passive overnight ECG feature tracks clinic-confirmed cardiovagal function in older adults with diabetes, and possibly its decline. That is direct, if small, evidence toward early detection.
 - **Would not:** a validated biomarker. It needs replication in a larger cohort with repeated reflex tests (e.g., DCCT/EDIC through an academic partner) before any detection claim.
+
+## Amendment 1 — 2026-11-15, written before any outcome was computed
+
+**What stage 1 and 1b showed** ([inventory](../reports/CDED_INVENTORY.md), [segments](../reports/CDED_SEGMENTS.md)):
+- The release has no usable 24-hour/overnight ECG. The `S####ECG` WFDB records are 6–42 minutes long (median 6.3); the dataset's own documentation lists them as ME6000 walk-test recordings with ECG channels in only 21.
+- The lab marker channel does not mark protocol segments: 12 of 23 sampled records are flat; 7 show sparse pulses with no consistent pattern.
+- Lab records are complete otherwise: 69 baseline and 41 two-year records at 500 Hz with ECG, arterial pressure, airflow, CO2, O2 and TCD.
+
+**Changes:**
+1. **Predictor:** Costa PIP (sensitivity: hard-inflection rate) from the **5-minute supine baseline** of the baseline lab ECG at 500 Hz. Comparators: mean HR and log RMSSD from the same 5 minutes. The overnight predictor is dropped.
+2. **Segmentation from non-cardiac channels only:** the documented protocol order is Valsalva → 5-min supine baseline → 3-min hyperventilation → 3-min CO2 rebreathing → 5-min supine rest → 10-min tilt. Hyperventilation onset = first sustained fall in end-tidal CO2; rebreathing = the following sustained rise; Valsalva = the strain/breath-hold on the airflow channel before the baseline; supine baseline = the 5 minutes ending 30 s before hyperventilation onset; tilt = the final 10-minute segment. Segmentation code may read airflow, CO2 and O2 only, never ECG or arterial pressure.
+3. **Segmentation check:** one reviewer inspects airflow/CO2 plots (no ECG or pressure shown) for 10 records per visit. Proceed only if segments are correctly placed in ≥80% of records at both visits; otherwise stop CDED and report why.
+4. Questions, outcomes, covariates and the decision rule are unchanged. Q2 (41 people) remains a pilot signal only.
