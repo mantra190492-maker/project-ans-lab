@@ -1,0 +1,135 @@
+{
+  "study": "HRF-NULL-001",
+  "cohorts": 200,
+  "subjects_per_cohort": 300,
+  "beats_per_visit": 500,
+  "scenarios": {
+    "null_stable_fragmentation": {
+      "fragmentation_drift": 0.0,
+      "true_effect": 0.0,
+      "visit1_grid_hz": 125.0
+    },
+    "null_progressing_fragmentation": {
+      "fragmentation_drift": 0.05,
+      "true_effect": 0.0,
+      "visit1_grid_hz": 125.0
+    },
+    "null_progressing_same_250hz_grid": {
+      "fragmentation_drift": 0.05,
+      "true_effect": 0.0,
+      "visit1_grid_hz": 250.0
+    },
+    "positive_control_real_effect": {
+      "fragmentation_drift": 0.05,
+      "true_effect": -1.5,
+      "visit1_grid_hz": 125.0
+    }
+  },
+  "results": {
+    "null_stable_fragmentation": {
+      "rmssd": {
+        "rejection_rate": 1.0,
+        "mc_se": 0.0,
+        "mean_pip_coefficient": -0.008662033590636543,
+        "reading": "trap material"
+      },
+      "rsa_resp": {
+        "rejection_rate": 0.03,
+        "mc_se": 0.012062338081814818,
+        "mean_pip_coefficient": 0.00010812819153535118,
+        "reading": "safe"
+      },
+      "rmssd_oracle_true_fragmentation": {
+        "rejection_rate": 0.175,
+        "mc_se": 0.026867731575255845,
+        "mean_pip_coefficient": 0.1679457784418973,
+        "reading": "trap material"
+      },
+      "rsa_resp_oracle_true_fragmentation": {
+        "rejection_rate": 0.045,
+        "mc_se": 0.014658615214269049,
+        "mean_pip_coefficient": -0.0013658875853923991,
+        "reading": "safe"
+      }
+    },
+    "null_progressing_fragmentation": {
+      "rmssd": {
+        "rejection_rate": 0.98,
+        "mc_se": 0.009899494936611668,
+        "mean_pip_coefficient": -0.007624596830438144,
+        "reading": "trap material"
+      },
+      "rsa_resp": {
+        "rejection_rate": 0.08,
+        "mc_se": 0.01918332609325088,
+        "mean_pip_coefficient": 8.457911916475606e-05,
+        "reading": "borderline"
+      },
+      "rmssd_oracle_true_fragmentation": {
+        "rejection_rate": 0.195,
+        "mc_se": 0.028015620642777128,
+        "mean_pip_coefficient": 0.17422244666369002,
+        "reading": "trap material"
+      },
+      "rsa_resp_oracle_true_fragmentation": {
+        "rejection_rate": 0.06,
+        "mc_se": 0.016792855623746664,
+        "mean_pip_coefficient": 0.013555207645737642,
+        "reading": "safe"
+      }
+    },
+    "null_progressing_same_250hz_grid": {
+      "rmssd": {
+        "rejection_rate": 1.0,
+        "mc_se": 0.0,
+        "mean_pip_coefficient": -0.00859748852924211,
+        "reading": "trap material"
+      },
+      "rsa_resp": {
+        "rejection_rate": 0.04,
+        "mc_se": 0.013856406460551017,
+        "mean_pip_coefficient": -0.00010099546696720776,
+        "reading": "safe"
+      },
+      "rmssd_oracle_true_fragmentation": {
+        "rejection_rate": 0.16,
+        "mc_se": 0.02592296279363144,
+        "mean_pip_coefficient": 0.1508312338275563,
+        "reading": "trap material"
+      },
+      "rsa_resp_oracle_true_fragmentation": {
+        "rejection_rate": 0.085,
+        "mc_se": 0.01971991379291502,
+        "mean_pip_coefficient": -0.005525109388714933,
+        "reading": "borderline"
+      }
+    },
+    "positive_control_real_effect": {
+      "rmssd": {
+        "rejection_rate": 1.0,
+        "mc_se": 0.0,
+        "mean_pip_coefficient": -0.009046916703639388,
+        "reading": "power (real effect present)"
+      },
+      "rsa_resp": {
+        "rejection_rate": 0.36,
+        "mc_se": 0.03394112549695428,
+        "mean_pip_coefficient": -0.00384141817609932,
+        "reading": "power (real effect present)"
+      },
+      "rmssd_oracle_true_fragmentation": {
+        "rejection_rate": 1.0,
+        "mc_se": 0.0,
+        "mean_pip_coefficient": -0.8623770830811347,
+        "reading": "power (real effect present)"
+      },
+      "rsa_resp_oracle_true_fragmentation": {
+        "rejection_rate": 1.0,
+        "mc_se": 0.0,
+        "mean_pip_coefficient": -1.496877798956411,
+        "reading": "power (real effect present)"
+      }
+    }
+  },
+  "generated_utc": "2026-11-15T15:55:34.063766+00:00"
+}

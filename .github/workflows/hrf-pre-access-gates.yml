@@ -1,0 +1,71 @@
+name: ANS-001 HRF Pre-Access Gates (125 Hz + shared-signal null)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'anslab/hrf_costa_reference.py'
+      - 'scripts/hrf_resolution_gate.py'
+      - 'scripts/hrf_shared_signal_null.py'
+      - 'tests/test_hrf_resolution_gate.py'
+      - '.github/workflows/hrf-pre-access-gates.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-001-hrf-pre-access-gates
+  cancel-in-progress: false
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -r requirements.txt pytest
+      - name: Full test suite (must pass before any result is produced)
+        run: python -m pytest -q
+      - name: HRF-RES-001 on GUDB (25 adults, 250 Hz annotated R peaks)
+        run: python -m scripts.hrf_resolution_gate --source gudb --out reports
+      - name: HRF-RES-001 on Fantasia (40 adults, 30-min windows)
+        continue-on-error: true
+        run: python -m scripts.hrf_resolution_gate --source fantasia --out reports
+      - name: HRF-NULL-001 shared-signal false-positive simulation
+        run: python -m scripts.hrf_shared_signal_null --cohorts 200 --subjects 300 --workers 2 --out reports
+      - name: Job summary
+        if: always()
+        run: |
+          for f in reports/HRF_RESOLUTION_GATE_GUDB.md reports/HRF_RESOLUTION_GATE_FANTASIA.md reports/HRF_SHARED_SIGNAL_NULL.md; do
+            [ -f "$f" ] && cat "$f" >> "$GITHUB_STEP_SUMMARY"
+          done
+      - name: Publish reports without stale-branch conflicts
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          scratch="$(mktemp -d)"
+          cp reports/HRF_RESOLUTION_GATE_*.* reports/HRF_SHARED_SIGNAL_NULL.* "$scratch/" 2>/dev/null || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -f -B publish-hrf-gates origin/main
+            mkdir -p reports
+            cp "$scratch"/* reports/
+            git add -f reports/HRF_RESOLUTION_GATE_*.* reports/HRF_SHARED_SIGNAL_NULL.*
+            if git diff --cached --quiet; then echo "Reports current"; exit 0; fi
+            git commit -m 'Archive HRF pre-access gate reports [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hrf-pre-access-gates
+          path: |
+            reports/HRF_RESOLUTION_GATE_*.*
+            reports/HRF_SHARED_SIGNAL_NULL.*
+          if-no-files-found: warn
+          retention-days: 30
