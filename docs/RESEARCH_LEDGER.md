@@ -13,9 +13,9 @@ Purpose: one honest list of what has been tested, so a later "hit" can be judged
 | 6 | POOL-VR-001 stage A | Does an automated Valsalva ratio agree with the lab's values (GE-71)? | **Done — failed, stopped** | Best Spearman 0.37 (rule: ≥ 0.60). Automated values run about 0.5 higher than the lab's. Pooled test not run |
 | 7 | NAT-BREATH-001 | Heart-rate response to spontaneous large breaths as a passive deep-breathing test | **Dropped before any test** | Prior art: heart-rate variation with deep breathing is the established cardiovagal test, and respiratory sinus arrhythmia in diabetic neuropathy has been studied since the 1980s. With ~4 minutes of rest in ~35 people it could not show added value over RMSSD |
 | 8 | FUSION-001 | Do two autonomic domains together separate diabetes from controls better than one? (founder request, 2026-11-15) | **Done — no demonstrated gain** | n = 46 (25 diabetes, 21 control), lab-scored values. Leave-one-out AUC: Valsalva 0.36, tilt pressure 0.56, both 0.52 (95% CI 0.35–0.69). Gain −0.05. The two domains are uncorrelated (ρ = −0.08) but neither separates diabetes from controls here. Report: `wearable/reports/FUSION_001.md` |
-| 9 | TILT-001 | Resting PIP vs lab-computed tilt response | Queued | — |
+| 9 | TILT-001 | Resting PIP vs lab-computed heart-rate response to tilt, beyond age, sex, diabetes, resting HR, RMSSD | **Done — null** | β = +0.4 bpm per SD (95% CI −3.7 to +4.4), p = 0.85, n = 29. Report: `reports/explore/TILT_001_RESULT.md` |
 
-Outcome-level hypothesis tests run so far: **2** (GE71-ANS-001, FUSION-001). Candidates found: **0**.
+Outcome-level hypothesis tests run so far: **3** (GE71-ANS-001, FUSION-001, TILT-001). Candidates found: **0**.
 
 Practical note: physionet.org timed out from GitHub runners for ~45 minutes on 2026-11-15; open-access files are also served from `https://physionet-open.s3.amazonaws.com/<project>/<version>/...`.
 
@@ -32,3 +32,18 @@ Practical note: physionet.org timed out from GitHub runners for ~45 minutes on 2
 3. **TILT-001:** resting markers vs head-up-tilt heart-rate and pressure response (neurogenic pattern: pressure falls ≥20 mmHg with a blunted heart-rate rise).
 
 Stopping rule: stop when a candidate replicates, or when this queue is exhausted. No fourth open-data experiment without the founder's go-ahead. Larger tests need NSRR (SHHS/MrOS) or a clinical-cohort partner.
+
+## Open-data verdict — 2026-11-15
+
+The fixed queue is exhausted. No candidate.
+
+- Every outcome test had 27–46 people, enough only for large effects. The results are "not shown", not "disproved".
+- About 40% of GE-71 Day-2 resting ECGs failed outcome-blind quality checks under either rule (two-detector agreement, or beat-shape consistency plus usable-beat fraction).
+- In 4-minute resting windows PIP tracked RMSSD closely (ρ = −0.65 in both analyses), so at this recording length it largely re-measures ordinary HRV. Fragmentation was developed on overnight recordings.
+- The automated Valsalva ratio did not reproduce the lab's values, so self-computed reflex outcomes cannot yet extend the sample to CDED or GE-75.
+
+Routes that can answer the question:
+1. **NSRR (SHHS, MrOS):** thousands of people, overnight ECG, two visits. Founder to apply.
+2. **A clinic cohort with a full reflex battery** (and a sweat test): the only way to test early detection of confirmed dysfunction, and the three-domain idea.
+
+Not run, needs the founder's go-ahead under the stopping rule: **DIAB-PIP-001**, resting PIP in type 2 diabetes vs controls pooled over CDED visit 2 and GE-75 (about 120 people), prompted by the post hoc difference noted above. Diabetes status is an at-risk label, not autonomic dysfunction.
