@@ -234,6 +234,33 @@
       ],
       "priority": "high",
       "status": "Official waveform tasks verified; candidate for challenge-recovery pipeline QA"
+    },
+    {
+      "id": "physionet-prcp-v100",
+      "name": "Physiologic Response to Changes in Posture (PRCP), PhysioNet v1.0.0",
+      "url": "https://physionet.org/content/prcp/1.0.0/",
+      "doi": "10.13026/C2PC7R",
+      "access": "open_ODC_Attribution",
+      "reported_sample_size": 10,
+      "signals": [
+        "ECG",
+        "arterial blood pressure waveforms during active stand and slow/fast head-up tilt",
+        "beat annotations"
+      ],
+      "demographics": [
+        "10 adult healthy volunteer recordings; detailed participant traits to verify"
+      ],
+      "outcomes": [
+        "physiological response and challenge repeatability only; no disease/frailty/mortality follow-up"
+      ],
+      "limitations": [
+        "Small, healthy selected sample",
+        "No prognostic outcomes",
+        "Posture/stand onset annotation and calibration must be verified before computing recovery",
+        "Cannot establish pharmacologic maximal BRS gain"
+      ],
+      "priority": "critical",
+      "status": "PhysioNet source and open access verified; candidate for paired ECG/BP alignment and repeated-stand engineering test. No Project ANS analysis run."
     }
   ]
 }
