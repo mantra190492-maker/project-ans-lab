@@ -2,13 +2,25 @@ name: ANS Literature Scout
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'reports/**'
+    paths:
+      - '.github/workflows/daily-research.yml'
+      - 'scripts/daily.py'
+      - 'scripts/archive.py'
+      - 'scripts/dataset_inventory.py'
+      - 'tests/test_audit.py'
+      - 'tests/test_dataset_inventory.py'
+      - 'anslab/audit.py'
+      - 'anslab/report.py'
+      - 'config/datasets.json'
+      - 'requirements-scout.txt'
   workflow_dispatch:
   schedule:
     - cron: '0 9 * * *'
 permissions:
   contents: write
+concurrency:
+  group: ans-001-literature-scout
+  cancel-in-progress: false
 jobs:
   scout:
     runs-on: ubuntu-latest
@@ -18,20 +30,38 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install -r requirements.txt
-      - run: python -m pip install pytest
-      - run: python -m pytest -q
-      - run: python -m scripts.daily
-      - run: python -m scripts.dataset_inventory
-      - run: python -m scripts.archive
+          cache: pip
+          cache-dependency-path: requirements-scout.txt
+      - name: Install lightweight literature dependencies
+        run: python -m pip install -r requirements-scout.txt
+      - name: Run Scout-specific regression tests
+        run: python -m pytest -q tests/test_audit.py tests/test_dataset_inventory.py
+      - name: Retrieve research publications
+        run: python -m scripts.daily
+      - name: Render dataset registry safely
+        run: python -m scripts.dataset_inventory
+      - name: Deduplicate and update persistent library
+        run: python -m scripts.archive
+      - name: Include research observatory in job summary
+        if: always()
+        run: |
+          if [ -f reports/README.md ]; then
+            cat reports/README.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Commit persistent research archive
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -f reports/library.json reports/README.md
-          git diff --cached --quiet || (git commit -m 'Archive daily ANS-001 literature metadata' && git push)
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive daily ANS-001 literature metadata'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: ans-001-research-report
+          name: ans-001-research-report-${{ github.run_id }}
           path: reports/
+          if-no-files-found: warn
           retention-days: 14
