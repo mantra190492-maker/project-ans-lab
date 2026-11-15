@@ -9,6 +9,12 @@ on:
       - 'tests/test_hrf_resolution_gate.py'
       - '.github/workflows/hrf-pre-access-gates.yml'
   pull_request:
+    paths:
+      - 'anslab/hrf_costa_reference.py'
+      - 'scripts/hrf_resolution_gate.py'
+      - 'scripts/hrf_shared_signal_null.py'
+      - 'tests/test_hrf_resolution_gate.py'
+      - '.github/workflows/hrf-pre-access-gates.yml'
   workflow_dispatch:
 permissions:
   contents: write

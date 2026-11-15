@@ -26,3 +26,12 @@ def test_csv_summary_counts_without_values():
     out = summarize_csv("id,Valsalva ratio,HR_supine\n1,1.3,\n2,NA,60\n3,1.1,62\n")
     cols = {c["name"]: c["nonmissing"] for c in out["columns"]}
     assert out["rows"] == 3 and cols == {"id": 3, "Valsalva ratio": 2, "HR_supine": 2}
+
+
+def test_marker_run_lengths_collapse_levels():
+    from scripts.cded_segments import run_lengths
+    fs = 10.0
+    trace = [0] * 50 + [1] * 30 + [0] * 3 + [2] * 40
+    runs = run_lengths(trace, fs, min_seconds=0.5)
+    assert [r[0] for r in runs] == [0.0, 1.0, 2.0]
+    assert runs[1][1] == 5.0 and runs[1][2] == 3.0
