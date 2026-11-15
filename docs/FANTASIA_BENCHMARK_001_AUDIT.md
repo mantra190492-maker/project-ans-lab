@@ -14,12 +14,12 @@ The archived output mislabeled **sample offsets as milliseconds** in the median 
 | f2y01 | 350 | 1.000 | 3 samples | **12 ms** |
 | f2o01 | 338 | 1.000 | 2 samples | **8 ms** |
 
-This is a unit correction only, **not** a rerun or independent verification. Code commit `5938ff5` corrected the conversion formula; its GitHub workflow run #2 is shown **failed** in the founder's screenshot, so the correction has **not yet passed a verified execution**. Failure cause still requires the actual job logs; do not speculate.
+This is a unit correction only, **not** a rerun or independent verification. Code commit `5938ff5` corrected the conversion formula. **Run #2 passed tests and the ECG benchmark but failed during report publication:** `git pull --rebase` produced an add/add conflict in the two generated report files. The publishing logic was fixed in commit `9da8cbe` to publish against the latest branch with retries. A subsequent execution produced and committed an updated result at **2026-11-15T13:15:59 UTC**, which reports actual timing units in milliseconds.
 
 ## Scientific interpretation
 - F1=1.000 for four selected five-minute segments is promising but **cannot establish general ECG-detector accuracy**, accuracy in arrhythmia, or transfer to the Autonomic Aging recordings.
 - A 150 ms tolerance can obscure fiducial timing discrepancies. In later analysis also report sensitivity at **50 ms and 100 ms** and waveform overlays.
 - The current four-record sample does not validate systolic BP detection, ECG/BP delay, baroreflex sensitivity, risk prediction, biological ageing, or longevity.
-- The latest failed run may be a data/network, test, workflow, or repository-publication issue. Until log inspection, categorize as **unknown execution failure** rather than a failed scientific benchmark.
+- **Verified root cause of Run #2:** repository report-publishing merge conflict, not a failed ECG benchmark. The subsequent report re-execution shows the same four F1 values and corrected timing offsets (4, 8, 12, 8 ms). A four-record benchmark is still not sufficient to establish broad ECG/BRS accuracy.
 
-**Decision:** Keep the original result for auditability; correct the units; HOLD further scientific interpretation until the corrected workflow passes and annotated reference beat checks are independently reviewed.
+**Decision:** PASS first four-record annotated ECG detector benchmark and report publication. HOLD general ECG/BRS validation and any clinical/ageing claims pending broader annotation-level comparisons and independent waveform review.
