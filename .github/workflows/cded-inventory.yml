@@ -1,0 +1,54 @@
+name: ANS-001 CDED stage 1 inventory (structure only)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/cded_inventory.py'
+      - 'tests/test_cded_inventory.py'
+      - '.github/workflows/cded-inventory.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-001-cded-inventory
+  cancel-in-progress: false
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt pytest
+      - name: Full test suite
+        run: python -m pytest -q
+      - name: Map CDED structure (no participant values, no associations)
+        run: python -m scripts.cded_inventory
+      - name: Job summary
+        if: always()
+        run: '[ -f reports/CDED_INVENTORY.md ] && cat reports/CDED_INVENTORY.md >> "$GITHUB_STEP_SUMMARY" || true'
+      - name: Publish inventory
+        run: |
+          set -euo pipefail
+          scratch="$(mktemp -d)"; cp reports/CDED_INVENTORY.* "$scratch/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -f -B publish-cded-inventory origin/main
+            mkdir -p reports; cp "$scratch"/* reports/
+            git add -f reports/CDED_INVENTORY.*
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Archive CDED stage 1 inventory [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cded-inventory
+          path: reports/CDED_INVENTORY.*
+          if-no-files-found: warn
