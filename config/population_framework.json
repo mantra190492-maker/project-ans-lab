@@ -12,10 +12,10 @@
     ],
     "documented_variables": [
       "age_group",
-      "recorded_sex_code",
-      "BMI",
-      "recording_device",
-      "recording_duration",
+      "sex_code",
+      "bmi",
+      "device_code",
+      "length_min",
       "ECG",
       "continuous_blood_pressure"
     ],
