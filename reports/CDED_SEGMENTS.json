@@ -1,6 +1,6 @@
 {
   "study": "CDED-ANS-001 stage 1b segment decoding",
-  "generated_utc": "2026-11-15T17:01:20.577475+00:00",
+  "generated_utc": "2026-11-15T17:05:30.233444+00:00",
   "files_and_channels_doc": [
     [
       "Visit",
@@ -3822,15 +3822,10 @@
     ]
   ],
   "sampled_records": 24,
-  "decoded": 23,
-  "failures": [
-    {
-      "record": "./Data/Labview/Converted/Labview-v2/s0296DB-v2",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/cded/1.0.1/Data/Labview/Converted/Labview-v2/s0296DB-v2.hea"
-    }
-  ],
+  "decoded": 24,
+  "failures": [],
   "marker_value_record_counts": {
-    "-0.0": 23,
+    "-0.0": 24,
     "1.02": 7
   },
   "marker_patterns": [
@@ -4891,6 +4886,141 @@
         }
       ],
       "n_marker_runs": 12,
+      "flat_channels": {
+        "ecg": false,
+        "abp": false
+      }
+    },
+    {
+      "record": "./Data/Labview/Converted/Labview-v2/s0296DB-v2",
+      "fs": 500.0,
+      "duration_min": 34.5,
+      "marker_distinct_values": [
+        -0.0
+      ],
+      "marker_runs": [
+        {
+          "value": -0.0,
+          "start_s": 0.0,
+          "duration_s": 7.7
+        },
+        {
+          "value": -0.0,
+          "start_s": 8.1,
+          "duration_s": 94.4
+        },
+        {
+          "value": -0.0,
+          "start_s": 102.5,
+          "duration_s": 510.5
+        },
+        {
+          "value": -0.0,
+          "start_s": 613.1,
+          "duration_s": 3.7
+        },
+        {
+          "value": -0.0,
+          "start_s": 617.0,
+          "duration_s": 170.8
+        },
+        {
+          "value": -0.0,
+          "start_s": 788.0,
+          "duration_s": 32.8
+        },
+        {
+          "value": -0.0,
+          "start_s": 821.0,
+          "duration_s": 185.5
+        },
+        {
+          "value": -0.0,
+          "start_s": 1006.7,
+          "duration_s": 15.1
+        },
+        {
+          "value": -0.0,
+          "start_s": 1022.1,
+          "duration_s": 169.9
+        },
+        {
+          "value": -0.0,
+          "start_s": 1192.0,
+          "duration_s": 97.5
+        },
+        {
+          "value": -0.0,
+          "start_s": 1289.5,
+          "duration_s": 38.8
+        },
+        {
+          "value": -0.0,
+          "start_s": 1328.5,
+          "duration_s": 46.8
+        },
+        {
+          "value": 0.0,
+          "start_s": 1375.4,
+          "duration_s": 10.3
+        },
+        {
+          "value": 0.0,
+          "start_s": 1386.0,
+          "duration_s": 3.0
+        },
+        {
+          "value": -0.0,
+          "start_s": 1388.9,
+          "duration_s": 65.6
+        },
+        {
+          "value": -0.0,
+          "start_s": 1454.6,
+          "duration_s": 101.6
+        },
+        {
+          "value": -0.0,
+          "start_s": 1556.2,
+          "duration_s": 131.7
+        },
+        {
+          "value": -0.0,
+          "start_s": 1687.9,
+          "duration_s": 62.2
+        },
+        {
+          "value": -0.0,
+          "start_s": 1750.1,
+          "duration_s": 173.3
+        },
+        {
+          "value": -0.0,
+          "start_s": 1923.4,
+          "duration_s": 9.5
+        },
+        {
+          "value": -0.0,
+          "start_s": 1932.9,
+          "duration_s": 44.4
+        },
+        {
+          "value": 0.0,
+          "start_s": 1977.5,
+          "duration_s": 11.5
+        },
+        {
+          "value": -0.0,
+          "start_s": 1989.2,
+          "duration_s": 74.5
+        },
+        {
+          "value": -0.0,
+          "start_s": 2063.8,
+          "duration_s": 5.9
+        }
+      ],
+      "n_marker_runs": 24,
       "flat_channels": {
         "ecg": false,
         "abp": false

@@ -1,8 +1,8 @@
 # CDED-ANS-001 stage 1b — protocol segment decoding (structure only)
 
-Generated UTC: 2026-11-15T17:01:20.577475+00:00
+Generated UTC: 2026-11-15T17:05:30.233444+00:00
 
-Decoded 23 of 24 sampled lab records (12 per visit). Failures: 1.
+Decoded 24 of 24 sampled lab records (12 per visit). Failures: 0.
 
 ## Dataset channel documentation (GE-79_Files_and_Channels.csv)
 
@@ -131,7 +131,7 @@ Day 2 | data/labview | labview-sit-to-stand | Sit-to-stand Test |  |  |  |  |  |
 
 ## Marker values across records
 
-- value -0.0: present in 23 records
+- value -0.0: present in 24 records
 - value 1.02: present in 7 records
 
 ## Most common marker sequences (values in time order)
