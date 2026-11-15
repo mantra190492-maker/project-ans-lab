@@ -194,13 +194,13 @@ def _load_trusted_pickle(fp):
 
 def local_sources(root,limit):
     root=Path(root)
-    for sid in SUBJECTS[:limit]:
+    for sid in SUBJECTS[offset:offset+limit]:
         file=root/sid/(sid+".pkl")
         if file.is_file():
             with file.open("rb") as f:yield _load_trusted_pickle(f)
 
 
-def remote_sources(url,limit):
+def remote_sources(url,limit,offset=0):
     """Retrieve individual members with HTTP ranges, not a full 2.5GB download."""
     from remotezip import RemoteZip
     with RemoteZip(url) as rz:
