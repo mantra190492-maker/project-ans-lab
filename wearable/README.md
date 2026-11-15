@@ -61,3 +61,7 @@ Across the 15 original WESAD volunteers, three **disjoint** pilot samples were u
 - **Still unsolved:** wrist pulse-to-ECG one-to-one event matching and independently verified clinical reference. All 10 calibration windows in the 5-subject study were withheld; no beat-level accuracy or ANS/EDS biomarker can be claimed.
 
 For the corrected extractor use: `python -m pytest -q wearable/tests/test_signal_processing.py`. The original real-data experiment workflows preserve the frozen reproducible comparisons.
+
+## Beat-level alignment and quality-gate findings (WATCH-SYNC-007)
+
+[Verified 15-person WESAD timing/quality report](reports/WATCH_SYNC_007_FINDINGS.md): the wider +/-10s cross-device clock-offset search now yields meaningful **exploratory** resting wrist/ECG pulse matching, but the offset often remains rhythm-ambiguous. On the 13-person frozen timing evaluation, only **28/65 resting epochs** passed all timing and wrist quality gates (median **0.876** F1 on selected epochs); only **1/65 stress epochs** passed (F1 **0.241**, one epoch). **Do not interpret as validated sensor accuracy**, especially given no manually adjudicated WESAD ECG/PPG beat labels or proven physical timestamp alignment. Resting results are quality-selected, and stress/movement coverage is a severe blocker. Next priority: independently annotated ECG/PPG data and source-side clock verification before wearable HRV or biomarker claims.
