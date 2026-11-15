@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Current exploration step (edited per loop). Structure/QC only unless a frozen plan says otherwise.
 set -uo pipefail
-# POOL-VR-001 stage A. Retry on PhysioNet connection timeouts.
+# FUSION-001 (wearable/experiments/FUSION_001_PLAN.md). Retry on PhysioNet connection timeouts.
 for attempt in 1 2 3; do
-  python -m scripts.vr_validate && exit 0
-  echo "attempt $attempt failed; retrying in 90 s"; sleep 90
+  python -m wearable.experiments.fusion_001 && exit 0
+  echo "attempt $attempt failed; retrying in 60 s"; sleep 60
 done
 exit 1
