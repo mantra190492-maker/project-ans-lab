@@ -1,6 +1,6 @@
 # ANS-001 — 20-participant age-stratified waveform feasibility
 
-Generated UTC: 2026-11-15T12:40:12.896111+00:00
+Generated UTC: 2026-11-15T12:48:32.634260+00:00
 Participants selected: 20
 Recordings computationally processed: 20
 Automatic ECG consistency checks passed: 19
@@ -45,6 +45,15 @@ Sex partially balanced; BMI not matched. This sample is NOT representative.
 | 0912 | 85-92 | 1 | processed | pass | 36.7 | 63 |
 | 0779 | 85-92 | 1 | processed | pass | 28.6 | 0 |
 | 0237 | 70-74 | 1 | processed | pass | 17.0 | 11 |
+
+## Waveform quality-control snapshots
+
+- [18-34: ten-second ECG/BP sample](cohort_qc_18to34.png)
+- [35-49: ten-second ECG/BP sample](cohort_qc_35to49.png)
+- [50-64: ten-second ECG/BP sample](cohort_qc_50to64.png)
+- [65+: ten-second ECG/BP sample](cohort_qc_65plus.png)
+
+These plots show automatic beat picks only. They require independent visual review and must not be treated as annotation ground truth.
 
 ## Method limitations and interpretation
 
