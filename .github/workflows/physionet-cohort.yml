@@ -6,6 +6,10 @@ on:
       - 'anslab/physio_qc.py'
       - 'scripts/physionet_cohort.py'
       - 'tests/test_physio_cohort.py'
+      - 'anslab/population.py'
+      - 'scripts/population_audit.py'
+      - 'tests/test_population.py'
+      - 'config/population_framework.json'
       - 'requirements.txt'
       - '.github/workflows/physionet-cohort.yml'
   workflow_dispatch:
@@ -30,11 +34,16 @@ jobs:
         run: python -m pytest -q
       - name: Process 20 age-stratified PhysioNet recordings
         run: python -m scripts.physionet_cohort
+      - name: Audit unobserved clinical populations
+        run: python -m scripts.population_audit
       - name: Publish readable report to GitHub
         if: always()
         run: |
           if [ -f reports/COHORT_001_SUMMARY.md ]; then
             cat reports/COHORT_001_SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f reports/POPULATION_COVERAGE.md ]; then
+            cat reports/POPULATION_COVERAGE.md >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Save reproducible result summary in repository
         if: always()
@@ -42,7 +51,7 @@ jobs:
           if [ -f reports/physionet_cohort.json ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add -f reports/COHORT_001_SUMMARY.md reports/physionet_cohort.json reports/physionet_cohort.csv reports/cohort_qc_*.png
+            git add -f reports/COHORT_001_SUMMARY.md reports/physionet_cohort.json reports/physionet_cohort.csv reports/POPULATION_COVERAGE.md reports/population_coverage.json reports/cohort_qc_*.png
             if ! git diff --cached --quiet; then
               git commit -m 'Record ANS-001 age-stratified physiological pilot results'
               git pull --rebase origin main
@@ -57,6 +66,8 @@ jobs:
             reports/COHORT_001_SUMMARY.md
             reports/physionet_cohort.json
             reports/physionet_cohort.csv
+            reports/POPULATION_COVERAGE.md
+            reports/population_coverage.json
             reports/cohort_qc_*.png
           if-no-files-found: warn
           retention-days: 30
