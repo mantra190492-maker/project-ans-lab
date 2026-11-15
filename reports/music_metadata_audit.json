@@ -1,0 +1,64 @@
+{
+  "source": "https://physionet.org/files/music-sudden-cardiac-death/1.0.1/subject-info.csv",
+  "version": "1.0.1",
+  "participant_rows": 992,
+  "distinct_participant_identifiers_count": 992,
+  "field_completeness": {
+    "Age": 992,
+    "Gender (male=1)": 992,
+    "Body Mass Index (Kg/m2)": 992,
+    "Prior Myocardial Infarction (yes=1)": 992,
+    "Prior Revascularization": 992,
+    "Follow-up period from enrollment (days)": 992,
+    "Cause of death": 992,
+    "Holter available": 992,
+    "Holter rhythm": 0,
+    "Betablockers (yes=1)": 992,
+    "SDNN (ms)": 587,
+    "RMSSD (ms)": 587
+  },
+  "prior_revascularization_codes": {
+    "0": 736,
+    "1": 149,
+    "2": 80,
+    "3": 27
+  },
+  "prior_revascularization_meanings": {
+    "0": "none",
+    "1": "percutaneous",
+    "2": "surgical",
+    "3": "both"
+  },
+  "unrecognized_revascularization_codes": {},
+  "cause_of_death_codes": {
+    "0": 726,
+    "1": 61,
+    "3": 94,
+    "6": 100,
+    "7": 11
+  },
+  "cause_of_death_meanings": {
+    "0": "survivor",
+    "1": "noncardiac death",
+    "3": "sudden cardiac death",
+    "6": "pump-failure death",
+    "7": "pump-failure death"
+  },
+  "holter_available_codes": {
+    "0": 56,
+    "1": 936
+  },
+  "holter_rhythm_codes": {
+    "0": 651,
+    "1": 171,
+    "2": 2,
+    "3": 105,
+    "4": 4
+  },
+  "holter_rhythm_source_column": "Holter  rhythm",
+  "holter_rhythm_status": "present",
+  "interpretation": "DESCRIPTIVE DATA READINESS ONLY. No predictive model fitted; do not infer stent implantation from percutaneous revascularization; death code 0 not automatically sufficient to prove censoring completeness.",
+  "raw_data_saved": false,
+  "patient_level_data_committed": false,
+  "generated_utc": "2026-11-15T13:25:39.375776+00:00"
+}
