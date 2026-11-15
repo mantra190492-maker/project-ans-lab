@@ -2,11 +2,13 @@ name: ANS Literature Scout
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'reports/**'
   workflow_dispatch:
   schedule:
     - cron: '0 9 * * *'
 permissions:
-  contents: read
+  contents: write
 jobs:
   scout:
     runs-on: ubuntu-latest
@@ -21,6 +23,13 @@ jobs:
       - run: python -m pytest -q
       - run: python -m scripts.daily
       - run: python -m scripts.dataset_inventory
+      - run: python -m scripts.archive
+      - name: Commit persistent research archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f reports/library.json reports/README.md
+          git diff --cached --quiet || (git commit -m 'Archive daily ANS-001 literature metadata' && git push)
       - uses: actions/upload-artifact@v4
         with:
           name: ans-001-research-report
