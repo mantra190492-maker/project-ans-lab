@@ -54,7 +54,7 @@ def summarize(rows):
         "Holter available", "Holter rhythm", "Betablockers (yes=1)",
         "SDNN (ms)", "RMSSD (ms)",
     ]
-    observed_counts = {f: sum(present(r.get(f, "")) for r in rows) for f in checked_fields}
+    observed_counts = {f: sum(present(r.get(optional_rhythm if f == "Holter rhythm" else f, "")) for r in rows) for f in checked_fields}
     revasc = Counter(r["Prior Revascularization"] for r in rows
                      if present(r.get("Prior Revascularization", "")))
     death = Counter(r["Cause of death"] for r in rows
