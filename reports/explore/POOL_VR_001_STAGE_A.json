@@ -1,0 +1,125 @@
+{
+ "study": "POOL-VR-001 stage A",
+ "generated_utc": "2026-11-15T17:48:47.370981+00:00",
+ "pass_rule": {
+  "spearman_min": 0.6,
+  "n_min": 20
+ },
+ "gap_based_validated": false,
+ "agreement": {
+  "gap_day2_vs_lab_VM_RATIO": {
+   "n": 37,
+   "spearman": 0.3705986985142754,
+   "p": 0.023947583672718178,
+   "median_abs_diff": 0.5374655502394909,
+   "bias_auto_minus_ref": 0.5602381313926463
+  },
+  "gap_day1_vs_lab_VM_RATIO": {
+   "n": 36,
+   "spearman": -0.2333097397639405,
+   "p": 0.1708616073938766,
+   "median_abs_diff": 0.47502487562194706,
+   "bias_auto_minus_ref": 0.47647738420749847
+  },
+  "marker_day1_vs_lab_VM_RATIO": {
+   "n": 37,
+   "spearman": 0.0358138171683655,
+   "p": 0.833326420145479,
+   "median_abs_diff": 0.3397584541062737,
+   "bias_auto_minus_ref": 0.34362265931191693
+  },
+  "gap_day2_vs_lab_VMRatio2": {
+   "n": 0
+  },
+  "marker_day1_vs_lab_VMRatio2": {
+   "n": 0
+  },
+  "lab_VM_RATIO_vs_lab_VMRatio2": {
+   "n": 0
+  },
+  "gap_day2_vs_marker_day1": {
+   "n": 34,
+   "spearman": 0.4370081760786706,
+   "p": 0.00975878415600603,
+   "median_abs_diff": 0.29436439943136206,
+   "bias_auto_minus_ref": 0.11467347401227454
+  },
+  "gap_day1_vs_marker_day1": {
+   "n": 49,
+   "spearman": 0.7544772692484311,
+   "p": 3.837833365681779e-10,
+   "median_abs_diff": 0.0,
+   "bias_auto_minus_ref": 0.06566617548048079
+  }
+ },
+ "descriptive": {
+  "day1": {
+   "records": 59,
+   "template_quality_p10_25_50_75_90": [
+    0.91,
+    0.98,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "records_with_gap": 55,
+   "gaps_per_record_quantiles": [
+    1.0,
+    2.0,
+    2.0,
+    3.0,
+    3.0
+   ],
+   "records_with_vr": 52
+  },
+  "day2": {
+   "records": 57,
+   "template_quality_p10_25_50_75_90": [
+    0.86,
+    0.98,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "records_with_gap": 49,
+   "gaps_per_record_quantiles": [
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    3.4
+   ],
+   "records_with_vr": 44
+  },
+  "value_quantiles": {
+   "gap_day1": [
+    1.32,
+    1.7,
+    1.89,
+    2.16,
+    2.75
+   ],
+   "gap_day2": [
+    1.25,
+    1.71,
+    1.91,
+    2.44,
+    2.73
+   ],
+   "marker_day1": [
+    1.32,
+    1.66,
+    1.85,
+    1.97,
+    2.48
+   ],
+   "lab_VM_RATIO": [
+    1.19,
+    1.27,
+    1.44,
+    1.66,
+    1.86
+   ]
+  }
+ }
+}
