@@ -38,13 +38,20 @@ def within(x, lo, hi):
     return a[(a>=lo)&(a<hi)]
 
 
-def _nearest_match_fraction(ecg,ppg,lag,tol=LAG_TOL):
-    """Fast calibration-only approximate fraction; final one-to-one uses match_peaks."""
-    if len(ecg)==0 or len(ppg)==0:return 0.
+def _nearest_match_metrics(ecg,ppg,lag,tol=LAG_TOL):
+    """Fraction and mean timing discrepancy of matches, calibration only."""
+    if len(ecg)==0 or len(ppg)==0:return (0.,float("inf"))
     idx=np.searchsorted(ppg,ecg+lag)
     d1=np.where(idx<len(ppg),np.abs(ppg[np.minimum(idx,len(ppg)-1)]-(ecg+lag)),np.inf)
     d0=np.where(idx>0,np.abs(ppg[np.maximum(idx-1,0)]-(ecg+lag)),np.inf)
-    return float(np.mean(np.minimum(d0,d1)<=tol))
+    d=np.minimum(d0,d1)
+    matched=d<=tol
+    if not np.any(matched):return (0.,float("inf"))
+    return float(np.mean(matched)),float(np.mean(d[matched]))
+
+
+def _nearest_match_fraction(ecg,ppg,lag,tol=LAG_TOL):
+    return _nearest_match_metrics(ecg,ppg,lag,tol)[0]
 
 
 def find_clock_shift(ecg_peaks, ppg_peaks, grid=LAG_CANDIDATES):
@@ -58,9 +65,14 @@ def find_clock_shift(ecg_peaks, ppg_peaks, grid=LAG_CANDIDATES):
     p_train=within(ppg_peaks,0,60)
     if min(len(e_train),len(e_check))<10 or len(p_train)<30:
         raise ValueError("Too few calibration events")
-    sc=np.array([_nearest_match_fraction(e_train,p_train,float(v)) for v in grid])
-    # Reproducible tie breaks favor proximity to 0 only among equal scores.
-    rank=np.lexsort((np.abs(grid),-sc))
+    metrics=[_nearest_match_metrics(e_train,p_train,float(v)) for v in grid]
+    sc=np.array([m[0] for m in metrics])
+    timing_error=np.array([m[1] for m in metrics])
+    # Prefer more matches, then LOWER timing residual among matched beats.
+    # Exact match-count ties are common for periodic heart rhythms; without
+    # this gate, an entire-beat alias can falsely "win" calibration.
+    # Physical clock offset remains unknown even if algorithm selects a lag.
+    rank=np.lexsort((np.abs(grid),timing_error,-sc))
     best=int(rank[0])
     lag=float(grid[best])
     train=float(sc[best])
