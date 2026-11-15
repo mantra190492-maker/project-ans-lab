@@ -41,8 +41,8 @@ def main():
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     folder = Path("reports")
     folder.mkdir(exist_ok=True)
-    (folder / f"scout_{stamp}.json").write_text(json.dumps({"project":"ANS-003","generated_utc":stamp,"queries":QUERIES,"records":records,"limitation":"Metadata alone cannot establish diagnostic accuracy, clinical efficacy, or novelty."},indent=2), encoding="utf-8")
-    lines = ["# ANS-003 Literature Scout", "",f"Generated: {stamp} UTC",f"Records: {len(records)}","","**Metadata only; findings require full-text review and independent validation.**",""]
+    (folder / f"scout_{stamp}.json").write_text(json.dumps({"project":"ANS-001","generated_utc":stamp,"queries":QUERIES,"records":records,"limitation":"Metadata alone cannot establish diagnostic accuracy, clinical efficacy, or novelty."},indent=2), encoding="utf-8")
+    lines = ["# ANS-001 Literature Scout", "",f"Generated: {stamp} UTC",f"Records: {len(records)}","","**Metadata only; findings require full-text review and independent validation.**",""]
     lines.extend(f"- [{r['title']}]({r['url']}) — {r['journal']} ({r['published']}); PMID {r['pmid']}" for r in records)
     (folder / f"scout_{stamp}.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
     print(f"Saved {len(records)} records.")
