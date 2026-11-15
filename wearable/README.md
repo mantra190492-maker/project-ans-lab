@@ -45,3 +45,7 @@ Sources: [Samsung SDK](https://developer.samsung.com/health/sensor/guide/introdu
 ## External clinical-reference accuracy layer
 
 The specialist measurements selected by the founder (MSNA, cardiac sympathetic imaging, peripheral small-fibre and sweat-gland morphology, corneal nerves, skin alpha-synuclein pathology, gastrointestinal, urinary, and tear/salivary function) are documented under [clinical_reference/](clinical_reference/README.md). These are **external, disease-/domain-specific comparison outcomes**, NOT wrist sensors or validated general ANS labels. Only same-person paired studies can establish whether wearable features predict them. The existing WATCH-SIM-001 remains synthetic-only.
+
+## Real-data wrist/chest experiment (2026-11-15)
+
+[WATCH-REAL-003 findings](reports/WATCH_REAL_003_FINDINGS.md): the first original-WESAD two-participant pilot completed. It exposed large discrepancies between automatically detected wrist-pulse and ECG heart rates and **failed 4/4 pulse-delay calibrations**. Beat-level F1 is withheld and clinical ANS/EDS accuracy is unmeasured. This is a measurement-method failure requiring further validation, **not** evidence of a discovered biomarker.
