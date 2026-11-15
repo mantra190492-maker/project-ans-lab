@@ -1,0 +1,50 @@
+name: ANS-001 Mission Guardrails
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'config/research_charter.json'
+      - 'research/proposals/**'
+      - 'scripts/check_research_guardrails.py'
+      - 'tests/test_research_guardrails.py'
+      - '.github/workflows/research-guardrails.yml'
+  pull_request:
+    paths:
+      - 'config/research_charter.json'
+      - 'research/proposals/**'
+      - 'scripts/check_research_guardrails.py'
+      - 'tests/test_research_guardrails.py'
+      - '.github/workflows/research-guardrails.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  charter-and-scientific-claim-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reject mission drift and premature biomarker claims
+        run: python -m scripts.check_research_guardrails
+      - name: Verify governance vetoes with regression tests
+        run: python -m unittest discover -s tests -p 'test_research_guardrails.py' -v
+      - name: Make scientific limitations visible
+        if: always()
+        run: |
+          {
+            echo '## Project ANS mission control'
+            echo ''
+            echo '**Primary mission:** Discover and validate an original measurable marker of'
+            echo 'autonomic dysfunction or functional deterioration.'
+            echo ''
+            echo '**Explicitly not the mission:** Biological-age scores, mortality risk'
+            echo 'prediction, or a diabetes product without founder-authorized change.'
+            echo ''
+            echo '**Clinical biomarker status:** No validated discovery.'
+            echo ''
+            echo 'The checks validate scope and evidence-stage declarations only.'
+            echo 'They cannot establish scientific truth or clinical efficacy.'
+          } >> "$GITHUB_STEP_SUMMARY"
