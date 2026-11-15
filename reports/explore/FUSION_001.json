@@ -1,0 +1,93 @@
+{
+ "study": "FUSION-001",
+ "plan": "wearable/experiments/FUSION_001_PLAN.md",
+ "generated_utc": "2026-11-15T18:32:22.266244+00:00",
+ "flow": {
+  "table_rows": 50,
+  "missing_any_required": 4,
+  "analysed": 46
+ },
+ "result": {
+  "n": 46,
+  "n_diabetes": 25,
+  "n_control": 21,
+  "loo_auc": {
+   "M0_age_sex": 0.38095238095238093,
+   "M1_plus_cardiovagal": 0.3580952380952381,
+   "M2_plus_adrenergic": 0.5638095238095238,
+   "M3_plus_both": 0.5161904761904762,
+   "S_plus_both_and_tilt_hr": 0.5771428571428572
+  },
+  "auc_m3_bootstrap_ci95": [
+   0.35090186419395347,
+   0.6900236582476024
+  ],
+  "best_single_domain_model": "M2_plus_adrenergic",
+  "fusion_gain_auc": -0.04761904761904756,
+  "fusion_gain_bootstrap_ci95": [
+   -0.10667857142857144,
+   -0.009743308591992765
+  ],
+  "fusion_adds": false,
+  "domain_correlation": {
+   "spearman": -0.0778960358229691,
+   "p": 0.6068604882826,
+   "age_adjusted_partial": -0.11989993251404517
+  },
+  "single_measure_auc_unadjusted": {
+   "valsalva_ratio_low": 0.5914285714285714,
+   "tilt_sbp_fall": 0.3361904761904762,
+   "tilt_hr_rise_low": 0.6657142857142857
+  }
+ },
+ "quartiles_25_50_75": {
+  "valsalva_ratio": {
+   "control": [
+    1.35,
+    1.56,
+    1.72
+   ],
+   "diabetes": [
+    1.25,
+    1.39,
+    1.57
+   ]
+  },
+  "tilt_sbp_change_mmHg": {
+   "control": [
+    -10.0,
+    -2.0,
+    3.0
+   ],
+   "diabetes": [
+    -3.0,
+    8.0,
+    15.0
+   ]
+  },
+  "tilt_hr_change_bpm": {
+   "control": [
+    7.0,
+    12.2,
+    15.0
+   ],
+   "diabetes": [
+    5.7,
+    9.0,
+    13.0
+   ]
+  },
+  "age": {
+   "control": [
+    56.0,
+    62.0,
+    72.0
+   ],
+   "diabetes": [
+    57.0,
+    60.0,
+    68.0
+   ]
+  }
+ }
+}
