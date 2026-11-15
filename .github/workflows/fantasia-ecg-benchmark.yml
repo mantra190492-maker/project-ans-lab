@@ -36,19 +36,40 @@ jobs:
           if [ -f reports/FANTASIA_ECG_BENCHMARK.md ]; then
             cat reports/FANTASIA_ECG_BENCHMARK.md >> "$GITHUB_STEP_SUMMARY"
           fi
-      - name: Persist benchmark report
+      - name: Persist benchmark report without stale-branch merge conflicts
         if: always()
         run: |
-          if [ -f reports/FANTASIA_ECG_BENCHMARK.md ]; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add -f reports/FANTASIA_ECG_BENCHMARK.md reports/fantasia_ecg_benchmark.json
-            if ! git diff --cached --quiet; then
-              git commit -m 'Archive independently annotated ECG benchmark'
-              git pull --rebase origin main
-              git push origin HEAD:main
-            fi
+          set -euo pipefail
+          if [ ! -f reports/FANTASIA_ECG_BENCHMARK.md ] || [ ! -f reports/fantasia_ecg_benchmark.json ]; then
+            echo "No completed report to publish"
+            exit 0
           fi
+          scratch="$(mktemp -d)"
+          cp reports/FANTASIA_ECG_BENCHMARK.md "$scratch/"
+          cp reports/fantasia_ecg_benchmark.json "$scratch/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -f -B publish-ecg-report origin/main
+            mkdir -p reports
+            cp "$scratch/FANTASIA_ECG_BENCHMARK.md" reports/
+            cp "$scratch/fantasia_ecg_benchmark.json" reports/
+            git add -f reports/FANTASIA_ECG_BENCHMARK.md reports/fantasia_ecg_benchmark.json
+            if git diff --cached --quiet; then
+              echo "Benchmark report already published"
+              exit 0
+            fi
+            git commit -m 'Archive independently annotated ECG benchmark [skip ci]'
+            if git push origin HEAD:main; then
+              echo "Benchmark report published"
+              exit 0
+            fi
+            echo "Concurrent repository update; retrying publication ($attempt/3)"
+            sleep $((attempt * 2))
+          done
+          echo "Unable to publish benchmark report after three attempts" >&2
+          exit 1
       - uses: actions/upload-artifact@v4
         if: always()
         with:
