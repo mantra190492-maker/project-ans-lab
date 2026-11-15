@@ -24,7 +24,65 @@
         "No longitudinal clinical outcomes"
       ],
       "priority": "high",
-      "status": "source identified; data analysis not yet run"
+      "status": "20 real participant ECG/BP recordings processed; 19 preliminary ECG QC passes, 12 exploratory BRS outputs; 0 clinically validated biomarkers"
+    },
+    {
+      "id": "physionet-fantasia-v1",
+      "name": "Fantasia Database",
+      "url": "https://physionet.org/content/fantasia/1.0.0/",
+      "doi": "10.13026/C2RG61",
+      "license": "ODC-By-1.0",
+      "access": "open",
+      "signals": [
+        "ECG",
+        "respiration",
+        "uncalibrated continuous noninvasive BP in 20 of 40 records"
+      ],
+      "demographics": [
+        "young 21-34 (20 participants)",
+        "older 68-85 (20 participants)",
+        "balanced men/women within age groups"
+      ],
+      "reported_sample_size": 40,
+      "annotations": [
+        "manually verified beat annotations: *.ecg, 250 Hz"
+      ],
+      "limitations": [
+        "Two-hour resting recordings",
+        "Uncalibrated BP unsuitable for absolute mmHg BRS without independent calibration",
+        "No prospective outcomes",
+        "Small, selected sample",
+        "Not pregnancy/menopause/stents/athletes/children cohort"
+      ],
+      "priority": "critical",
+      "status": "Primary candidate for independent ECG R-peak detection validation; not yet benchmarked"
+    },
+    {
+      "id": "shhs-nsrr",
+      "name": "Sleep Heart Health Study via National Sleep Research Resource",
+      "url": "https://sleepdata.org/datasets/shhs",
+      "access": "registration_and_data_use_process",
+      "signals": [
+        "polysomnography includes ECG; waveform availability must be linked to clinical data"
+      ],
+      "demographics": [
+        "age 40+",
+        "sex",
+        "clinical covariates and sleep exposures"
+      ],
+      "reported_sample_size": 6441,
+      "outcomes": [
+        "adjudicated CVD events in linked data",
+        "mortality follow-up"
+      ],
+      "limitations": [
+        "Verification of individual outcome-variable accessibility and ECG continuity required",
+        "Night-time/sleep measurement context differs from resting supine dataset",
+        "No verified beat-to-beat BP for the proposed BRS analysis",
+        "Access not yet obtained"
+      ],
+      "priority": "high",
+      "status": "Candidate for prospective HRV outcome modelling, not yet approved/linked"
     }
   ]
 }
