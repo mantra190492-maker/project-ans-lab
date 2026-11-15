@@ -13,186 +13,186 @@
   "by_tie_rule": {
     "random": {
       "primary_costa_pip": {
-        "n_recordings": 36,
-        "spearman_250_vs_125": 0.957014157014157,
-        "mean_shift_pp": 4.811210109951931,
-        "sd_shift_pp": 2.383288012339355,
+        "n_recordings": 37,
+        "spearman_250_vs_125": 0.9523470839260312,
+        "mean_shift_pp": 5.09827511646188,
+        "sd_shift_pp": 2.5830357206402965,
         "min_shift_pp": 0.6666666666666714,
-        "max_shift_pp": 10.259433962264154,
-        "spearman_shift_vs_log_rmssd": -0.876962676962677,
+        "max_shift_pp": 10.44320651782759,
+        "spearman_shift_vs_log_rmssd": -0.8238501659554291,
         "checks": {
           "rank_agreement": true,
           "small_mean_shift": false,
           "shift_independent_of_hrv": false
         },
         "decision": "FAIL",
-        "n_participants": 36,
+        "n_participants": 37,
         "participant_cluster_bootstrap_95ci": {
           "spearman_250_vs_125": [
-            0.8914639464211069,
-            0.9793287656021632
+            0.88552713084218,
+            0.9779017091677943
           ],
           "mean_shift_pp": [
-            4.0576047256748256,
-            5.589177867239768
+            4.291205007668933,
+            5.97251262055324
           ],
           "spearman_shift_vs_log_rmssd": [
-            -0.9522880690101478,
-            -0.7240394132142542
+            -0.9453411665535102,
+            -0.6060684467403663
           ]
         }
       },
       "hard_inflection_rate": {
-        "n_recordings": 36,
-        "spearman_250_vs_125": 0.9595881595881596,
-        "mean_shift_pp": -3.1555981987271564,
-        "sd_shift_pp": 1.772921594830863,
+        "n_recordings": 37,
+        "spearman_250_vs_125": 0.9653864390706496,
+        "mean_shift_pp": -3.0012485992655535,
+        "sd_shift_pp": 2.0550042037946863,
         "min_shift_pp": -7.826086956521742,
-        "max_shift_pp": 1.2382075471698073,
-        "spearman_shift_vs_log_rmssd": 0.2398970398970399,
+        "max_shift_pp": 3.5603026257231853,
+        "spearman_shift_vs_log_rmssd": 0.12707444286391653,
         "checks": {
           "rank_agreement": true,
           "small_mean_shift": false,
           "shift_independent_of_hrv": true
         },
         "decision": "FAIL",
-        "n_participants": 36,
+        "n_participants": 37,
         "participant_cluster_bootstrap_95ci": {
           "spearman_250_vs_125": [
-            0.8920442279640066,
-            0.9816876626827729
+            0.9066216006957147,
+            0.9830563033501448
           ],
           "mean_shift_pp": [
-            -3.746467736069951,
-            -2.5757844031785186
+            -3.600726436970752,
+            -2.315319833749156
           ],
           "spearman_shift_vs_log_rmssd": [
-            -0.16636775943695864,
-            0.6480246741515033
+            -0.28459238173088935,
+            0.551361528309766
           ]
         }
       }
     },
     "floor": {
       "primary_costa_pip": {
-        "n_recordings": 36,
-        "spearman_250_vs_125": 0.9703989703989705,
-        "mean_shift_pp": 4.251418143447937,
-        "sd_shift_pp": 1.815555563221454,
+        "n_recordings": 37,
+        "spearman_250_vs_125": 0.9675201517306778,
+        "mean_shift_pp": 4.440648906012415,
+        "sd_shift_pp": 1.800176051218247,
         "min_shift_pp": 0.7777777777777786,
         "max_shift_pp": 7.91805094130676,
-        "spearman_shift_vs_log_rmssd": -0.8404118404118405,
+        "spearman_shift_vs_log_rmssd": -0.7676623992413465,
         "checks": {
           "rank_agreement": true,
           "small_mean_shift": false,
           "shift_independent_of_hrv": false
         },
         "decision": "FAIL",
-        "n_participants": 36,
+        "n_participants": 37,
         "participant_cluster_bootstrap_95ci": {
           "spearman_250_vs_125": [
-            0.925151149389013,
-            0.9868320406950888
+            0.9115440396919571,
+            0.9866860823378483
           ],
           "mean_shift_pp": [
-            3.6445868991973107,
-            4.8366491294852985
+            3.8679903844227987,
+            5.012325809168765
           ],
           "spearman_shift_vs_log_rmssd": [
-            -0.9240224177825312,
-            -0.6704066608391102
+            -0.895801737683473,
+            -0.5260365926101944
           ]
         }
       },
       "hard_inflection_rate": {
-        "n_recordings": 36,
-        "spearman_250_vs_125": 0.9564993564993566,
-        "mean_shift_pp": -4.148238641628728,
-        "sd_shift_pp": 1.9663463081811299,
+        "n_recordings": 37,
+        "spearman_250_vs_125": 0.9611190137505926,
+        "mean_shift_pp": -4.169286769602811,
+        "sd_shift_pp": 1.8910627254375927,
         "min_shift_pp": -8.909574468085104,
         "max_shift_pp": -0.8296460176991118,
-        "spearman_shift_vs_log_rmssd": 0.8213642213642214,
+        "spearman_shift_vs_log_rmssd": 0.6998577524893314,
         "checks": {
           "rank_agreement": true,
           "small_mean_shift": false,
           "shift_independent_of_hrv": false
         },
         "decision": "FAIL",
-        "n_participants": 36,
+        "n_participants": 37,
         "participant_cluster_bootstrap_95ci": {
           "spearman_250_vs_125": [
-            0.8783082199140725,
-            0.9857936659064495
+            0.8980133850473939,
+            0.9854767515409825
           ],
           "mean_shift_pp": [
-            -4.819238355974421,
-            -3.519931548760332
+            -4.776850563054023,
+            -3.5601445059082955
           ],
           "spearman_shift_vs_log_rmssd": [
-            0.6389234042896982,
-            0.9086044410018074
+            0.3957558123346082,
+            0.8761175548131819
           ]
         }
       }
     },
     "half_even": {
       "primary_costa_pip": {
-        "n_recordings": 36,
-        "spearman_250_vs_125": 0.9446589446589446,
-        "mean_shift_pp": 6.3371609292564655,
-        "sd_shift_pp": 2.6417595521025743,
+        "n_recordings": 37,
+        "spearman_250_vs_125": 0.9423897581792318,
+        "mean_shift_pp": 6.545478760189278,
+        "sd_shift_pp": 2.6999975295178205,
         "min_shift_pp": 1.4091245604293903,
         "max_shift_pp": 12.794811320754718,
-        "spearman_shift_vs_log_rmssd": -0.8126126126126128,
+        "spearman_shift_vs_log_rmssd": -0.748696064485538,
         "checks": {
           "rank_agreement": true,
           "small_mean_shift": false,
           "shift_independent_of_hrv": false
         },
         "decision": "FAIL",
-        "n_participants": 36,
+        "n_participants": 37,
         "participant_cluster_bootstrap_95ci": {
           "spearman_250_vs_125": [
-            0.874610955731679,
-            0.9757391179336419
+            0.8674901590571253,
+            0.9741044479343787
           ],
           "mean_shift_pp": [
-            5.464295808625314,
-            7.19122749365186
+            5.70164302349447,
+            7.413685017110556
           ],
           "spearman_shift_vs_log_rmssd": [
-            -0.9369736502195816,
-            -0.5937765835284708
+            -0.9137832811319953,
+            -0.47136314975615584
           ]
         }
       },
       "hard_inflection_rate": {
-        "n_recordings": 36,
-        "spearman_250_vs_125": 0.9106821106821108,
-        "mean_shift_pp": -5.7890786930079745,
-        "sd_shift_pp": 2.6210784292053906,
+        "n_recordings": 37,
+        "spearman_250_vs_125": 0.9236605026078709,
+        "mean_shift_pp": -5.771190203514001,
+        "sd_shift_pp": 2.5781063820449766,
         "min_shift_pp": -12.289855072463773,
         "max_shift_pp": -1.0365853658536608,
-        "spearman_shift_vs_log_rmssd": 0.7480051480051481,
+        "spearman_shift_vs_log_rmssd": 0.615931721194879,
         "checks": {
           "rank_agreement": true,
           "small_mean_shift": false,
           "shift_independent_of_hrv": false
         },
         "decision": "FAIL",
-        "n_participants": 36,
+        "n_participants": 37,
         "participant_cluster_bootstrap_95ci": {
           "spearman_250_vs_125": [
-            0.785173895103365,
-            0.9654293806319256
+            0.8180748019465008,
+            0.9693152117695997
           ],
           "mean_shift_pp": [
-            -6.659295616033001,
-            -4.944906498202615
+            -6.567416058255633,
+            -4.968059497664166
           ],
           "spearman_shift_vs_log_rmssd": [
-            0.4524238152609047,
-            0.915920716918593
+            0.26187082312842835,
+            0.8841165972635338
           ]
         }
       }
@@ -240,20 +240,6 @@
       "hard_shift_pp": -3.062787136294027,
       "soft_share_250": 25.61881188118812,
       "soft_share_125": 43.821391484942886
-    },
-    {
-      "record": "f1y04",
-      "age_group": "young_21_34",
-      "n_beats": 1371,
-      "rmssd_ms": 101.16556454389514,
-      "pip_250": 73.22083639031548,
-      "pip_125": 75.34849596478357,
-      "pip_shift_pp": 2.1276595744680833,
-      "hard_250": 70.96774193548387,
-      "hard_125": 69.42815249266862,
-      "hard_shift_pp": -1.539589442815256,
-      "soft_share_250": 3.006012024048096,
-      "soft_share_125": 7.789678675754625
     },
     {
       "record": "f1y05",
@@ -310,20 +296,6 @@
       "hard_shift_pp": -3.8855909336211525,
       "soft_share_250": 13.118062563067609,
       "soft_share_125": 25.213270142180093
-    },
-    {
-      "record": "f1y09",
-      "age_group": "young_21_34",
-      "n_beats": 2107,
-      "rmssd_ms": 36.03439897845777,
-      "pip_250": 52.759276879162705,
-      "pip_125": 58.03996194100856,
-      "pip_shift_pp": 5.280685061845858,
-      "hard_250": 43.868821292775664,
-      "hard_125": 40.874524714828894,
-      "hard_shift_pp": -2.99429657794677,
-      "soft_share_250": 16.771866546438233,
-      "soft_share_125": 29.508196721311474
     },
     {
       "record": "f1y10",
@@ -452,6 +424,20 @@
       "soft_share_125": 31.946222791293213
     },
     {
+      "record": "f1o09",
+      "age_group": "older_68_85",
+      "n_beats": 1276,
+      "rmssd_ms": 65.62320504595597,
+      "pip_250": 68.3794466403162,
+      "pip_125": 71.72413793103448,
+      "pip_shift_pp": 3.3446912907182735,
+      "hard_250": 57.994323557237465,
+      "hard_125": 54.966887417218544,
+      "hard_shift_pp": -3.0274361400189207,
+      "soft_share_250": 11.416184971098266,
+      "soft_share_125": 20.192307692307693
+    },
+    {
       "record": "f1o10",
       "age_group": "older_68_85",
       "n_beats": 2112,
@@ -578,6 +564,20 @@
       "soft_share_125": 25.902335456475583
     },
     {
+      "record": "f2y10",
+      "age_group": "young_21_34",
+      "n_beats": 1845,
+      "rmssd_ms": 50.31352857371553,
+      "pip_250": 34.89855072463768,
+      "pip_125": 43.95161290322581,
+      "pip_shift_pp": 9.053062178588128,
+      "hard_250": 24.600456621004565,
+      "hard_125": 22.089041095890412,
+      "hard_shift_pp": -2.5114155251141526,
+      "soft_share_250": 28.40531561461794,
+      "soft_share_125": 49.27916120576671
+    },
+    {
       "record": "f2o01",
       "age_group": "older_68_85",
       "n_beats": 1991,
@@ -632,6 +632,20 @@
       "hard_shift_pp": -3.4977064220183465,
       "soft_share_250": 18.385650224215247,
       "soft_share_125": 31.72978505629478
+    },
+    {
+      "record": "f2o05",
+      "age_group": "older_68_85",
+      "n_beats": 2279,
+      "rmssd_ms": 9.832311869504483,
+      "pip_250": 66.30824372759857,
+      "pip_125": 76.75145024542616,
+      "pip_shift_pp": 10.44320651782759,
+      "hard_250": 30.79661771250556,
+      "hard_125": 34.35692033822875,
+      "hard_shift_pp": 3.5603026257231853,
+      "soft_share_250": 53.24324324324324,
+      "soft_share_125": 55.116279069767444
     },
     {
       "record": "f2o06",
@@ -706,21 +720,17 @@
   ],
   "excluded": [
     {
-      "record": "f1o09",
-      "reason": "HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f1o09.ecg"
+      "record": "f1y04",
+      "reason": "HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f1y04.ecg"
+    },
+    {
+      "record": "f1y09",
+      "reason": "HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f1y09.ecg"
     },
     {
       "record": "f2y02",
       "reason": "ValueError: Unexpected sampling rate 333"
-    },
-    {
-      "record": "f2y10",
-      "reason": "HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f2y10.ecg"
-    },
-    {
-      "record": "f2o05",
-      "reason": "HTTPError: 502 Server Error: Bad Gateway for url: https://physionet.org/files/fantasia/1.0.0/f2o05.ecg"
     }
   ],
-  "generated_utc": "2026-11-15T16:53:25.293010+00:00"
+  "generated_utc": "2026-11-15T16:59:54.561024+00:00"
 }
