@@ -4,11 +4,11 @@ This folder is an **independent wearable engineering experiment**. It does not c
 
 **Objective:** Test what physiological information survives realistic wrist-device sampling, noise and missingness. **NOT** a wearable diagnosis or validated ANS biomarker.
 
-## Seven-layer architecture
+## Engineering checkpoints (not the discovery hypothesis)
 
-| Layer | Purpose | Present status |
+| Component | Purpose | Present status |
 |---|---|---|
-| L0 | Same-person source provenance and labels | Synthetic only; public wrist dataset adapter pending |
+| L0 | Same-person source provenance and labels | Paired real WESAD wrist/chest recordings processed; stress-task labels only, no clinical disease labels |
 | L1 | Watch acquisition profile | 25 Hz PPG/accelerometer, 1 Hz EDA; optional temperature with explicit assumed cadence |
 | L2 | Artifacts | Seeded optical noise, motion-linked interference, missing PPG |
 | L3 | Quality checks | Stream consistency and data-coverage gate |
@@ -25,22 +25,22 @@ This folder is an **independent wearable engineering experiment**. It does not c
 ## Run in repository root
 
 ```bash
-python -m pip install -r requirements.txt pytest
+python -m pip install -r requirements.txt pytest neurokit2 remotezip
 python -m pytest -q wearable/tests
 python -m wearable.experiments.watch_sim_001
 ```
 
 Produces `wearable/reports/WATCH_SIM_001.json` from **synthetic** signals only (no patient records or smartwatch).
 
-## Next real-data step
+## Real-data source and clinical validation gap
 
-WESAD provides simultaneous wrist E4 blood-volume pulse (64 Hz), EDA (4 Hz), temperature (4 Hz), accelerometer (32 Hz), and chest ECG/respiration (700 Hz). Load each person *locally* after checking research use conditions; do not commit raw person-level source data or pass restricted data to public workflows. Do not combine our other ECG/BP cohort with WESAD as though they were the same participants.
+WESAD provides simultaneous wrist E4 blood-volume pulse (64 Hz), EDA (4 Hz), temperature (4 Hz), accelerometer (32 Hz), and chest ECG/respiration (700 Hz). Use the original source only within its scientific/noncommercial research terms. Our controlled GitHub runners download directly from the official source; no participant-level recordings, beat arrays or personal signals are committed or published. Do not combine our other ECG/BP cohort with WESAD as though they were the same participants.
 
 Before computing pulse-HRV, independently validate PPG peaks against the *same person's* reference ECG. Before any ANS diagnostic accuracy claim, use independently assessed autonomic dysfunction/progression labels. WESAD's labels denote stress-related task states, **not ANS disease**.
 
 Sources: [Samsung SDK](https://developer.samsung.com/health/sensor/guide/introduction.html), [Samsung specifications](https://developer.samsung.com/health/sensor/guide/data-specifications.html), [WESAD UCI](https://archive.ics.uci.edu/dataset/465/wesad%2Awearable%2Astress%2Aand%2Aaffect%2Adetection).
 
-**Privacy:** The only committed outputs are aggregate diagnostics of artificial signals. Do not upload clinical waveforms, personal IDs, or restricted outcome records.
+**Privacy:** Committed results comprise aggregate diagnostics from both synthetic experiments and original WESAD paired recordings. No raw physiological waveforms or person-level records are committed. Never upload restricted records or identifiers.
 
 ## External clinical-reference accuracy layer
 
@@ -49,3 +49,15 @@ The specialist measurements selected by the founder (MSNA, cardiac sympathetic i
 ## Real-data wrist/chest experiment (2026-11-15)
 
 [WATCH-REAL-003 findings](reports/WATCH_REAL_003_FINDINGS.md): the first original-WESAD two-participant pilot completed. It exposed large discrepancies between automatically detected wrist-pulse and ECG heart rates and **failed 4/4 pulse-delay calibrations**. Beat-level F1 is withheld and clinical ANS/EDS accuracy is unmeasured. This is a measurement-method failure requiring further validation, **not** evidence of a discovered biomarker.
+
+## Corrected real-data pulse extraction (November 2026)
+
+Across the 15 original WESAD volunteers, three **disjoint** pilot samples were used in sequence (2 development + 5 repaired-detector assessment + 8 independent sample-rate assessment). These are engineering tests without ANS disease labels.
+
+- [Initial 2-subject measurement failure](reports/WATCH_REAL_003_FINDINGS.md): legacy wrist peak-finder grossly undercounted pulses, especially under stress.
+- [Independent 5-subject detector repair](reports/WATCH_REPAIR_005_FINDINGS.md): 64Hz median absolute rate difference versus *algorithmic* chest ECG fell from **5.13 to 2.05 bpm** at rest, and **19.49 to 8.21 bpm** during stress.
+- [Unseen 8-subject sample-rate correction](reports/WATCH_REPAIR_006_FINDINGS.md): 25Hz direct processing stress discrepancy **23.85 bpm**, versus **7.69 bpm** after interpolating 25Hz -> 64Hz and using the same Elgendi extractor; all 8 improved in this small study.
+- The [reusable experimental extractor](signal_processing.py) now handles source-rate 25Hz and 64Hz explicitly and uses a consistent 64Hz analysis rate. It is **not clinically validated**, and interpolation does not create information missing from 25Hz recordings.
+- **Still unsolved:** wrist pulse-to-ECG one-to-one event matching and independently verified clinical reference. All 10 calibration windows in the 5-subject study were withheld; no beat-level accuracy or ANS/EDS biomarker can be claimed.
+
+For the corrected extractor use: `python -m pytest -q wearable/tests/test_signal_processing.py`. The original real-data experiment workflows preserve the frozen reproducible comparisons.
