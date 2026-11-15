@@ -58,3 +58,11 @@ def test_missing_schema_fails_loudly():
 
 def test_small_groups_suppressed_in_markdown():
     assert "1: <5" in counts_display({"1":3,"0":989})
+
+def test_optional_holter_rhythm_absent_from_source():
+    source=rows()
+    for item in source:
+        item.pop("Holter rhythm ")
+    report=summarize(source)
+    assert report["holter_rhythm_status"]=="not_found_in_metadata_header"
+    assert report["field_completeness"]["Holter rhythm"]==0
