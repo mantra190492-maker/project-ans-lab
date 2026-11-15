@@ -1,0 +1,52 @@
+{
+  "proposal_id": "AFDV-001",
+  "mission_id": "ANS-001",
+  "track": "discovery",
+  "candidate_name": "Autonomic Functional Deterioration Vector",
+  "claim_level": "IDEA",
+  "scientific_claim": "A within-person multi-domain change marker might identify independently confirmed cardiovagal/adrenergic autonomic deterioration earlier or more reliably than existing tests.",
+  "clinical_target": "Longitudinal worsening of cardiovagal and/or adrenergic function on independently interpreted clinical autonomic tests; no generalized ANS claim without sudomotor measurement.",
+  "population": "Not fixed: requires disease-specific inclusion criteria and controls before a clinical study.",
+  "novelty_gap": "UNVERIFIED: within-person multi-domain recovery change and reference-based improvement must be screened for exact prior art.",
+  "reference_standard": "Autonomic reflex testing and domain-specific CASS subscores, with independently adjudicated changes; no appropriate longitudinal dataset acquired.",
+  "available_data": [
+    "PhysioNet PRCP: healthy stand/tilt ECG and BP; engineering only",
+    "PhysioNet CDED/CVES: small diseased/control challenge cohorts; independent autonomic dysfunction labels unverified"
+  ],
+  "next_falsifiable_test": "Confirm PRCP repeated-challenge timing, test-retest variation and negative controls for cardiovagal and BP features; do not calculate clinical detection accuracy.",
+  "rejection_rule": "Reject the current candidate if apparent deterioration lies within measurement noise or fails to add blinded clinically important discrimination relative to established reflex tests once ground-truth data become available.",
+  "monthly_budget_usd": 0,
+  "gates": {
+    "G1_TARGET": {
+      "status": "PARTIAL",
+      "evidence_ref": "docs/FORMULATION_001_AUTONOMIC_FUNCTION_DETERIORATION.md",
+      "note": "Needs a narrowly specified disorder and study population"
+    },
+    "G2_PRIOR_ART": {
+      "status": "OPEN",
+      "evidence_ref": "docs/NOVELTY_RESET_2026-11-15.md",
+      "note": "Exact formula-and-application novelty not established"
+    },
+    "G3_REFERENCE": {
+      "status": "BLOCKED",
+      "evidence_ref": "docs/EXPERIMENT_002_ANS_DYSFUNCTION_MEASUREMENT_GATE.md",
+      "note": "No accessible paired repeated clinical CASS deterioration cohort"
+    },
+    "G4_ANALYTICAL": {
+      "status": "OPEN",
+      "evidence_ref": ".github/workflows/prcp-annotation-preflight.yml",
+      "note": "PRCP repeatability and ABP alignment have not been validated"
+    },
+    "G5_INCREMENTAL": {
+      "status": "BLOCKED",
+      "evidence_ref": "docs/EXPERIMENT_002_ANS_DYSFUNCTION_MEASUREMENT_GATE.md",
+      "note": "No independent clinical outcomes or measured comparator yet"
+    },
+    "G6_REPLICATION": {
+      "status": "BLOCKED",
+      "evidence_ref": "docs/EXPERIMENT_002_ANS_DYSFUNCTION_MEASUREMENT_GATE.md",
+      "note": "No positive finding to replicate"
+    }
+  },
+  "founder_authorized_mission_change": false
+}
