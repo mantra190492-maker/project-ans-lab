@@ -66,3 +66,12 @@ def test_optional_holter_rhythm_absent_from_source():
     report=summarize(source)
     assert report["holter_rhythm_status"]=="not_found_in_metadata_header"
     assert report["field_completeness"]["Holter rhythm"]==0
+
+def test_double_space_holter_rhythm_header_from_real_metadata():
+    sample=rows()
+    for item in sample:
+        item["Holter  rhythm"]=item.pop("Holter rhythm ")
+    report=summarize(sample)
+    assert report["holter_rhythm_source_column"]=="Holter  rhythm"
+    assert report["field_completeness"]["Holter rhythm"]==992
+    assert report["holter_rhythm_codes"]["0"]==992
