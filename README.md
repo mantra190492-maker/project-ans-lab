@@ -6,7 +6,11 @@
 
 **Status: early research, NOT a clinically validated autonomic dysfunction detector.** A validated clinical autonomic reflex screen and CASS already exist. ECG/BP measures only cardiovagal and adrenergic responses; sudomotor assessment needs additional tests. No predictive clinical-deterioration model has been validated.
 
-**[Primary research formulation — detect ANS functional deterioration](docs/FORMULATION_001_AUTONOMIC_FUNCTION_DETERIORATION.md)**. We propose domain-specific repeat-visit changes compared with clinical autonomic-reflex/CASS standards. This is a hypothesis, not a proven new marker.
+**[Earlier AFDV formulation — parked](docs/FORMULATION_001_AUTONOMIC_FUNCTION_DETERIORATION.md).** This unvalidated multi-domain score is not being developed while SHHS-HRF-001 is the active hypothesis.
+
+**Sole active discovery hypothesis (2026-11-15):** [SHHS-HRF-001 — baseline nighttime fragmentation predicting subsequent change in respiration-linked cardiac-autonomic physiology](docs/SHHS_HRF_LONGITUDINAL_HYPOTHESIS_001.md). **This is a longitudinal physiological-proxy experiment, not yet a clinical dysfunction biomarker.** Access to restricted SHHS/MrOS records is not approved. The broader AFDV score is **parked**, not the active project.
+
+**Measurement gate passed on public author fixtures:** [Independent Costa-style algorithm](anslab/hrf_costa_reference.py) matched original AWK PIP/PNNSS/PNNLS counts on all [three official test cases](reports/HRF_DIFFERENTIAL_TEST.md). [Real corrected Fantasia pilot](reports/FANTASIA_HRF_PILOT.md): three usable annotated records showed a 4.25–9.62 percentage-point shift from the earlier provisional method. The fourth was excluded. The [previous NN-only PIP](anslab/heart_rate_fragmentation.py) is **legacy/non-reference-equivalent**.
 
 ## Research overview
 
