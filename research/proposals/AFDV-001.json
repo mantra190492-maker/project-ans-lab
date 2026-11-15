@@ -48,5 +48,7 @@
       "note": "No positive finding to replicate"
     }
   },
-  "founder_authorized_mission_change": false
+  "founder_authorized_mission_change": false,
+  "development_status": "PARKED_NOT_ACTIVE",
+  "parking_reason": "SHHS-HRF-001 is the sole active falsifiable longitudinal discovery candidate; AFDV is unvalidated, clinically unanchored, and not authorized for new work."
 }
