@@ -1,0 +1,11 @@
+data/raw/
+data/local/
+*.pkl
+*.pickle
+*.edf
+*.dat
+*.hea
+*.csv
+*.zip
+__pycache__/
+.pytest_cache/
