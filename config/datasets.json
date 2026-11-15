@@ -124,7 +124,7 @@
         "Baseline HRV may be missing in non-Holter participants"
       ],
       "priority": "critical",
-      "status": "Official subject-info.csv and code dictionary inspected; run aggregate-only local metadata audit next; raw ECG and patient-level modeling not run"
+      "status": "Aggregate-only public metadata audit completed (2026-11-15): 992 participants; 587 with baseline SDNN/RMSSD; 176 prior percutaneous or combined revascularization (not confirmed stents); outcomes/censoring available but no predictive model fitted"
     },
     {
       "id": "icpsr-midus2-biomarker",
