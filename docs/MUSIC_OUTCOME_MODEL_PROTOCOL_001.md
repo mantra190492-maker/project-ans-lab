@@ -56,3 +56,17 @@ After data validation and predefined eligibility:
 - [Official categorical coding](https://physionet.org/content/music-sudden-cardiac-death/1.0.1/subject-info_codes.csv)
 - [Agent 02 evidence audit](AGENT_02_SKEPTICAL_ASSESSMENT_AUDIT.md)
 - [First aggregate metadata audit](../reports/MUSIC_METADATA_AUDIT.md)
+
+## 2026-11-15 multi-agent protocol safety addendum (no model fitted)
+
+The uploaded external *MUSIC prediction protocol* (9 pages) strengthens the baseline comparator but must not be copied verbatim. See [four-agent adjudication](EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md).
+
+1. **Clinical endpoints are not interchangeable.** Primary prospective model design remains **all-cause death**, with transplantation treated using a prespecified clinically justified estimand (e.g., transplant as censor/competing event plus sensitivity analyses). A separate **cardiac-death-or-transplant** composite may be scientifically interesting but must never be titled simply "cardiac death." Cardiac death by cause and 4-year cardiac-event risk require proper competing-event handling.
+2. **Source count accuracy:** `Cause of death` code `0` is NOT adequate to prove survival among all 992 patients; cross-tab with the raw `Exit of the study` field. The [MUSIC aggregate audit](../reports/MUSIC_METADATA_AUDIT.md) includes this cross-tab after the November 15 correction. Blank exit codes must remain visible; do not silently assume `0`.
+3. **Covariates:** Actual `subject-info.csv` **does include `Betablockers (yes=1)` and other drug columns**, contrary to the external agent's unresolved speculation; an institutional 2003–2004 treatment cohort may still lack time-varying exposure information.
+4. **Stronger comparison:** Freeze M0 clinical severity + demographics + therapy, M1 + mean heart rate and conventional HRV, **M2 + validated deceleration capacity**, **M3 + reference-faithful PIP**. The incremental comparison **M3 vs M2** is the strongest relevant test. Avoid overfitting if the eligible event count is too small for all parameters.
+5. **Definition consistency:** Costa 2018 mapped NN changes to -1 / 0 / +1 using approximately 4 ms ECG resolution at 256 Hz, then counted ternary transitions. A raw unquantized `ΔNN(i)×ΔNN(i+1)≤0` test is not automatically equivalent at a different sampling rate. Include published-method agreement tests and 4/5/8 ms sensitivity *before* opening outcomes.
+6. **Risk of optimism:** The 607-person MUSIC sinus-rhythm heart-rate turbulence analysis (129 deaths, 52 sudden) is **not** the same population as 587 participants with available standard HRV, nor the final rhythm/QC-qualified HRF sample. Require a pre-outcome count audit and subject-level exclusion log.
+7. **Research claim:** Success would be *independent incremental prediction/transportability of existing HRF methods*, not discovery of a never-used autonomic biomarker. Future invention work requires the [novelty-reset gate](NOVELTY_RESET_2026-11-15.md).
+
+**No prospective survival model is yet validated or preregistered in an independent research registry.**
