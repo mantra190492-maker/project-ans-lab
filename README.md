@@ -21,6 +21,8 @@
 - **[Project ANS independent research review (Agents 3–7 topics)](docs/INDEPENDENT_BIOMARKER_REVIEW_2026-11-15.md)** — biomarker discovery, BRS method validation, outcome prediction, dynamic recovery, falsification/novelty.
 - [External Agent 01 — source integrity audit](docs/AGENT_01_EVIDENCE_REVIEW.md).
 - [External Agent 02 — skeptical research assessment audit](docs/AGENT_02_SKEPTICAL_ASSESSMENT_AUDIT.md).
+- [External Agents 04–07 — BRS, MUSIC, dynamic recovery and independent red-team adjudication](docs/EXTERNAL_AGENTS_BRS_MUSIC_RECOVERY_REDTEAM_2026-11-15.md).
+- [Originality decision and prior-art reset](docs/NOVELTY_RESET_2026-11-15.md).
 
 ## Core research decision
 
