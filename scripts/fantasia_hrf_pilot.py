@@ -54,14 +54,29 @@ def one_record(name, directory):
     labels=[s for _,s in pairs]
     rr, valid=annotation_intervals(times,labels,fs)
     n_eligible=int(valid.sum())
-    base=fragmentation_features(rr, validated_sinus=True, valid_mask=valid,
-                                quantization_ms=4.0,min_clean_intervals=200)
-    sensitive=fragmentation_features(rr, validated_sinus=True, valid_mask=valid,
-                                     quantization_ms=8.0,min_clean_intervals=200)
+    plausibility=np.isfinite(rr) & (rr>=300) & (rr<=2000)
+    clean=valid & plausibility
+    diagnostics={
+        "record":name,"age_band":"21-34" if "y" in name else "68-85",
+        "sampling_hz":fs,"window_s":DURATION_S,
+        "annotated_beats":len(pairs),
+        "non_normal_beat_annotations":int(sum(x!="N" for x in labels)),
+        "intervals_with_normal_beat_endpoints":n_eligible,
+        "physiologically_plausible_intervals":int(plausibility.sum()),
+        "intervals_passing_all_checks":int(clean.sum()),
+        "preflight_clean_fraction":round(float(np.mean(clean)),4),
+    }
+    try:
+        base=fragmentation_features(rr, validated_sinus=True, valid_mask=valid,
+                                    quantization_ms=4.0,min_clean_intervals=200)
+        sensitive=fragmentation_features(rr, validated_sinus=True, valid_mask=valid,
+                                         quantization_ms=8.0,min_clean_intervals=200)
+    except ValueError as error:
+        return {**diagnostics,"status":"qc_excluded",
+                "qc_exclusion_reason":str(error),
+                "clinical_validation":"none; QC exclusion, no measurement reported"}
     return {
-        "record":name, "status":"processed","age_band":"21-34" if "y" in name else "68-85",
-        "sampling_hz":fs, "window_s":DURATION_S,
-        "annotated_beats":len(pairs),"intervals_with_normal_beat_endpoints":n_eligible,
+        **diagnostics,"status":"processed",
         "candidate_pip_4ms":round(base["pip_percent"],3),
         "candidate_pip_8ms":round(sensitive["pip_percent"],3),
         "candidate_w1_4ms":round(base["w1_percent"],3),
@@ -99,16 +114,19 @@ def main():
         "**Engineering-only results: these values do not predict disease, ageing rate, or longevity.**",
         "All subjects were screened healthy and recorded while resting and watching a film.",
         "Inputs are visually verified beat annotation files; no patient-level waveforms or identifiers were committed.",
-        "", "| Record | Published age band | Annotated beats | PIP 4 ms | PIP 8 ms | W1 4 ms | RMSSD (ms) | Data status |",
-        "|---|---|---:|---:|---:|---:|---:|---|"]
+        "", "| Record | Published age band | Annotated beats | QC eligible | PIP 4 ms | PIP 8 ms | W1 4 ms | RMSSD (ms) | Data status |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---|"]
     for r in results:
         if r["status"]=="processed":
-            lines.append(f"| {r['record']} | {r['age_band']} | {r['annotated_beats']} | {r['candidate_pip_4ms']:.2f}% | {r['candidate_pip_8ms']:.2f}% | {r['candidate_w1_4ms']:.2f}% | {r['candidate_rmssd_ms']:.2f} | Processed |")
+            lines.append(f"| {r['record']} | {r['age_band']} | {r['annotated_beats']} | {r['preflight_clean_fraction']:.1%} | {r['candidate_pip_4ms']:.2f}% | {r['candidate_pip_8ms']:.2f}% | {r['candidate_w1_4ms']:.2f}% | {r['candidate_rmssd_ms']:.2f} | Processed |")
+        elif r["status"]=="qc_excluded":
+            lines.append(f"| {r['record']} | {r['age_band']} | {r['annotated_beats']} | {r['preflight_clean_fraction']:.1%} | — | — | — | — | Withheld: {r['qc_exclusion_reason']} |")
         else:
-            lines.append(f"| {r['record']} | n/a | — | — | — | — | — | Failed: {r['error_type']} |")
+            lines.append(f"| {r['record']} | n/a | — | — | — | — | — | — | Failure: {r['error_type']} |")
     lines += ["", "## Interpretive gates",
         "- Sampling-resolution sensitivity is reported because changing the ternary difference threshold changes PIP even with the same biology.",
         "- Beat types other than N are excluded without joining disconnected intervals across gaps.",
+        "- Per-record preflight counts distinguish non-N beat annotations and implausible intervals. An excluded record is NOT reclassified as healthy by relaxing quality rules.",
         "- Fantasia labels are visually verified but this does not prove all sinus intervals are free of physiological complexity.",
         "- Four selected healthy participants cannot establish group difference, prognostic accuracy or a clinical cut-off.",
         "- This result **must not** be used to train an age score, infer disease or claim mortality prediction.",
