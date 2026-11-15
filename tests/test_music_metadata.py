@@ -6,6 +6,7 @@ def rows(n=992):
         "Patient ID": "",
         "Follow-up period from enrollment (days)": "1000",
         "Cause of death": "0",
+        "Exit of the study": "",
         "Age": "62",
         "Gender (male=1)": "1",
         "Body Mass Index (Kg/m2)": "26",
@@ -75,3 +76,15 @@ def test_double_space_holter_rhythm_header_from_real_metadata():
     assert report["holter_rhythm_source_column"]=="Holter  rhythm"
     assert report["field_completeness"]["Holter rhythm"]==992
     assert report["holter_rhythm_codes"]["0"]==992
+
+def test_exit_and_cause_cross_tab_preserves_blanks():
+    source=rows()
+    source[0]["Exit of the study"]="2"
+    source[1]["Exit of the study"]="1"
+    source[2]["Exit of the study"]="3"
+    source[2]["Cause of death"]="3"
+    report=summarize(source)
+    assert report["exit_of_study_codes"]["2"]==1
+    assert report["exit_of_study_codes"]["<blank>"]==989
+    assert report["exit_cause_joint_counts"]["exit=2;cause=0"]==1
+    assert sum(report["exit_cause_joint_counts"].values())==992
