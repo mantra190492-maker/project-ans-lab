@@ -1,0 +1,48 @@
+{
+  "name": "galaxy_watch8_class_research_proxy",
+  "version": "WATCH-SIM-001",
+  "type": "published_SDK_profile_not_hardware_emulator",
+  "verified_source": "https://developer.samsung.com/health/sensor/guide/data-specifications.html",
+  "continuous": {
+    "ppg": {
+      "hz": 25,
+      "signal": "raw optical PPG",
+      "optical_equivalence_to_WESAD_BVP": false
+    },
+    "acc": {
+      "hz": 25,
+      "signal": "3 axis acceleration"
+    },
+    "eda": {
+      "hz": 1,
+      "availability": "Watch8+",
+      "signal": "electrodermal conductance"
+    },
+    "temperature": {
+      "hz": null,
+      "signal": "processed skin and ambient temperature",
+      "comment": "Fixed cadence not stated by vendor"
+    },
+    "hr_ibi": {
+      "hz": 1,
+      "signal": "processed heart rate and IBI",
+      "modeled": false
+    }
+  },
+  "on_demand": {
+    "ecg": {
+      "hz": 500,
+      "typical_seconds": 30,
+      "concurrent_continuous_tracker_quality": "may be invalid",
+      "modeled": false
+    }
+  },
+  "not_measured": [
+    "validated orthostatic BP",
+    "QSART",
+    "pupil reflex",
+    "independent clinical ANS diagnosis"
+  ],
+  "clinical_accuracy": "not measured",
+  "warning": "SDK measurements are for fitness and wellness, not medical diagnosis"
+}
