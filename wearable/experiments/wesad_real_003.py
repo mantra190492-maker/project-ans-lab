@@ -136,22 +136,44 @@ def one_state(ecg,bvp,labels,condition):
     c=ecg[a:a+seconds*ECG_FS];w=bvp[b:b+seconds*BVP_FS]
     if len(c)!=seconds*ECG_FS or len(w)!=seconds*BVP_FS:
         raise ValueError("Truncated simultaneous data window")
-    e=find_ecg_beats(c)
+    ecg_beats=find_ecg_beats(c)
     native=find_pulse_beats(w,BVP_FS)
-    watch=find_pulse_beats(resample_poly(w,25,64),25)
-    lag=calibrate_lag(e,native)
-    # 60s calibration. 117s held-out validation. Buffer before last 3s.
-    ref=e[(e>=60)&(e<177)]
+    reduced=find_pulse_beats(resample_poly(w,25,64),25)
+    # Define an identical 117-second evaluation window for both devices.
+    ref=ecg_beats[(ecg_beats>=60)&(ecg_beats<177)]
     b64=native[(native>=60)&(native<177)]
-    b25=watch[(watch>=60)&(watch<177)]
-    if len(ref)<50:raise ValueError("Insufficient validation reference beats")
-    raw=match_peaks(ref,b64,lag)
-    reduced=match_peaks(ref,b25,lag)
+    b25=reduced[(reduced>=60)&(reduced<177)]
+    if len(ref)<50 or len(b64)<35 or len(b25)<35:
+        raise ValueError("Insufficient validation ECG or wrist pulses")
+    window_minutes=117/60.0
+    hr_ref=len(ref)/window_minutes
+    hr_64=len(b64)/window_minutes
+    hr_25=len(b25)/window_minutes
+    # HR comparisons do not assume a known physiological pulse-transit delay.
+    lag=None
+    cal_status="withheld_unstable_ECG_to_pulse_calibration"
+    raw=None;watch=None;difference=None
+    try:
+        lag=calibrate_lag(ecg_beats,native)
+        raw=match_peaks(ref,b64,lag)
+        watch=match_peaks(ref,b25,lag)
+        difference=watch["f1"]-raw["f1"]
+        cal_status="passed_first_60_seconds_only"
+    except ValueError:
+        # This is an informative failure, not permission to optimize pulse
+        # delay on test data. Report HR discrepancies but withhold pulse F1.
+        pass
     return {"ecg_beat_f1_vs_manual":None,
-            "raw_wrist_bvp_64hz":raw,"watch_rate_bvp_25hz":reduced,
-            "f1_change_watch_minus_raw":reduced["f1"]-raw["f1"],
+            "raw_wrist_bvp_64hz":raw,"watch_rate_bvp_25hz":watch,
+            "f1_change_watch_minus_raw":difference,
+            "pulse_delay_calibration_status":cal_status,
             "estimated_pulse_delay_seconds_calibrated":lag,
-            "time_alignment":"Source sample-index synchronization, not independently established clock truth",
+            "ecg_rate_bpm":hr_ref,
+            "wrist_64hz_rate_bpm":hr_64,
+            "wrist_25hz_rate_bpm":hr_25,
+            "absolute_rate_error_64hz_bpm":abs(hr_64-hr_ref),
+            "absolute_rate_error_25hz_bpm":abs(hr_25-hr_ref),
+            "time_alignment":"WESAD sample-index time origins, not independently measured clock truth",
             "state_label":STATE_NAMES[condition],
             "data_type":"WESAD synchronized wrist/chest; automated reference ECG"}
 
@@ -205,36 +227,37 @@ def aggregate(subject_outputs,*,verified_source=False):
             "per_subject_data_committed":False,"results":{}}
     for state in STATE_NAMES.values():
         eligible=[s[state] for s in subject_outputs if s[state].get("data_type")]
-        def stat(name):
-            values=[v[name]["f1"] for v in eligible]
+        f1_eligible=[r for r in eligible if r.get("raw_wrist_bvp_64hz") is not None]
+        def summarize(values):
             return {"median":float(np.median(values)),"min":float(min(values)),
                     "max":float(max(values))} if values else None
-        delta=[v["f1_change_watch_minus_raw"] for v in eligible]
         failure_reasons={}
         for subject in subject_outputs:
-            failure = subject[state] if subject[state].get("status") == "withheld" else None
+            failure=subject[state] if subject[state].get("status")=="withheld" else None
             if failure is not None:
-                reason = failure.get("reason","unspecified")
-                # Aggregate categorical counts only; no participant IDs.
-                failure_reasons[reason] = failure_reasons.get(reason,0)+1
+                reason=failure.get("reason","unspecified")
+                failure_reasons[reason]=failure_reasons.get(reason,0)+1
         report["results"][state]={
-            "n_valid_subjects":len(eligible),
-            "n_withheld":len(subject_outputs)-len(eligible),
+            "n_rate_valid_subjects":len(eligible),
+            "n_pulse_f1_valid_subjects":len(f1_eligible),
+            "n_pulse_f1_withheld_for_calibration":len(eligible)-len(f1_eligible),
+            "n_wholly_withheld":len(subject_outputs)-len(eligible),
             "withheld_reasons_aggregate":failure_reasons,
-            "f1_bvp64":stat("raw_wrist_bvp_64hz"),
-            "f1_bvp25":stat("watch_rate_bvp_25hz"),
-            "median_25_minus_64_f1":float(np.median(delta)) if delta else None}
+            "absolute_rate_error_64hz_bpm":summarize([r["absolute_rate_error_64hz_bpm"] for r in eligible]),
+            "absolute_rate_error_25hz_bpm":summarize([r["absolute_rate_error_25hz_bpm"] for r in eligible]),
+            "f1_bvp64":summarize([r["raw_wrist_bvp_64hz"]["f1"] for r in f1_eligible]),
+            "f1_bvp25":summarize([r["watch_rate_bvp_25hz"]["f1"] for r in f1_eligible]),
+            "median_25_minus_64_f1":float(np.median([r["f1_change_watch_minus_raw"] for r in f1_eligible])) if f1_eligible else None}
     report["source_verified_original_archive"]=bool(verified_source)
-    report["status"]=(("real_recordings_processed" if any(v["n_valid_subjects"] for v in report["results"].values())
-                      else "no_quality_eligible_real_recordings") if verified_source
-                      else "unverified_source_not_claimed_as_real_data")
+    any_valid=any(v["n_rate_valid_subjects"] for v in report["results"].values())
+    report["status"]=("real_recordings_processed" if any_valid else "no_quality_eligible_real_recordings") if verified_source else "unverified_source_not_claimed_as_real_data"
     report["limitations"]=[
-        "ECG reference is automated not manually adjudicated; cannot certify true beat-finding accuracy.",
-        "Pulse transit lag fitted only on first 60s; F1 computed on held-out seconds 60-177.",
-        "One short window per state; no clinically useful confidence interval or population generalization.",
-        "WESAD states are not ANS disease diagnoses and cannot show EDS or early ANS detection.",
-        "25Hz downsampling is a sample-rate stress test, not a Samsung optical hardware emulation.",
-        "No individual traces or individual participant outputs published."]
+        "Chest ECG peaks are automatically detected and not manually adjudicated; rate error is NOT clinical validation.",
+        "All four original windows failed 0.05-0.55s pulse-delay calibration in the initial run; the timing F1 is withheld unless first-60s calibration passes.",
+        "Count-based BPM comparison does not establish one-to-one beat fidelity or optical hardware transfer.",
+        "Only two same-person WESAD recordings; no uncertainty interval or prospective generalizability.",
+        "WESAD states are not ANS disease diagnoses, and cannot establish EDS or early ANS detection.",
+        "25Hz downsampling is not a true Samsung optical model; raw waveforms or subject outputs never published."]
     return report
 
 
