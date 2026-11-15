@@ -25,16 +25,21 @@ N_BOOT = 2000
 GAIN_RULE = 0.05
 
 
-def fetch(url=URL, tries=5):
+MIRROR = URL.replace("https://physionet.org/files/", "https://physionet-open.s3.amazonaws.com/")
+
+
+def fetch(urls=(MIRROR, URL), tries=3):
+    """Open-access PhysioNet files are also served from PhysioNet's public S3 bucket; try it first."""
     last = None
     for attempt in range(tries):
-        try:
-            r = requests.get(url, timeout=60, headers={"User-Agent": "ProjectANS-Lab/0.7"})
-            r.raise_for_status()
-            return r.content.decode("utf-8-sig", errors="replace")
-        except requests.RequestException as err:
-            last = err
-            time.sleep(10 * (attempt + 1))
+        for url in urls:
+            try:
+                r = requests.get(url, timeout=30, headers={"User-Agent": "ProjectANS-Lab/0.7"})
+                r.raise_for_status()
+                return r.content.decode("utf-8-sig", errors="replace")
+            except requests.RequestException as err:
+                last = err
+        time.sleep(10 * (attempt + 1))
     raise last
 
 
