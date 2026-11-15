@@ -62,21 +62,19 @@ Before opening visit-2 outcomes, verify that respiratory phase and amplitude can
 - [Costa's HRF author source, 2024, DOI 10.13026/0mzj-gn98](https://physionet.org/content/heart-rate-fragmentation-code/1.0.0/).
 - [Original Costa HRF paper 2017](https://doi.org/10.3389/fphys.2017.00255).
 
-## Pre-access gate results — 2026-11-15 (no SHHS data used)
+## Pre-access gate results — 2026-11-15 (no SHHS data used; revised after board review)
 
-Two gates were run before any NSRR request so the protocol can be amended **before** anyone sees SHHS outcomes.
+Two engineering checks run before any NSRR request. Thresholds were agent-defined in code before the first run; they are **not** an external preregistration. Revised after the [board review](AGENT_HRF_PRE_ACCESS_PATCH_REVIEW_2026-11-15.md): tie-correct Spearman and participant-clustered CIs added; conclusions narrowed.
 
-**HRF-RES-001 — does PIP survive 125 Hz?** ([report](../reports/HRF_RESOLUTION_GATE_GUDB.md), [code](../scripts/hrf_resolution_gate.py))
-- Data: 50 public recordings (25 healthy adults × sitting and maths tasks, Glasgow GUDB, 250 Hz annotated R peaks, CC BY 3.0). Same beats re-gridded to 125 Hz; quantization only, so real 125 Hz recordings are likely worse.
-- **Costa PIP: FAIL under all three tie rules.** PIP rises 5–7 percentage points at 125 Hz, rank agreement 0.86–0.91, and the shift is larger in low-HRV recordings (Spearman −0.37 to −0.53).
-- **Hard-inflection rate: closer but FAIL.** Rank agreement 0.93–0.96, offset −1 to −4 points; fails the pre-specified bias limit, and depends on HRV under the random tie rule.
-- Implication: visit-1 Costa PIP partly measures recording resolution, in an HRV-dependent way. It cannot stay the primary predictor as written. Amendment options, to choose before data access: restrict to visit-1 recordings sampled at ≥250 Hz if any exist; switch the primary predictor to the hard-inflection rate with a resolution sensitivity analysis; or drop SHHS for a cohort with ≥250 Hz ECG at baseline.
-- Fantasia (40 adults, 30-minute windows) runs in GitHub Actions via `hrf-pre-access-gates.yml`; the sandbox that produced this report cannot reach PhysioNet.
+**HRF-RES-001 — PIP at 250 Hz vs 125 Hz on identical annotated beats** ([report](../reports/HRF_RESOLUTION_GATE_GUDB.md))
+- 50 recordings from 25 healthy adults (Glasgow GUDB, sitting and maths tasks, CC BY 3.0). Quantization only, so real 125 Hz recordings are likely worse.
+- Costa PIP rises **+5.3 to +7.0 points** at 125 Hz depending on tie rule (participant-bootstrap CIs exclude 0), and the rise is **larger at lower HRV** (Spearman −0.37 to −0.53, CIs exclude 0).
+- Hard-inflection rate keeps ranks better (0.93–0.96) with an offset of −1 to −4 points.
+- **Interpretation:** SHHS-HRF-001 measures PIP only at visit 1 under one protocol, so the offset alone does not invalidate within-SHHS prediction. The HRV-dependent part does matter: at 125 Hz, PIP partly encodes baseline vagal amplitude, which is the pathway that produces false "prediction" in HRF-NULL-001. Keep PIP as the locked primary; keep baseline HRV adjustment; preregister the hard-inflection rate as a sensitivity analysis; never compare SHHS-1 PIP values directly with 256 Hz cohorts such as MESA.
+- Not yet done: Fantasia replication (runs in GitHub Actions), beat-typed data instead of GUDB's untyped peaks.
 
-**HRF-NULL-001 — can PIP falsely predict vagal decline?** ([report](../reports/HRF_SHARED_SIGNAL_NULL.md), [code](../scripts/hrf_shared_signal_null.py))
-- Stylised simulation: 200 cohorts × 300 people per scenario; true vagal change independent of fragmentation in every null scenario.
-- **ECG-only RMSSD change: 98–100% false positives.** Do not analyse RMSSD change against PIP at all, not even as a secondary outcome.
-- **Breathing-locked RSA change: 3–8% false positives** (safe to borderline). The protocol's primary endpoint choice is the right defence, provided SHHS belts give a usable breathing phase.
-- **Power warning:** with a real effect, PIP detected it in 36% of cohorts at n = 300 (true fragmentation: 100%), because PIP mostly tracks low vagal amplitude in this model. Rough scaling suggests ~900–1,300 eligible paired participants for 80–90% power. Model-dependent; confirm after the feasibility count.
+**HRF-NULL-001 — shared-signal false-positive simulation** ([report](../reports/HRF_SHARED_SIGNAL_NULL.md))
+- In this stylised model (true vagal change independent of fragmentation), an RMSSD-change outcome "found" a PIP effect in 98–100% of cohorts; a breathing-locked RSA outcome in 3–8%.
+- **Use:** RMSSD change may appear only as a negative-control or descriptive endpoint, never as evidence for PIP. The breathing-locked RSA primary endpoint is supported, conditional on usable SHHS belt phase. Model-specific; not a real-world SHHS error rate and not a power calculation.
 
-**Decision:** HOLD the OSF preregistration until the predictor is amended for the 125 Hz problem. The NSRR access request can proceed in parallel; it does not unblind outcomes.
+**Decision:** locked question unchanged. Hold OSF preregistration until visit-1 ECG properties and respiratory-signal usability are checked without opening visit-2 outcomes. NSRR access can proceed in parallel.

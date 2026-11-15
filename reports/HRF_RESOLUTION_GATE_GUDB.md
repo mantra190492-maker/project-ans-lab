@@ -1,23 +1,25 @@
 # HRF-RES-001 — PIP stability from 250 Hz to 125 Hz (gudb)
 
-Generated UTC: 2026-11-15T15:56:43.862226+00:00
+Generated UTC: 2026-11-15T16:17:11.596889+00:00
 
 **Question:** SHHS visit-1 ECG was mostly 125 Hz. Is Costa-reference PIP measured at 125 Hz interchangeable with PIP at 250 Hz on the same heartbeats?
 
 Same human-annotated beats, re-gridded to the nearest 8 ms sample. This is the BEST case for a 125 Hz recording: no extra R-peak detection jitter is added.
 
-Pre-specified rule: PASS only if Spearman ≥ 0.90, |mean shift| ≤ 2.0 pp and |Spearman(shift, log RMSSD)| ≤ 0.30. Beats exactly between two 125 Hz samples need a tie rule; a metric passes overall only if it passes under all three rules.
+Engineering thresholds (agent-defined in code before the first run; not an external preregistration): PASS only if Spearman ≥ 0.90, |mean shift| ≤ 2.0 pp and |Spearman(shift, log RMSSD)| ≤ 0.30. Beats exactly between two 125 Hz samples need a tie rule; a metric passes overall only if it passes under all three rules.
 
 **Overall: Costa PIP FAIL; hard-inflection rate FAIL.**
 
-| Metric | Tie rule | Recordings | Spearman 250 vs 125 | Mean shift (pp) | Shift range (pp) | Shift vs log RMSSD (ρ) | Decision |
-|---|---|---:|---:|---:|---:|---:|---|
-| Costa PIP | random | 50 | 0.86 | +6.0 | -0.7 to +16.0 | -0.53 | FAIL |
-| Costa PIP | floor | 50 | 0.91 | +5.3 | -4.2 to +15.3 | -0.37 | FAIL |
-| Costa PIP | half_even | 50 | 0.88 | +7.0 | -1.4 to +20.3 | -0.38 | FAIL |
-| Hard-inflection rate | random | 50 | 0.93 | -1.1 | -8.7 to +14.0 | -0.33 | FAIL |
-| Hard-inflection rate | floor | 50 | 0.96 | -2.3 | -8.8 to +7.6 | +0.05 | FAIL |
-| Hard-inflection rate | half_even | 50 | 0.94 | -3.9 | -13.3 to +6.5 | -0.02 | FAIL |
+Spearman is tie-corrected. Brackets are 95% CIs from resampling participants (each GUDB participant contributes two recordings).
+
+| Metric | Tie rule | Recordings (people) | Spearman 250 vs 125 | Mean shift (pp) | Shift vs log RMSSD (ρ) | Decision |
+|---|---|---:|---:|---:|---:|---|
+| Costa PIP | random | 50 (25) | 0.86 [0.75, 0.93] | +6.0 [+4.5, +7.6] | -0.53 [-0.71, -0.26] | FAIL |
+| Costa PIP | floor | 50 (25) | 0.91 [0.82, 0.96] | +5.3 [+4.3, +6.4] | -0.37 [-0.63, -0.06] | FAIL |
+| Costa PIP | half_even | 50 (25) | 0.88 [0.78, 0.94] | +7.0 [+5.6, +8.7] | -0.38 [-0.63, -0.07] | FAIL |
+| Hard-inflection rate | random | 50 (25) | 0.93 [0.85, 0.96] | -1.1 [-2.5, +0.5] | -0.33 [-0.59, -0.03] | FAIL |
+| Hard-inflection rate | floor | 50 (25) | 0.96 [0.90, 0.98] | -2.3 [-3.2, -1.4] | +0.06 [-0.29, +0.40] | FAIL |
+| Hard-inflection rate | half_even | 50 (25) | 0.94 [0.87, 0.97] | -3.9 [-5.0, -2.9] | -0.02 [-0.35, +0.34] | FAIL |
 
 Mean share of inflections that are 'soft' (a zero NN change): 23.3% at 250 Hz → 33.1% at 125 Hz.
 

@@ -46,7 +46,8 @@ def test_wfdb_symbols_map_to_reference_labels():
 
 
 def test_rule_requires_all_three_checks():
-    rows = [{"pip_250": v, "pip_125": v + 10, "pip_shift_pp": 10.0, "rmssd_ms": 20 + v} for v in range(12)]
+    rows = [{"record": f"r{v}", "pip_250": v, "pip_125": v + 10, "pip_shift_pp": 10.0 + 0.01 * (v % 3),
+             "rmssd_ms": 20 + v} for v in range(12)]
     result = evaluate(rows, "pip_250", "pip_125", "pip_shift_pp")
     assert result["checks"]["rank_agreement"] is True
     assert result["checks"]["small_mean_shift"] is False
@@ -58,3 +59,14 @@ def test_null_simulation_runs_and_classifies():
     out = cohort((1, "null_stable_fragmentation", 40))
     assert set(out) >= {"rmssd", "rsa_resp"}
     assert classify(0.05) == "safe" and classify(0.09) == "borderline" and classify(0.2) == "trap material"
+
+
+def test_spearman_handles_ties_with_average_ranks():
+    from scripts.hrf_resolution_gate import spearman
+    assert abs(spearman([1, 1, 2, 3], [1, 2, 3, 4]) - 0.9486832980505138) < 1e-9
+
+
+def test_participant_clustering_groups_gudb_tasks():
+    from scripts.hrf_resolution_gate import participant_of
+    assert participant_of({"record": "gudb_s03_sitting"}) == participant_of({"record": "gudb_s03_maths"}) == "gudb_s03"
+    assert participant_of({"record": "f1y01"}) == "f1y01"

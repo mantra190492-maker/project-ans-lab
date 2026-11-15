@@ -7,7 +7,8 @@ Method: take human-annotated R peaks recorded at 250 Hz, compute PIP on the nati
 grid, re-grid the SAME beats to the nearest 8 ms sample (best case for a 125 Hz
 detector: quantization only, no extra detector jitter), recompute, and compare.
 
-Pre-specified decision rule (fixed in code BEFORE the first run on real data):
+Engineering decision rule (agent-defined and written into this code before the first run;
+NOT an externally time-stamped preregistration):
   PASS only if ALL hold for the primary metric (Costa PIP):
     1. Spearman rho(PIP_250, PIP_125) >= 0.90 across recordings
     2. |mean shift (PIP_125 - PIP_250)| <= 2.0 percentage points
@@ -116,9 +117,33 @@ def compare(record_id, times_s, labels, meta=None, tie="random"):
 
 
 def spearman(x, y):
-    rx = np.argsort(np.argsort(x)).astype(float)
-    ry = np.argsort(np.argsort(y)).astype(float)
-    return float(np.corrcoef(rx, ry)[0, 1])
+    """Tie-correct Spearman (average ranks); quantized PIP values can tie."""
+    from scipy.stats import spearmanr
+    return float(spearmanr(x, y).statistic)
+
+
+def participant_of(row):
+    """Cluster key: GUDB has two recordings (sitting, maths) per participant."""
+    rid = row["record"]
+    return rid.rsplit("_", 1)[0] if rid.startswith("gudb_") else rid
+
+
+def cluster_bootstrap(rows, a, b, shift, reps=2000, seed=20261115):
+    """95% CIs resampling PARTICIPANTS (all of a person's recordings together)."""
+    rng = np.random.default_rng(seed)
+    groups = {}
+    for r in rows:
+        groups.setdefault(participant_of(r), []).append(r)
+    keys = list(groups)
+    stats = {"spearman_250_vs_125": [], "mean_shift_pp": [], "spearman_shift_vs_log_rmssd": []}
+    for _ in range(reps):
+        sample = [r for k in rng.choice(keys, size=len(keys), replace=True) for r in groups[k]]
+        x = [r[a] for r in sample]; y = [r[b] for r in sample]; s = [r[shift] for r in sample]
+        lr = [math.log(r["rmssd_ms"]) for r in sample]
+        stats["spearman_250_vs_125"].append(spearman(x, y))
+        stats["mean_shift_pp"].append(statistics.fmean(s))
+        stats["spearman_shift_vs_log_rmssd"].append(spearman(s, lr))
+    return {k: [float(np.nanpercentile(v, 2.5)), float(np.nanpercentile(v, 97.5))] for k, v in stats.items()}
 
 
 def evaluate(rows, a, b, shift):
@@ -140,6 +165,8 @@ def evaluate(rows, a, b, shift):
         "shift_independent_of_hrv": abs(result["spearman_shift_vs_log_rmssd"]) <= RULE["max_abs_shift_rmssd_rho"],
     }
     result["decision"] = "PASS" if all(result["checks"].values()) else "FAIL"
+    result["n_participants"] = len({participant_of(r) for r in rows})
+    result["participant_cluster_bootstrap_95ci"] = cluster_bootstrap(rows, a, b, shift)
     return result
 
 
@@ -237,19 +264,24 @@ def render(source, by_tie, skipped, overall):
         "interchangeable with PIP at 250 Hz on the same heartbeats?", "",
         "Same human-annotated beats, re-gridded to the nearest 8 ms sample. This is the BEST case "
         "for a 125 Hz recording: no extra R-peak detection jitter is added.", "",
-        "Pre-specified rule: PASS only if Spearman ≥ 0.90, |mean shift| ≤ 2.0 pp and "
+        "Engineering thresholds (agent-defined in code before the first run; not an external preregistration): "
+        "PASS only if Spearman ≥ 0.90, |mean shift| ≤ 2.0 pp and "
         "|Spearman(shift, log RMSSD)| ≤ 0.30. Beats exactly between two 125 Hz samples need a tie rule; "
         "a metric passes overall only if it passes under all three rules.", "",
         f"**Overall: Costa PIP {overall['primary']}; hard-inflection rate {overall['hard']}.**", "",
-        "| Metric | Tie rule | Recordings | Spearman 250 vs 125 | Mean shift (pp) | Shift range (pp) | Shift vs log RMSSD (ρ) | Decision |",
-        "|---|---|---:|---:|---:|---:|---:|---|",
+        "Spearman is tie-corrected. Brackets are 95% CIs from resampling participants (each GUDB participant "
+        "contributes two recordings).", "",
+        "| Metric | Tie rule | Recordings (people) | Spearman 250 vs 125 | Mean shift (pp) | Shift vs log RMSSD (ρ) | Decision |",
+        "|---|---|---:|---:|---:|---:|---|",
     ]
     for key, name in (("primary", "Costa PIP"), ("hard", "Hard-inflection rate")):
         for tie in TIE_RULES:
             r = by_tie[tie][key]
+            ci = r["participant_cluster_bootstrap_95ci"]
+            fmt = lambda k, f: f"{f.format(r[k])} [{f.format(ci[k][0])}, {f.format(ci[k][1])}]"
             lines.append(
-                f"| {name} | {tie} | {r['n_recordings']} | {r['spearman_250_vs_125']:.2f} | {r['mean_shift_pp']:+.1f} "
-                f"| {r['min_shift_pp']:+.1f} to {r['max_shift_pp']:+.1f} | {r['spearman_shift_vs_log_rmssd']:+.2f} | {r['decision']} |")
+                f"| {name} | {tie} | {r['n_recordings']} ({r['n_participants']}) | {fmt('spearman_250_vs_125', '{:.2f}')} "
+                f"| {fmt('mean_shift_pp', '{:+.1f}')} | {fmt('spearman_shift_vs_log_rmssd', '{:+.2f}')} | {r['decision']} |")
     lines += ["", "Mean share of inflections that are 'soft' (a zero NN change): "
               f"{statistics.fmean(r['soft_share_250'] for r in rows):.1f}% at 250 Hz → "
               f"{statistics.fmean(r['soft_share_125'] for r in rows):.1f}% at 125 Hz.", ""]

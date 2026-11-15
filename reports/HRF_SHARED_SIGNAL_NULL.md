@@ -25,7 +25,7 @@ Model per cohort: Δlog(outcome) ~ PIP1 + log(outcome at visit 1) + age + baseli
 | positive_control_real_effect | rmssd_oracle_true_fragmentation | 100.0% ± 0.0 | power (real effect present) |
 | positive_control_real_effect | rsa_resp_oracle_true_fragmentation | 100.0% ± 0.0 | power (real effect present) |
 
-Pre-specified reading: ≤7.5% safe; 7.5–10% borderline; >10% trap material.
+Agent-defined reading (set in code before the first run; not an external preregistration): ≤7.5% safe; 7.5–10% borderline; >10% trap material. Rates are type-I error in THIS generative model only, not a real-world SHHS rate.
 
 ## Limits
 

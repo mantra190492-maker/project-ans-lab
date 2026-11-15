@@ -18,7 +18,7 @@ Outcomes compared:
   rsa_resp  - respiration-locked RSA amplitude: RR regressed on sin/cos of a noisy
               breathing phase (stand-in for the protocol's breathing-linked primary)
 
-Pre-specified reading (fixed before the first run):
+Agent-defined reading (written in code before the first run; not an external preregistration):
   false-positive rate <= 7.5%  -> endpoint safe from the trap in this model
   7.5% to 10%                  -> borderline
   > 10%                        -> trap material; endpoint unusable as specified
@@ -189,7 +189,7 @@ def main():
     for scenario, by_outcome in results.items():
         for outcome, r in by_outcome.items():
             lines.append(f"| {scenario} | {outcome} | {100 * r['rejection_rate']:.1f}% ± {100 * r['mc_se']:.1f} | {r['reading']} |")
-    lines += ["", "Pre-specified reading: ≤7.5% safe; 7.5–10% borderline; >10% trap material.", "",
+    lines += ["", "Agent-defined reading (set in code before the first run; not an external preregistration): ≤7.5% safe; 7.5–10% borderline; >10% trap material. Rates are type-I error in THIS generative model only, not a real-world SHHS rate.", "",
               "## Limits", "",
               "- Stylised model: fragmentation is simulated as runs of beat-to-beat alternation plus extra non-respiratory beat noise; real HRF is more varied.",
               "- In this model, measured PIP tracks low respiratory vagal amplitude (r ≈ −0.7) far more than latent fragmentation (r ≈ 0.26). That is why RMSSD-change models produce false positives and why the PIP positive control has limited power.",
