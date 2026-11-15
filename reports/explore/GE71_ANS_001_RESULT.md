@@ -1,6 +1,6 @@
 # GE71-ANS-001 — resting heart-rate fragmentation vs lab-computed Valsalva ratio
 
-Generated UTC: 2026-11-15T17:30:06.096040+00:00  
+Generated UTC: 2026-11-15T17:33:57.102183+00:00  
 Plan frozen before data were read: `docs/GE71_ANS_001_PLAN.md`  
 Predictor table SHA-256 (written before outcomes were parsed): `d37fb39daf449c58ed0b4b09b288d71a8036b8ce2fd02acd7a55592ecd8aabde`
 
