@@ -16,7 +16,7 @@ OUT = Path("reports")
 MISSING = {"", "NA", "N/A", "NAN", "NONE", "NULL", "999", "-999"}
 REQUIRED = {
     "Patient ID", "Follow-up period from enrollment (days)",
-    "Cause of death", "Age", "Gender (male=1)", "Body Mass Index (Kg/m2)",
+    "Cause of death", "Exit of the study", "Age", "Gender (male=1)", "Body Mass Index (Kg/m2)",
     "Prior Myocardial Infarction (yes=1)", "Prior Revascularization",
     "Holter available", "Betablockers (yes=1)",
     "SDNN (ms)", "RMSSD (ms)",
@@ -50,7 +50,7 @@ def summarize(rows):
     checked_fields = [
         "Age", "Gender (male=1)", "Body Mass Index (Kg/m2)",
         "Prior Myocardial Infarction (yes=1)", "Prior Revascularization",
-        "Follow-up period from enrollment (days)", "Cause of death",
+        "Follow-up period from enrollment (days)", "Cause of death", "Exit of the study",
         "Holter available", "Holter rhythm", "Betablockers (yes=1)",
         "SDNN (ms)", "RMSSD (ms)",
     ]
@@ -59,6 +59,11 @@ def summarize(rows):
                      if present(r.get("Prior Revascularization", "")))
     death = Counter(r["Cause of death"] for r in rows
                     if present(r.get("Cause of death", "")))
+    exit_counts = Counter((r.get("Exit of the study", "").strip() or "<blank>") for r in rows)
+    event_cross = Counter((
+        r.get("Exit of the study", "").strip() or "<blank>",
+        r.get("Cause of death", "").strip() or "<blank>"
+    ) for r in rows)
     rhythm = Counter(r.get(optional_rhythm, "") for r in rows
                      if optional_rhythm and present(r.get(optional_rhythm, "")))
     holter = Counter(r["Holter available"] for r in rows
@@ -77,8 +82,12 @@ def summarize(rows):
         },
         "unrecognized_revascularization_codes": unknown_revasc,
         "cause_of_death_codes": dict(sorted(death.items())),
+        "exit_of_study_codes": dict(sorted(exit_counts.items())),
+        "exit_cause_joint_counts": {
+            f"exit={key[0]};cause={key[1]}": count for key,count in sorted(event_cross.items())
+        },
         "cause_of_death_meanings": {
-            "0": "survivor", "1": "noncardiac death", "3": "sudden cardiac death",
+            "0": "no recorded death; not proof of survivor", "1": "noncardiac death", "3": "sudden cardiac death",
             "6": "pump-failure death", "7": "pump-failure death"
         },
         "holter_available_codes": dict(sorted(holter.items())),
@@ -117,13 +126,16 @@ def render(summary):
     lines += [
         "", "## Coded baseline categories (aggregate counts only)", "",
         f"- Prior revascularization (0 none, 1 percutaneous, 2 surgical, 3 both): {counts_display(summary['prior_revascularization_codes'])}",
-        f"- Cause-of-death codes (0 survivor, 1 noncardiac, 3 sudden cardiac, 6-7 pump failure): {counts_display(summary['cause_of_death_codes'])}",
+        f"- Cause-of-death codes (0 no recorded death, 1 noncardiac, 3 sudden cardiac, 6-7 pump failure): {counts_display(summary['cause_of_death_codes'])}",
+        f"- Raw exit codes (0 survivor, 1 lost, 2 transplant, 3 death; blanks retained): {counts_display(summary['exit_of_study_codes'])}",
+        f"- Exit-by-cause coding pairs, descriptive only: {counts_display(summary['exit_cause_joint_counts'])}",
         f"- Holter availability: {counts_display(summary['holter_available_codes'])}",
         f"- Holter rhythm: {counts_display(summary['holter_rhythm_codes'])}", "",
         "## Scientific decision", "",
         "1. Percutaneous revascularization is **not a verified coronary stent**. Do not relabel the field.",
         "2. Baseline HRV metrics and event codes may support a **cardiovascular-disease-specific** benchmark, but this cohort is not a healthy-ageing reference.",
-        "3. Missingness, rhythm exclusions, event codes, follow-up/censoring definitions and data leakage must be prespecified before modeling.",
+        "3. Cause-of-death code 0 is NOT sufficient to establish survivor/censoring status; cross-check exit and cause together.",
+        "4. Missingness, rhythm exclusions, event codes, follow-up/censoring definitions and data leakage must be prespecified before modeling.",
         "4. ECG/BP BRS cannot be calculated here without a matching beat-to-beat BP signal.",
         "5. The full MUSIC waveform archive is around **90 GB uncompressed**; this audit downloads only a small CSV.",
         "6. An outcome risk score that is already published is **prior art**, not Project ANS novelty.", "",
