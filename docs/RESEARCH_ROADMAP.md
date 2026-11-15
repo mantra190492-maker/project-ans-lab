@@ -18,4 +18,8 @@ Candidate measurements: HRV under standardized conditions, orthostatic HR/BP res
 Adult-onset neuromuscular disease differentiation remains an exploratory branch. Do not treat muscular dystrophy as synonymous with autoimmune or autonomic disease.
 
 ## Current implementation
-The PubMed metadata scout is operational code but has not yet been verified to complete a cloud run. It is not an autonomous scientist, validated biomarker system, or longevity product.
+- Automated PubMed literature scouting and persistent publication archive.
+- PhysioNet Autonomic Aging: 20 adult ECG/BP records computationally processed across four age strata; 19 passed preliminary ECG consistency screening; 12 yielded provisional BRS values. This is engineering feasibility, **not** scientific measurement validation or a longevity biomarker.
+- Population gap analysis and future cohorts: [Population Stratification Protocol](POPULATION_STRATIFICATION.md). Pregnant, postpartum, menopausal, coronary-stent, athletic and pediatric outcomes **cannot** be derived from unobserved PhysioNet phenotypes. Adult dataset has no participants below 18.
+- Next gates: verify beat annotations, breathing/posture/device covariates, age/sex/BMI sensitivity, external data for named populations, prospective outcomes, independent replication.
+- Still not an autonomous scientist, validated biomarker system, or longevity product.
