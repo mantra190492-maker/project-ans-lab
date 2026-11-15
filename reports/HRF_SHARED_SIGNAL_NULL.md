@@ -1,6 +1,6 @@
 # HRF-NULL-001 — Can visit-1 PIP falsely predict vagal decline?
 
-Generated UTC: 2026-11-15T15:55:34.063766+00:00
+Generated UTC: 2026-11-15T16:56:04.271979+00:00
 
 Simulated cohorts: 200 per scenario × 300 people × 500 beats per visit. True vagal change is independent of fragmentation in every null scenario.
 

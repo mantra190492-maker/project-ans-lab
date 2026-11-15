@@ -30,25 +30,25 @@
       "rmssd": {
         "rejection_rate": 1.0,
         "mc_se": 0.0,
-        "mean_pip_coefficient": -0.008662033590636543,
+        "mean_pip_coefficient": -0.00866203359063654,
         "reading": "trap material"
       },
       "rsa_resp": {
         "rejection_rate": 0.03,
         "mc_se": 0.012062338081814818,
-        "mean_pip_coefficient": 0.00010812819153535118,
+        "mean_pip_coefficient": 0.00010812819153535095,
         "reading": "safe"
       },
       "rmssd_oracle_true_fragmentation": {
         "rejection_rate": 0.175,
         "mc_se": 0.026867731575255845,
-        "mean_pip_coefficient": 0.1679457784418973,
+        "mean_pip_coefficient": 0.16794577844189726,
         "reading": "trap material"
       },
       "rsa_resp_oracle_true_fragmentation": {
         "rejection_rate": 0.045,
         "mc_se": 0.014658615214269049,
-        "mean_pip_coefficient": -0.0013658875853923991,
+        "mean_pip_coefficient": -0.001365887585392358,
         "reading": "safe"
       }
     },
@@ -62,7 +62,7 @@
       "rsa_resp": {
         "rejection_rate": 0.08,
         "mc_se": 0.01918332609325088,
-        "mean_pip_coefficient": 8.457911916475606e-05,
+        "mean_pip_coefficient": 8.45791191647583e-05,
         "reading": "borderline"
       },
       "rmssd_oracle_true_fragmentation": {
@@ -74,7 +74,7 @@
       "rsa_resp_oracle_true_fragmentation": {
         "rejection_rate": 0.06,
         "mc_se": 0.016792855623746664,
-        "mean_pip_coefficient": 0.013555207645737642,
+        "mean_pip_coefficient": 0.01355520764573757,
         "reading": "safe"
       }
     },
@@ -82,25 +82,25 @@
       "rmssd": {
         "rejection_rate": 1.0,
         "mc_se": 0.0,
-        "mean_pip_coefficient": -0.00859748852924211,
+        "mean_pip_coefficient": -0.008597488529242116,
         "reading": "trap material"
       },
       "rsa_resp": {
         "rejection_rate": 0.04,
         "mc_se": 0.013856406460551017,
-        "mean_pip_coefficient": -0.00010099546696720776,
+        "mean_pip_coefficient": -0.00010099546696720505,
         "reading": "safe"
       },
       "rmssd_oracle_true_fragmentation": {
         "rejection_rate": 0.16,
         "mc_se": 0.02592296279363144,
-        "mean_pip_coefficient": 0.1508312338275563,
+        "mean_pip_coefficient": 0.15083123382755634,
         "reading": "trap material"
       },
       "rsa_resp_oracle_true_fragmentation": {
         "rejection_rate": 0.085,
         "mc_se": 0.01971991379291502,
-        "mean_pip_coefficient": -0.005525109388714933,
+        "mean_pip_coefficient": -0.005525109388714904,
         "reading": "borderline"
       }
     },
@@ -108,28 +108,28 @@
       "rmssd": {
         "rejection_rate": 1.0,
         "mc_se": 0.0,
-        "mean_pip_coefficient": -0.009046916703639388,
+        "mean_pip_coefficient": -0.009046916703639387,
         "reading": "power (real effect present)"
       },
       "rsa_resp": {
         "rejection_rate": 0.36,
         "mc_se": 0.03394112549695428,
-        "mean_pip_coefficient": -0.00384141817609932,
+        "mean_pip_coefficient": -0.0038414181760993205,
         "reading": "power (real effect present)"
       },
       "rmssd_oracle_true_fragmentation": {
         "rejection_rate": 1.0,
         "mc_se": 0.0,
-        "mean_pip_coefficient": -0.8623770830811347,
+        "mean_pip_coefficient": -0.8623770830811344,
         "reading": "power (real effect present)"
       },
       "rsa_resp_oracle_true_fragmentation": {
         "rejection_rate": 1.0,
         "mc_se": 0.0,
-        "mean_pip_coefficient": -1.496877798956411,
+        "mean_pip_coefficient": -1.4968777989564108,
         "reading": "power (real effect present)"
       }
     }
   },
-  "generated_utc": "2026-11-15T15:55:34.063766+00:00"
+  "generated_utc": "2026-11-15T16:56:04.271979+00:00"
 }
