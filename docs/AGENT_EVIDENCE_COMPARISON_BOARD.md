@@ -1,5 +1,7 @@
 # Project ANS — Multi-agent scientific evidence board
 
+> **Mission correction — 2026-11-15:** The research endpoint is **detection, functional localization and longitudinal progression of ANS dysfunction**, not age prediction or mortality prediction. The existing validated comparator is clinical autonomic reflex testing and its 3-domain **CASS subscores**. ECG/BP-only studies (Fantasia, MUSIC, resting Autonomic Aging) cannot establish whole-system ANS deterioration and have no sudomotor reference. See [FORMULATION-001](FORMULATION_001_AUTONOMIC_FUNCTION_DETERIORATION.md). MUSIC HRF risk prediction is **secondary method benchmarking**, not the principal marker discovery experiment.
+
 **Updated:** 2026-11-15  
 **Purpose:** Consolidate each LLM agent's independently cited claims, keep disagreements visible, and translate only verified proposals into experimental gates. This board is a **decision log**, not a peer-reviewed systematic literature review.
 
