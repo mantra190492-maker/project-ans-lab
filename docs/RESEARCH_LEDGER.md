@@ -10,6 +10,11 @@ Purpose: one honest list of what has been tested, so a later "hit" can be judged
 | 4 | CDED-ANS-001 | Overnight PIP vs Valsalva ratio, baseline and 2-year change | Stopped before any outcome | No overnight ECG in release; no reference values in tables; visit-8 respiratory channels look corrupted |
 | 5 | GE71-ANS-001 | Resting PIP vs lab-computed Valsalva ratio beyond age, sex, diabetes, HR, RMSSD | **Done — null** | β = −0.05 per SD (95% CI −0.25 to +0.15), p = 0.61, n = 27. Underpowered: only a partial correlation ≥ ~0.5 was detectable |
 
+| 6 | POOL-VR-001 stage A | Does an automated Valsalva ratio agree with the lab's values (GE-71)? | **Done — failed, stopped** | Best Spearman 0.37 (rule: ≥ 0.60). Automated values run about 0.5 higher than the lab's. Pooled test not run |
+| 7 | NAT-BREATH-001 | Heart-rate response to spontaneous large breaths as a passive deep-breathing test | **Dropped before any test** | Prior art: heart-rate variation with deep breathing is the established cardiovagal test, and respiratory sinus arrhythmia in diabetic neuropathy has been studied since the 1980s. With ~4 minutes of rest in ~35 people it could not show added value over RMSSD |
+| 8 | FUSION-001 | Do two autonomic domains together separate diabetes from controls better than one? (founder request, 2026-11-15) | Plan frozen in `wearable/experiments/FUSION_001_PLAN.md` | — |
+| 9 | TILT-001 | Resting PIP vs lab-computed tilt response | Queued | — |
+
 Outcome-level hypothesis tests run so far: **1** (GE71-ANS-001). Candidates found: **0**.
 
 ## Notes from GE71-ANS-001 that must not be treated as findings
