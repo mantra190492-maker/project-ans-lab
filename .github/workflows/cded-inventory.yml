@@ -6,11 +6,6 @@ on:
       - 'scripts/cded_inventory.py'
       - 'tests/test_cded_inventory.py'
       - '.github/workflows/cded-inventory.yml'
-  pull_request:
-    paths:
-      - 'scripts/cded_inventory.py'
-      - 'tests/test_cded_inventory.py'
-      - '.github/workflows/cded-inventory.yml'
   workflow_dispatch:
 permissions:
   contents: write

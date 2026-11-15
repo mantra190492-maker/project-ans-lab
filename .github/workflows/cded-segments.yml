@@ -6,11 +6,6 @@ on:
       - 'scripts/cded_segments.py'
       - 'tests/test_cded_inventory.py'
       - '.github/workflows/cded-segments.yml'
-  pull_request:
-    paths:
-      - 'scripts/cded_segments.py'
-      - 'tests/test_cded_inventory.py'
-      - '.github/workflows/cded-segments.yml'
   workflow_dispatch:
 permissions:
   contents: write
