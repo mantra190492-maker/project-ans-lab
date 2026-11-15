@@ -1,7 +1,7 @@
 {
   "benchmark": "Fantasia manually reviewed ECG beat annotation validation",
   "dataset_url": "https://physionet.org/content/fantasia/1.0.0/",
-  "generated_utc": "2026-11-15T13:02:40.230099+00:00",
+  "generated_utc": "2026-11-15T13:15:59.228459+00:00",
   "method": "existing Project ANS primary ECG detector; 150ms one-to-one annotation comparison",
   "records": [
     {
@@ -23,7 +23,7 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "median_abs_timing_error_ms": 1.0
+      "median_abs_timing_error_ms": 4.0
     },
     {
       "record": "f1o01",
@@ -44,7 +44,7 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "median_abs_timing_error_ms": 2.0
+      "median_abs_timing_error_ms": 8.0
     },
     {
       "record": "f2y01",
@@ -65,7 +65,7 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "median_abs_timing_error_ms": 3.0
+      "median_abs_timing_error_ms": 12.0
     },
     {
       "record": "f2o01",
@@ -86,7 +86,7 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "median_abs_timing_error_ms": 2.0
+      "median_abs_timing_error_ms": 8.0
     }
   ],
   "limitations": [
