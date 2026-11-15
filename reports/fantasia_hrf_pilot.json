@@ -1,0 +1,64 @@
+{
+  "study": "ANS-001 Fantasia annotated beat HRF feasibility",
+  "generated_utc": "2026-11-15T13:47:43.499028+00:00",
+  "source": "https://physionet.org/files/fantasia/1.0.0/",
+  "doi": "10.13026/C2RG61",
+  "measurement": "PIP / W1 from human-reviewed beat annotations; 5-minute segment; 4 and 8 ms resolutions",
+  "records": [
+    {
+      "record": "f1y01",
+      "status": "processed",
+      "age_band": "21-34",
+      "sampling_hz": 250.0,
+      "window_s": 300,
+      "annotated_beats": 388,
+      "intervals_with_normal_beat_endpoints": 387,
+      "candidate_pip_4ms": 49.091,
+      "candidate_pip_8ms": 51.429,
+      "candidate_w1_4ms": 51.436,
+      "candidate_rmssd_ms": 84.006,
+      "candidate_mean_hr_bpm": 77.546,
+      "retained_interval_fraction": 1.0,
+      "clinical_validation": "none; four selected healthy records, no outcomes"
+    },
+    {
+      "record": "f1o01",
+      "status": "processed",
+      "age_band": "68-85",
+      "sampling_hz": 250.0,
+      "window_s": 300,
+      "annotated_beats": 309,
+      "intervals_with_normal_beat_endpoints": 308,
+      "candidate_pip_4ms": 65.359,
+      "candidate_pip_8ms": 53.595,
+      "candidate_w1_4ms": 19.408,
+      "candidate_rmssd_ms": 13.533,
+      "candidate_mean_hr_bpm": 61.809,
+      "retained_interval_fraction": 1.0,
+      "clinical_validation": "none; four selected healthy records, no outcomes"
+    },
+    {
+      "record": "f2y01",
+      "status": "processed",
+      "age_band": "21-34",
+      "sampling_hz": 250.0,
+      "window_s": 300,
+      "annotated_beats": 350,
+      "intervals_with_normal_beat_endpoints": 349,
+      "candidate_pip_4ms": 67.723,
+      "candidate_pip_8ms": 70.605,
+      "candidate_w1_4ms": 15.652,
+      "candidate_rmssd_ms": 52.96,
+      "candidate_mean_hr_bpm": 69.894,
+      "retained_interval_fraction": 1.0,
+      "clinical_validation": "none; four selected healthy records, no outcomes"
+    },
+    {
+      "record": "f2o01",
+      "status": "failed",
+      "error_type": "ValueError",
+      "error": "Insufficient quality-screened sinus NN intervals"
+    }
+  ],
+  "constraints": "No prospective outcome, no clinical validity, not a new discovered biomarker"
+}
