@@ -48,6 +48,12 @@ Sources:
 - PpgAge [PMID 41115881](https://pubmed.ncbi.nlm.nih.gov/41115881/).
 - ECG age mortality [Nature Communications 2021](https://www.nature.com/articles/s41467-021-25351-7).
 
+### Real annotated-NN HRF experiment (completed after initial review)
+
+The [first Fantasia HRF report](../reports/FANTASIA_HRF_PILOT.md) was produced on real, visually verified beat annotations for four selected, 5-minute healthy resting ECG segments. **Three passed our strict NN input gate; one was withheld**. Initial 4-ms PIP values in the three processed records were **49.09%, 65.36%, and 67.72%**; matched RMSSD values were **84.01, 13.53, and 52.96 ms**. The fourth segment was initially rejected as `Insufficient quality-screened sinus NN intervals`; a follow-up preflight audit was deployed to distinguish non-N labels from interval plausibility issues. These values are descriptive only, do not follow a monotonic age pattern, and have **no longitudinal clinical outcomes**. Changes to PIP when the ternary threshold is changed to 8 ms highlight quantization sensitivity. No statistical age test is appropriate with three records.
+
+The prior four-record Fantasia R-peak F1 benchmark **and** this annotated-NN PIP pilot are *engineering feasibility*, not two independent clinical replications.
+
 ## Agent 4 — Baroreflex measurement validator
 
 The **12 provisional BRS outputs among 20** processed adult recordings are **software-gated estimates**, not validated BRS. The four-record Fantasia comparison tested R-peak detection only.
@@ -188,5 +194,5 @@ Sources:
 - **Adult resting feasibility:** 20 records processed; 19 automatic ECG QC passes, 12 provisional BRS outputs; **0 validated BRS biomarkers**.
 - **External R-peak check:** four selected Fantasia segments at 150 ms tolerance (F1 1.000; timing medians 4/8/12/8 ms); not sufficient for broad ECG accuracy.
 - **MUSIC:** 992 metadata rows; 587 conventional HRV-complete; **0 outcome models fitted**.
-- **HRF PIP/W1:** code + unit tests committed; cloud outcome needs verification.
+- **HRF PIP/W1:** code + unit tests committed and **three of four** selected real annotated Fantasia segments processed; one quality exclusion. There are still **zero** HRF clinical-outcome models or validated biomarkers.
 - **Intervention / lifespan:** **no evidence in this project** that changing an autonomic marker prolongs life.
