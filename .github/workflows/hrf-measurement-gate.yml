@@ -1,0 +1,39 @@
+name: ANS-001 HRF Measurement Gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'anslab/heart_rate_fragmentation.py'
+      - 'tests/test_heart_rate_fragmentation.py'
+      - '.github/workflows/hrf-measurement-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install tiny test dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'pytest>=8,<10'
+      - name: Validate PIP and W1 calculation and quality gates
+        run: python -m pytest -q tests/test_heart_rate_fragmentation.py
+      - name: Distinguish software validation from clinical results
+        if: always()
+        run: |
+          {
+            echo '## HRF measurement readiness — synthetic checks'
+            echo ''
+            echo 'This job tests numerical implementation, beat-gap handling,'
+            echo 'quantization sensitivity and rhythm eligibility on synthetic inputs.'
+            echo ''
+            echo '**Not tested:** MUSIC clinical data, arrhythmia annotation accuracy,'
+            echo 'event prediction, independent cohort replication, or longevity.'
+            echo ''
+            echo 'Next gate: run annotation-verified ECG/RR data then evaluate'
+            echo 'incremental prognostic value relative to clinical factors + HRV.'
+          } >> "$GITHUB_STEP_SUMMARY"
