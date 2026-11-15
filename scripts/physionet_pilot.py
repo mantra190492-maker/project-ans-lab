@@ -6,7 +6,7 @@ import requests
 import numpy as np
 import wfdb
 from scipy.signal import find_peaks, butter, sosfiltfilt
-from anslab.physiology import rr_features, sequence_brs
+from anslab.physiology import rr_features
 
 BASE="https://physionet.org/files/autonomic-aging-cardiovascular/1.0.0/"
 RECORDS=("0001","0002","0003")
@@ -63,7 +63,7 @@ def extract(record):
         triple=aligned[k:k+3]
         if triple[1][0]!=triple[0][0]+1 or triple[2][0]!=triple[1][0]+1:
             continue
-        if triple[2][0]+1>=len(r):
+        if triple[2][0]+2>=len(r):
             continue
         sequences.append(triple)
     # Evaluate each matched three-beat segment individually; do not stitch gaps.
