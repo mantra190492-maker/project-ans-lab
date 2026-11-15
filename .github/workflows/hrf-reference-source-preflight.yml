@@ -1,0 +1,41 @@
+name: HRF Costa 2024 Reference Source Preflight
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hrf-reference-source-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Obtain Costa's open 2024 reference software and tiny fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/costa-reference
+          cd /tmp/costa-reference
+          base='https://physionet.org/files/heart-rate-fragmentation-code/1.0.0'
+          for file in HRF.awk README timeseries_1PVC.txt timeseries_1PVC_1outlier.txt timeseries_1PVC_2outliers.txt SHA256SUMS.txt; do
+            curl -fsSL --retry 3 --connect-timeout 15 --max-time 60 "$base/$file" -o "$file"
+          done
+          sha256sum -c SHA256SUMS.txt --ignore-missing
+          echo '=== COSTA SOURCE INSPECTION ==='
+          cat HRF.awk
+          echo '=== TEST FIXTURE INPUT 1 ==='
+          cat timeseries_1PVC.txt
+          echo '=== REFERENCE OUTPUT A ==='
+          awk -f HRF.awk < timeseries_1PVC.txt
+          echo '=== REFERENCE OUTPUT B ==='
+          awk -f HRF.awk < timeseries_1PVC_1outlier.txt
+          echo '=== REFERENCE OUTPUT C ==='
+          awk -f HRF.awk < timeseries_1PVC_2outliers.txt
+          echo '=== REFERENCE README ==='
+          cat README
+      - name: State interpretation limits
+        run: |
+          echo 'Source inspection only. This does not establish clinical validity, resolution invariance, or ANS deterioration detection.' >> "$GITHUB_STEP_SUMMARY"
