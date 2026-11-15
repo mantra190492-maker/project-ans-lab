@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "mission_id": "ANS-001",
+  "mission_status": "LOCKED_BY_FOUNDER_INTENT",
+  "north_star": "Discover and validate a genuinely differentiated physiological marker that detects autonomic nervous system dysfunction or longitudinal deterioration.",
+  "primary_endpoint": "Independently confirmed autonomic dysfunction or worsening of autonomic function, with domain-specific clinically appropriate reference testing.",
+  "discovery_requirement": "Demonstrate a defensible difference from established measures or methods, supported by original evidence; do not claim novelty from branding or feature aggregation.",
+  "research_scope": [
+    "cardiovagal function",
+    "sympathetic adrenergic function",
+    "sudomotor function where measured",
+    "within-person reproducible physiological responses",
+    "disease-context-specific autonomic dysfunction"
+  ],
+  "secondary_only": [
+    "chronological or biological age estimation",
+    "general mortality prediction",
+    "cardiovascular risk prediction",
+    "commercialization plans",
+    "diabetes-specific product concept",
+    "consumer readiness scores"
+  ],
+  "non_goals": [
+    "launch a generic HRV application",
+    "rename established indices as discoveries",
+    "infer broad ANS dysfunction from ECG and blood pressure alone",
+    "declare a validated biomarker without clinical reference and independent replication"
+  ],
+  "evidence_levels": [
+    "IDEA",
+    "PRIOR_ART_SCREENED",
+    "MEASUREMENT_FEASIBILITY",
+    "ANALYTICAL_VALIDITY",
+    "CLINICAL_VALIDITY",
+    "INDEPENDENT_REPLICATION"
+  ],
+  "decision_rules": {
+    "mission_pivot_requires": "Founder's explicit approval; document prior and proposed mission, rationale, tradeoffs and authorization before editing this charter.",
+    "agent_reports": "Evidence and proposals only; agents cannot authorize a pivot, new claim, spend or change of success endpoint.",
+    "negative_result": "Keep and report negative or null results; do not change thresholds after outcome inspection.",
+    "commercialization": "No product claims or specialized disease pivot until founded on primary research question and expressly approved."
+  },
+  "gates": [
+    {
+      "id": "G1_TARGET",
+      "description": "Specific clinically definable impairment/progression and affected ANS domain are stated."
+    },
+    {
+      "id": "G2_PRIOR_ART",
+      "description": "Original methods and direct competitors checked; precise remaining novelty is documented or declared unverified."
+    },
+    {
+      "id": "G3_REFERENCE",
+      "description": "Independent clinical reference/ground truth and validation population are identified and accessible, or gate remains blocked."
+    },
+    {
+      "id": "G4_ANALYTICAL",
+      "description": "Signal quality, repeatability, uncertainty, artifact and physiological confounder controls are verified."
+    },
+    {
+      "id": "G5_INCREMENTAL",
+      "description": "Relevant existing gold-standard or state-of-art clinical comparators are measured; added clinical usefulness is tested."
+    },
+    {
+      "id": "G6_REPLICATION",
+      "description": "Independent cohort or external validation successfully replicates the prespecified result."
+    }
+  ],
+  "current_claim": "No original or clinically validated ANS deterioration biomarker has been demonstrated by Project ANS.",
+  "cost_ceiling_usd_per_month": 50
+}
