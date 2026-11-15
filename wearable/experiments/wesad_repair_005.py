@@ -170,13 +170,17 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("--archive-url",default=OFFICIAL_URL)
     p.add_argument("--limit",type=int,default=5)
+    p.add_argument("--offset",type=int,default=2,help="Skip development subjects S2 and S3 by default")
     p.add_argument("--output",type=Path,default=OUT)
     args=p.parse_args()
     if args.archive_url!=OFFICIAL_URL:p.error("Original WESAD source only")
-    if not 1<=args.limit<=15:p.error("Limit must be between 1 and 15")
-    rows=[run_subject(s) for s in remote_sources(args.archive_url,args.limit)]
+    if not 0<=args.offset<15 or not 1<=args.limit<=15-args.offset:
+        p.error("Limit must fit remaining WESAD subjects after offset")
+    rows=[run_subject(s) for s in remote_sources(args.archive_url,args.limit,offset=args.offset)]
     if len(rows)!=args.limit:raise RuntimeError("Original WESAD participant count incomplete")
     report=aggregate(rows,verified_source=True)
+    report["development_subjects_excluded"]=args.offset
+    report["preliminary_unseen_participant_check"]=bool(args.offset>=2)
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,indent=2))
