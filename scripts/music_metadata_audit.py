@@ -18,7 +18,7 @@ REQUIRED = {
     "Patient ID", "Follow-up period from enrollment (days)",
     "Cause of death", "Age", "Gender (male=1)", "Body Mass Index (Kg/m2)",
     "Prior Myocardial Infarction (yes=1)", "Prior Revascularization",
-    "Holter available", "Holter rhythm ", "Betablockers (yes=1)",
+    "Holter available", "Betablockers (yes=1)",
     "SDNN (ms)", "RMSSD (ms)",
 }
 # Header spelling, including trailing whitespace, comes from the published CSV.
@@ -46,6 +46,7 @@ def summarize(rows):
     identifiers = [r["Patient ID"] for r in rows]
     if len(set(identifiers)) != len(rows):
         raise ValueError("Patient IDs not unique; stop rather than double-count")
+    optional_rhythm = next((key for key in keys if key.lower().replace(" ", "") in {"holterrhythm", "holterrhythm;"}), None)
     checked_fields = [
         "Age", "Gender (male=1)", "Body Mass Index (Kg/m2)",
         "Prior Myocardial Infarction (yes=1)", "Prior Revascularization",
@@ -58,8 +59,8 @@ def summarize(rows):
                      if present(r.get("Prior Revascularization", "")))
     death = Counter(r["Cause of death"] for r in rows
                     if present(r.get("Cause of death", "")))
-    rhythm = Counter(r["Holter rhythm"] for r in rows
-                     if present(r.get("Holter rhythm", "")))
+    rhythm = Counter(r.get(optional_rhythm, "") for r in rows
+                     if optional_rhythm and present(r.get(optional_rhythm, "")))
     holter = Counter(r["Holter available"] for r in rows
                      if present(r.get("Holter available", "")))
     allowed_revasc = {"0", "1", "2", "3"}
@@ -82,6 +83,8 @@ def summarize(rows):
         },
         "holter_available_codes": dict(sorted(holter.items())),
         "holter_rhythm_codes": dict(sorted(rhythm.items())),
+        "holter_rhythm_source_column": optional_rhythm,
+        "holter_rhythm_status": "present" if optional_rhythm else "not_found_in_metadata_header",
         "interpretation": (
             "DESCRIPTIVE DATA READINESS ONLY. No predictive model fitted; do not "
             "infer stent implantation from percutaneous revascularization; "
