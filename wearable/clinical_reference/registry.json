@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "track": "wearable/clinical_reference",
+  "purpose": "Specialist reference outcomes for testing wearable-derived ANS features; these tests are NOT wrist sensors",
+  "measurement_vs_reference_rule": "Wearable feature predictors must be generated without using any specialist outcome, reference result or later visit data",
+  "clinical_status": "No same-person reference-linked participants acquired; no diagnostic accuracy estimates",
+  "references": [
+    {
+      "id": "MSNA",
+      "display_name": "Muscle sympathetic nerve activity",
+      "modality": "microneurography",
+      "group": "direct_sympathetic_physiology",
+      "domain": "vascular sympathetic neural outflow",
+      "status": "specialist_research_comparator",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Test coupling of standardized wearable HR/vascular responses with invasively recorded MSNA during matched posture or provocation; no direct sympathetic nerve readout from wrist",
+      "confounding_and_limits": [
+        "microneurography is invasive and technically specialized",
+        "resting MSNA varies greatly across individuals",
+        "MSNA outflow to muscle does not equal sudomotor or global ANS function"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/32588247/"
+    },
+    {
+      "id": "CARDIAC_INNERVATION",
+      "display_name": "Cardiac sympathetic innervation",
+      "modality": "123I-MIBG scintigraphy or relevant cardiac sympathetic PET",
+      "group": "organ_specific_innervation",
+      "domain": "cardiac sympathetic innervation",
+      "status": "specialist_organ_reference",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Compare blinded wearable cardiac autonomic features against imaging assessments in selected clinical populations",
+      "confounding_and_limits": [
+        "radiotracer imaging",
+        "myocardial disease/diabetes/medications may alter tracer uptake",
+        "not a general ANS disease label"
+      ],
+      "reference": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12960062/"
+    },
+    {
+      "id": "SKIN_SMALL_FIBRES",
+      "display_name": "Skin small-fibre and sweat-gland nerve morphology",
+      "modality": "skin biopsy with IENFD and separately measured sweat-gland nerve-fibre density",
+      "group": "peripheral_nerve_structure",
+      "domain": "somatic and peripheral autonomic small fibres, depending on fibre type and site",
+      "status": "specialist_structural_comparator",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Test whether wearable functional abnormalities track independently characterized sweat-gland innervation; distinguish from general IENFD",
+      "confounding_and_limits": [
+        "IENFD alone is primarily a somatic small-fibre measure",
+        "biopsy site and laboratory norms matter",
+        "structural findings need clinical and physiological correlation"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/36376534/"
+    },
+    {
+      "id": "CORNEAL_NERVES",
+      "display_name": "Corneal nerve fibre length, density and branching",
+      "modality": "corneal confocal microscopy",
+      "group": "peripheral_nerve_structure",
+      "domain": "corneal small fibres (not autonomic-specific)",
+      "status": "supportive_structural_comparator",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Exploratory correlation against independently confirmed neuropathy status; not a specific ANS label",
+      "confounding_and_limits": [
+        "corneal nerve measures are not ANS-specific",
+        "sensitivity and specificity depend on comparator and disease setting",
+        "corneal disease and imaging methodology may matter"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/37651181/"
+    },
+    {
+      "id": "PHOSPHO_ALPHA_SYNUCLEIN",
+      "display_name": "Phosphorylated alpha-synuclein skin pathology",
+      "modality": "specialist skin biopsy immunohistochemistry",
+      "group": "disease_specific_pathology",
+      "domain": "selected synucleinopathies, e.g. pure autonomic failure, Parkinson disease, MSA or DLB",
+      "status": "phenotype_specific_pathology_reference",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Separate predefined disease-specific analysis only; never substitute positivity for generalized ANS dysfunction",
+      "confounding_and_limits": [
+        "does not detect all causes of autonomic dysfunction",
+        "study-population spectrum and expert diagnosis affect generalizability",
+        "pathology positivity and autonomic severity are different endpoints"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/38506839/"
+    },
+    {
+      "id": "GASTROINTESTINAL",
+      "display_name": "Gastric emptying, transit and manometry",
+      "modality": "gastric emptying studies; motility/transit tests; manometry",
+      "group": "organ_specific_function",
+      "domain": "gastrointestinal autonomic-related function",
+      "status": "organ_specific_functional_outcome",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Evaluate whether future changes in wearable metrics predict independently verified GI motility impairment in an appropriate clinical cohort",
+      "confounding_and_limits": [
+        "motility is affected by enteric, muscular, pharmacological and structural factors",
+        "symptoms alone are not objective autonomic outcomes",
+        "method and segment of GI tract must be specified"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/34009848/"
+    },
+    {
+      "id": "URINARY",
+      "display_name": "Bladder filling, emptying and urodynamics",
+      "modality": "urodynamic testing and postvoid residual assessments",
+      "group": "organ_specific_function",
+      "domain": "genitourinary autonomic-related function",
+      "status": "organ_specific_functional_outcome",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Compare wearable metrics with blinded neurological/urological assessment in a defined disorder",
+      "confounding_and_limits": [
+        "obstruction, medication, pelvic floor and other non-neural causes",
+        "urodynamic abnormalities alone do not prove autonomic nerve damage",
+        "phenotype and sex/anatomy affect interpretation"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/34009848/"
+    },
+    {
+      "id": "SECRETORY",
+      "display_name": "Tear and salivary secretion",
+      "modality": "Schirmer or other standardized tear and salivary secretion tests",
+      "group": "organ_specific_function",
+      "domain": "exocrine autonomic-related function",
+      "status": "supportive_organ_functional_outcome",
+      "watch_sensor": false,
+      "general_ANS_gold_standard": false,
+      "watch_surrogate_analyses": "Use only as supportive organ-specific outcome with documented competing causes",
+      "confounding_and_limits": [
+        "dry eye, gland disease, dehydration and medications",
+        "secretion also depends on ocular and gland local factors",
+        "not a stand-alone generalized ANS dysfunction label"
+      ],
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/34009848/"
+    }
+  ],
+  "design_rules": [
+    "Define a separate diagnosis/phenotype and timepoint for each reference target.",
+    "Keep reference results and specialist modalities excluded from wearable-only predictor features.",
+    "Use independent expert diagnosis or distinct future outcome to prevent circular CASS/test component labels.",
+    "Group all longitudinal records of a participant in a single validation fold; use external cohort for replication.",
+    "Compare PPG-only, multimodal wearable, and clinical-context baselines on matched participants; estimate uncertainty and calibration.",
+    "Treat absent specialist measurements as missing, not normal; do not require all eight tests on every patient.",
+    "Do not claim clinical accuracy unless appropriate real participants with matched wearable and independently adjudicated clinical references exist."
+  ]
+}
