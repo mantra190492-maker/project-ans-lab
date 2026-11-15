@@ -1,0 +1,77 @@
+name: ANS-001 MUSIC Outcome Metadata Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/music_metadata_audit.py'
+      - 'tests/test_music_metadata.py'
+      - '.github/workflows/music-metadata-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-001-music-audit
+  cancel-in-progress: false
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install lightweight metadata tools
+        run: python -m pip install 'requests>=2.31,<3' 'pytest>=8,<10'
+      - name: Validate schema and privacy rules
+        run: python -m pytest -q tests/test_music_metadata.py
+      - name: Audit public MUSIC metadata without storing patient-level data
+        run: python -m scripts.music_metadata_audit
+      - name: Display aggregate outcomes coverage
+        if: always()
+        run: |
+          if [ -f reports/MUSIC_METADATA_AUDIT.md ]; then
+            cat reports/MUSIC_METADATA_AUDIT.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Publish privacy-preserving aggregate report
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ ! -f reports/MUSIC_METADATA_AUDIT.md ] || [ ! -f reports/music_metadata_audit.json ]; then
+            echo "No completed report to publish"
+            exit 0
+          fi
+          scratch="$(mktemp -d)"
+          cp reports/MUSIC_METADATA_AUDIT.md "$scratch/"
+          cp reports/music_metadata_audit.json "$scratch/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -f -B publish-music-audit origin/main
+            mkdir -p reports
+            cp "$scratch/MUSIC_METADATA_AUDIT.md" reports/
+            cp "$scratch/music_metadata_audit.json" reports/
+            git add -f reports/MUSIC_METADATA_AUDIT.md reports/music_metadata_audit.json
+            if git diff --cached --quiet; then
+              echo "Metadata report already current"
+              exit 0
+            fi
+            git commit -m 'Publish aggregate-only MUSIC cardiovascular dataset audit [skip ci]'
+            if git push origin HEAD:main; then
+              echo "Published aggregate metadata audit"
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo "Report publication conflict after three retries" >&2
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ans-001-music-metadata-aggregate
+          path: |
+            reports/MUSIC_METADATA_AUDIT.md
+            reports/music_metadata_audit.json
+          if-no-files-found: warn
+          retention-days: 30
