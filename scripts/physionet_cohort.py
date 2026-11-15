@@ -195,8 +195,15 @@ def build_report(results):
     for r in results:
         rmssd = f"{r['rmssd_ms']:.1f}" if r.get("rmssd_ms") is not None else "NA"
         lines.append(f"| {r['record']} | {r['age_range']} | {r['sex_code']} | {r['status']} | {r.get('automatic_ecg_qc','NA')} | {rmssd} | {r.get('brs_sequences_nonoverlapping','NA')} |")
+    lines += ["", "## Waveform quality-control snapshots", ""]
+    for band in STRATA:
+        name = f"cohort_qc_{band.replace('+','plus').replace('-','to')}.png"
+        lines.append(f"- [{band}: ten-second ECG/BP sample]({name})")
     lines += [
-        "", "## Method limitations and interpretation",
+        "",
+        "These plots show automatic beat picks only. They require independent visual review and must not be treated as annotation ground truth.",
+        "",
+        "## Method limitations and interpretation",
         "",
         "- Detector agreement is a consistency check between two algorithms, **not ground truth**.",
         "- RR screening does not prove intervals are normal-to-normal; automated HRV is provisional.",
