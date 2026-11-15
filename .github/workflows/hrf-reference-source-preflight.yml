@@ -6,14 +6,14 @@ on:
       - '.github/workflows/hrf-reference-source-preflight.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   inspect-reference:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-      - name: Obtain Costa's open 2024 reference software and tiny fixtures
+      - name: Fetch Costa 2024 AWK and three test fixtures (open access only)
         shell: bash
         run: |
           set -euo pipefail
@@ -24,18 +24,72 @@ jobs:
             curl -fsSL --retry 3 --connect-timeout 15 --max-time 60 "$base/$file" -o "$file"
           done
           sha256sum -c SHA256SUMS.txt --ignore-missing
-          echo '=== COSTA SOURCE INSPECTION ==='
-          cat HRF.awk
-          echo '=== TEST FIXTURE INPUT 1 ==='
-          cat timeseries_1PVC.txt
-          echo '=== REFERENCE OUTPUT A ==='
-          awk -f HRF.awk < timeseries_1PVC.txt
-          echo '=== REFERENCE OUTPUT B ==='
-          awk -f HRF.awk < timeseries_1PVC_1outlier.txt
-          echo '=== REFERENCE OUTPUT C ==='
-          awk -f HRF.awk < timeseries_1PVC_2outliers.txt
-          echo '=== REFERENCE README ==='
-          cat README
-      - name: State interpretation limits
+          echo '=== ACTUAL AUTHOR REFERENCE OUTPUTS ==='
+          for data in timeseries_*.txt; do
+            echo "=== $data ==="
+            awk -f HRF.awk < "$data"
+          done
+          echo '=== SOURCE VERIFICATION ==='
+          sha256sum HRF.awk timeseries_*.txt
+      - name: Publish checkable output (source code not copied to repository)
+        shell: bash
         run: |
-          echo 'Source inspection only. This does not establish clinical validity, resolution invariance, or ANS deterioration detection.' >> "$GITHUB_STEP_SUMMARY"
+          set -euo pipefail
+          mkdir -p reports
+          python - <<'PY'
+          from datetime import datetime, timezone
+          from pathlib import Path
+          import subprocess, hashlib, json
+          folder=Path("/tmp/costa-reference")
+          script=folder/"HRF.awk"
+          examples=("timeseries_1PVC.txt","timeseries_1PVC_1outlier.txt","timeseries_1PVC_2outliers.txt")
+          results={}
+          for filename in examples:
+              data=(folder/filename).read_bytes()
+              r=subprocess.run(["awk","-f",str(script)],input=data,capture_output=True,check=True)
+              results[filename]={"stdout":r.stdout.decode().strip(),
+                                 "data_sha256":hashlib.sha256(data).hexdigest(),
+                                 "n_rows":len(data.splitlines())}
+          payload={"generated_utc":datetime.now(timezone.utc).isoformat(),
+             "author":"Madalena Costa",
+             "source_url":"https://physionet.org/content/heart-rate-fragmentation-code/1.0.0/",
+             "reference_doi":"10.13026/0mzj-gn98",
+             "reference_source_sha256":hashlib.sha256(script.read_bytes()).hexdigest(),
+             "source_license":"GPL-3.0 (source file downloaded and executed at runtime; not committed)",
+             "results":results,
+             "warning":"PhysioNet landing page example C 61/96 is inconsistent with its technical section and README which give 30/46. Treat actual AWK result as authoritative.",
+             "scope":"Reference software behavior only, not clinical validation."}
+          out=Path("reports/HRF_REFERENCE_PREFLIGHT.json")
+          out.write_text(json.dumps(payload,indent=2)+"\n",encoding="utf-8")
+          lines=["# Costa 2024 — Official reference HRF preflight","",
+             f"Generated UTC: {payload['generated_utc']}",
+             "Source: https://physionet.org/content/heart-rate-fragmentation-code/1.0.0/",
+             f"Source SHA256: `{payload['reference_source_sha256']}`",
+             "Software and example inputs downloaded only onto the runner. Source GPL code was **not** added to this repository.","",
+             "**Important:** PhysioNet's landing page contains internally inconsistent figures for its third case. The actual original AWK output is reproduced below rather than pretending one printed reference is definitive.","",
+             "## Raw outputs from Costa's AWK",""]
+          for key,result in results.items():
+              lines.extend([f"### {key}", "","~~~text", result["stdout"],"~~~","",
+                 f"Input rows: {result['n_rows']}, SHA256: `{result['data_sha256']}`", ""])
+          lines += ["## Gate","",
+             "- Source program and checksums verified from PhysioNet at runtime.",
+             "- These results are the numeric oracle for implementing a new independently written Python adapter.",
+             "- **Not yet** evidence that our Python calculation reproduces this AWK program.",
+             "- Neither the source nor the three examples involve disease progression or SHHS longitudinal access.",
+             ""]
+          Path("reports/HRF_REFERENCE_PREFLIGHT.md").write_text("\n".join(lines),encoding="utf-8")
+          PY
+      - name: Show numeric oracle in Actions summary
+        run: cat reports/HRF_REFERENCE_PREFLIGHT.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit only aggregate source-behavior report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f reports/HRF_REFERENCE_PREFLIGHT.md reports/HRF_REFERENCE_PREFLIGHT.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record official Costa HRF test vectors and reference software SHA [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
