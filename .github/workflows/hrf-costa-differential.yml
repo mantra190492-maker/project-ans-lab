@@ -1,0 +1,57 @@
+name: ANS HRF Official Costa Differential Gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'anslab/hrf_costa_reference.py'
+      - 'scripts/hrf_costa_differential.py'
+      - 'tests/test_hrf_costa_reference.py'
+      - '.github/workflows/hrf-costa-differential.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ans-official-hrf-differential
+  cancel-in-progress: false
+jobs:
+  compare-author-algorithm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download public author source and fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/costa-reference
+          base='https://physionet.org/files/heart-rate-fragmentation-code/1.0.0'
+          for fn in HRF.awk timeseries_1PVC.txt timeseries_1PVC_1outlier.txt timeseries_1PVC_2outliers.txt; do
+            curl --fail --location --silent --show-error --retry 3 "$base/$fn" -o "/tmp/costa-reference/$fn"
+          done
+      - name: Test our standalone source semantics
+        run: python -m unittest discover -s tests -p 'test_hrf_costa_reference.py' -v
+      - name: Compare author and independent calculations (report on mismatch)
+        run: python -m scripts.hrf_costa_differential
+      - name: Archive scientific result even when mismatched
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f reports/HRF_DIFFERENTIAL_TEST.md reports/HRF_DIFFERENTIAL_TEST.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record audited author-versus-Python HRF reference comparison [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Fail if any reference count disagrees
+        run: python -m scripts.hrf_costa_differential --fail-on-mismatch
+      - name: Display scientific gate
+        if: always()
+        run: |
+          if [ -f reports/HRF_DIFFERENTIAL_TEST.md ]; then
+            cat reports/HRF_DIFFERENTIAL_TEST.md >> "$GITHUB_STEP_SUMMARY"
+          fi
