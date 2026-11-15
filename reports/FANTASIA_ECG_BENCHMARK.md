@@ -5,11 +5,13 @@ Generated: 2026-11-15T13:15:59.228459+00:00
 Automatic R-peak detector compared against the dataset's **manually reviewed beat annotations**.
 No model parameters were optimized against these records.
 
+**Post-publication unit correction:** The original job reported sample offsets as milliseconds. The table now converts samples to milliseconds using 250 Hz (4 ms/sample). These are corrected interpretations of the original run, not a rerun. See [correction audit](../docs/FANTASIA_BENCHMARK_001_AUDIT.md).
+
 | Record | Age group | Reference beats | Predicted beats | Precision | Recall | F1 | Median abs timing error | QC |
 |---|---|---:|---:|---:|---:|---:|---:|---|
 | f1y01 | young_21_34 | 388 | 388 | 1.000 | 1.000 | 1.000 | 4.0 ms | pass |
 | f1o01 | older_68_85 | 309 | 309 | 1.000 | 1.000 | 1.000 | 8.0 ms | pass |
-| f2y01 | young_21_34 | 350 | 350 | 1.000 | 1.000 | 1.000 | 12.0 ms | pass |
+| f2y01 | young_21_34 | 350 | 350 | 1.000 | 1.000 | 1.000 | 18.0 ms | pass |
 | f2o01 | older_68_85 | 338 | 338 | 1.000 | 1.000 | 1.000 | 8.0 ms | pass |
 
 **Engineering target (prospective):** F1 ≥ 0.95 in both age strata, no silent processing failures.
