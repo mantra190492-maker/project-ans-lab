@@ -1,0 +1,183 @@
+{
+  "dataset": "https://physionet.org/files/cerebral-perfusion-diabetes/1.0.1/",
+  "name": "CPD",
+  "generated_utc": "2026-11-15T17:11:38.349170+00:00",
+  "n_files": 405,
+  "extensions": {
+    ".pdf": 26,
+    ".txt": 1,
+    "(none)": 1,
+    ".dat": 186,
+    ".hea": 186,
+    ".csv": 4,
+    ".docx": 1
+  },
+  "n_headers": 186,
+  "header_failures": 0,
+  "groups": {
+    "data/ecg": {
+      "records": 51,
+      "participants": 51,
+      "sampling_hz": {
+        "1000.0": 51
+      },
+      "duration_min": {
+        "min": 12.2,
+        "median": 25.9,
+        "max": 972.3
+      },
+      "channels": {
+        "ecg_0": 51,
+        "ecg_1": 51,
+        "sensor_0": 51,
+        "sensor_1": 51,
+        "emg_0": 51,
+        "emg_1": 51,
+        "accelerometer_0": 51,
+        "accelerometer_1": 51
+      },
+      "name_suffixes": {
+        "ECG": 51
+      }
+    },
+    "data/labview/converted/head-up-tilt": {
+      "records": 52,
+      "participants": 52,
+      "sampling_hz": {
+        "500.0": 52
+      },
+      "duration_min": {
+        "min": 27.1,
+        "median": 38.1,
+        "max": 57.8
+      },
+      "channels": {
+        "marker": 52,
+        "ecg": 52,
+        "abp": 52,
+        "mcar": 52,
+        "mcal": 52,
+        "Radi": 52,
+        "thermst": 52,
+        "flow_rate": 52,
+        "o2": 52,
+        "co2": 52
+      },
+      "name_suffixes": {
+        "DB": 52
+      }
+    },
+    "data/labview/converted/sit-to-stand": {
+      "records": 39,
+      "participants": 39,
+      "sampling_hz": {
+        "1000.0": 39
+      },
+      "duration_min": {
+        "min": 17.6,
+        "median": 18.3,
+        "max": 27.6
+      },
+      "channels": {
+        "marker": 39,
+        "ecg": 39,
+        "abp": 39,
+        "mcar": 39,
+        "mcal": 39,
+        "Radi": 39,
+        "thermst": 39,
+        "flow_rate": 39,
+        "o2": 39,
+        "co2": 39,
+        "fx": 39,
+        "fy": 39,
+        "fz": 39,
+        "px": 39,
+        "py": 39
+      },
+      "name_suffixes": {
+        "DC": 39
+      }
+    },
+    "data/pedar": {
+      "records": 44,
+      "participants": 44,
+      "sampling_hz": {
+        "50.0": 44
+      },
+      "duration_min": {
+        "min": 6.5,
+        "median": 9.2,
+        "max": 12.1
+      },
+      "channels": {
+        "m1_pressure_1": 44,
+        "m1_pressure_2": 44,
+        "m1_pressure_3": 44,
+        "m1_pressure_4": 44,
+        "m1_pressure_5": 44,
+        "m1_pressure_6": 44,
+        "m1_pressure_7": 44,
+        "m1_pressure_8": 44,
+        "m1_pressure_9": 44,
+        "m1_pressure_10": 44,
+        "m1_pressure_11": 44,
+        "m1_pressure_12": 44,
+        "m1_pressure_13": 44,
+        "m1_pressure_14": 44,
+        "m1_pressure_15": 44,
+        "m1_pressure_16": 44,
+        "m1_pressure_17": 44,
+        "m1_pressure_18": 44,
+        "m1_pressure_19": 44,
+        "m1_pressure_20": 44
+      },
+      "name_suffixes": {
+        "ASC": 44
+      }
+    }
+  },
+  "participant_overlap": {
+    "data/ecg & data/labview/converted/head-up-tilt": 49,
+    "data/ecg & data/labview/converted/sit-to-stand": 37,
+    "data/ecg & data/pedar": 42,
+    "data/labview/converted/head-up-tilt & data/labview/converted/sit-to-stand": 38,
+    "data/labview/converted/head-up-tilt & data/pedar": 42,
+    "data/labview/converted/sit-to-stand & data/pedar": 30
+  },
+  "tables": {
+    "data_description/GE-75_data_dictionary.csv": {
+      "rows": 1149,
+      "n_columns": 19
+    },
+    "data_description/GE-75_data_summary_table.csv": {
+      "rows": 88,
+      "n_columns": 1111
+    },
+    "data_description/GE-75_files_and_channels.csv": {
+      "rows": 111,
+      "n_columns": 15
+    },
+    "data_description/GE-75_files_per_subject.csv": {
+      "rows": 88,
+      "n_columns": 8
+    }
+  },
+  "candidate_autonomic_variables": [
+    "BETA BLOCKERS",
+    "Diabetes Duration",
+    "Diabetic Retinopathy (more advanced eye)",
+    "Dizziness AUTONOMIC SYMPTOMS",
+    "Hb A1C%",
+    "Labview - head-up-tilt",
+    "Labview - sit-to-stand",
+    "Left Eye Diabetic Retinopathy",
+    "Neuropathy AUTONOMIC SYMPTOMS",
+    "Numbness AUTONOMIC SYMPTOMS",
+    "OH AUTONOMIC SYMPTOMS",
+    "Painful feet AUTONOMIC SYMPTOMS",
+    "Right Eye Diabetic Retinopathy",
+    "Syncope AUTONOMIC SYMPTOMS"
+  ],
+  "scope": "Structure only. No participant values, no associations."
+}

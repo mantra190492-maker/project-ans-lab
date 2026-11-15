@@ -1,0 +1,256 @@
+{
+  "dataset": "https://physionet.org/files/cerebral-vasoreg-diabetes/1.0.0/",
+  "name": "CVD",
+  "generated_utc": "2026-11-15T17:12:29.673282+00:00",
+  "n_files": 363,
+  "extensions": {
+    ".dat": 171,
+    ".hea": 171,
+    ".csv": 6,
+    ".pdf": 13,
+    ".txt": 1,
+    "(none)": 1
+  },
+  "n_headers": 171,
+  "header_failures": 0,
+  "groups": {
+    "Data/Labview/Converted/Head-up-tilt_Day1": {
+      "records": 59,
+      "participants": 59,
+      "sampling_hz": {
+        "1000.0": 59
+      },
+      "duration_min": {
+        "min": 7.2,
+        "median": 9.0,
+        "max": 11.8
+      },
+      "channels": {
+        "marker": 59,
+        "ecg": 59,
+        "abp": 59,
+        "thermst": 59,
+        "flow_rate": 59,
+        "o2": 59,
+        "co2": 59
+      },
+      "name_suffixes": {
+        "DA": 59
+      }
+    },
+    "Data/Labview/Converted/Head-up-tilt_Day2": {
+      "records": 57,
+      "participants": 57,
+      "sampling_hz": {
+        "1000.0": 57
+      },
+      "duration_min": {
+        "min": 5.0,
+        "median": 22.9,
+        "max": 31.4
+      },
+      "channels": {
+        "marker": 57,
+        "ecg": 57,
+        "abp": 57,
+        "mcar": 57,
+        "mcal": 57,
+        "Radi": 57,
+        "thermst": 57,
+        "flow_rate": 57,
+        "o2": 57,
+        "co2": 57
+      },
+      "name_suffixes": {
+        "DB": 57
+      }
+    },
+    "Data/Labview/Converted/Sit-to-stand": {
+      "records": 31,
+      "participants": 31,
+      "sampling_hz": {
+        "1000.0": 31
+      },
+      "duration_min": {
+        "min": 10.2,
+        "median": 17.7,
+        "max": 20.1
+      },
+      "channels": {
+        "marker": 31,
+        "ecg": 31,
+        "abp": 31,
+        "mcar": 31,
+        "mcal": 31,
+        "Radi": 31,
+        "thermst": 31,
+        "flow_rate": 31,
+        "o2": 31,
+        "co2": 31,
+        "fx": 31,
+        "fy": 31,
+        "fz": 31,
+        "px": 31,
+        "py": 31
+      },
+      "name_suffixes": {
+        "DC": 31
+      }
+    },
+    "Data/Pedar": {
+      "records": 24,
+      "participants": 24,
+      "sampling_hz": {
+        "50.0": 24
+      },
+      "duration_min": {
+        "min": 0.1,
+        "median": 12.1,
+        "max": 15.3
+      },
+      "channels": {
+        "m1_pressure_1": 24,
+        "m1_pressure_2": 24,
+        "m1_pressure_3": 24,
+        "m1_pressure_4": 24,
+        "m1_pressure_5": 24,
+        "m1_pressure_6": 24,
+        "m1_pressure_7": 24,
+        "m1_pressure_8": 24,
+        "m1_pressure_9": 24,
+        "m1_pressure_10": 24,
+        "m1_pressure_11": 24,
+        "m1_pressure_12": 24,
+        "m1_pressure_13": 24,
+        "m1_pressure_14": 24,
+        "m1_pressure_15": 24,
+        "m1_pressure_16": 24,
+        "m1_pressure_17": 24,
+        "m1_pressure_18": 24,
+        "m1_pressure_19": 24,
+        "m1_pressure_20": 24
+      },
+      "name_suffixes": {
+        "ASC": 24
+      }
+    }
+  },
+  "participant_overlap": {
+    "Data/Labview/Converted/Head-up-tilt_Day1 & Data/Labview/Converted/Head-up-tilt_Day2": 50,
+    "Data/Labview/Converted/Head-up-tilt_Day1 & Data/Labview/Converted/Sit-to-stand": 25,
+    "Data/Labview/Converted/Head-up-tilt_Day1 & Data/Pedar": 20,
+    "Data/Labview/Converted/Head-up-tilt_Day2 & Data/Labview/Converted/Sit-to-stand": 30,
+    "Data/Labview/Converted/Head-up-tilt_Day2 & Data/Pedar": 20,
+    "Data/Labview/Converted/Sit-to-stand & Data/Pedar": 11
+  },
+  "tables": {
+    "Data_Description/GE-71_Data_Dictionary.csv": {
+      "rows": 371,
+      "n_columns": 122
+    },
+    "Data_Description/GE-71_Data_Summary_Table.csv": {
+      "rows": 50,
+      "n_columns": 310
+    },
+    "Data_Description/GE-71_File_and_channels.csv": {
+      "rows": 133,
+      "n_columns": 20
+    },
+    "Data_Description/GE-71_Files_Per_Subject.csv": {
+      "rows": 86,
+      "n_columns": 7
+    },
+    "Data_Description/GE-71_Head-up-tilt-Day1_Markers_per_subject.csv": {
+      "rows": 86,
+      "n_columns": 14
+    },
+    "Data_Description/GE-71_Head-up-tilt-Day2_Markers_per_subject.csv": {
+      "rows": 86,
+      "n_columns": 21
+    }
+  },
+  "candidate_autonomic_variables": [
+    "CVR MCAL Hypo Tilt",
+    "CVR MCAL Tilt MN",
+    "CVR MCAR Hypo Tilt",
+    "CVR MCAR Tilt MN",
+    "Change Baseline To HypoTilt MCAL",
+    "Change Baseline To Tilt Mean BP",
+    "Change Baseline to HypoTilt MCAR",
+    "Change Baseline to HypoTilt Mean BP",
+    "Change Baseline to Tilt MCAL",
+    "Change Baseline to Tilt MCAR",
+    "DBP II",
+    "DBP IV",
+    "DBP TILT BASELINE1",
+    "DBP TILT Baseline",
+    "Diabetic retinopathy (yes/no)",
+    "ETCO2(Hypo Tilt Mean)",
+    "ETCO2(Tilt MN)",
+    "ETO2(Hypo Tilt Mean)",
+    "ETO2(Tilt MN)",
+    "End tilt",
+    "HR TILT BASELINE",
+    "HR(Baseline MR)",
+    "HR(HyperMean)",
+    "HR(HyperMin MN)",
+    "HR(Hypo Mean)",
+    "HR(Hypo Tilt Mean)",
+    "HR(Tilt MN)",
+    "HR(hypomax)",
+    "HbA1c",
+    "Head Up Tilt D1",
+    "Head Up Tilt D2",
+    "Neuropathy",
+    "SBP TILT BASELINE1",
+    "SBP TILT Baseline",
+    "Sit-To-Stand",
+    "TILT AVE",
+    "TILT AVE1",
+    "TILT AVE2",
+    "Tilt",
+    "VMR dia_BP",
+    "VMR mn_BP",
+    "VMR sys_BP",
+    "dia_BP(Baseline MR)",
+    "dia_BP(HyperMean)",
+    "dia_BP(HyperMin MN)",
+    "dia_BP(Hypo Mean)",
+    "dia_BP(Hypo Tilt Mean)",
+    "dia_BP(Tilt MN)",
+    "dia_BP(hypomax)",
+    "dia_MCAL(Hypo Tilt Mean)",
+    "dia_MCAL(Tilt MN)",
+    "dia_MCAR(Hypo Tilt Mean)",
+    "dia_MCAR(Tilt MN)",
+    "dia_RAAR(Hypo Tilt Mean)",
+    "dia_RAAR(Tilt MN)",
+    "mn_BP(Baseline MR)",
+    "mn_BP(HyperMean)",
+    "mn_BP(HyperMin MN)",
+    "mn_BP(Hypo Mean)",
+    "mn_BP(Hypo Tilt Mean)",
+    "mn_BP(Tilt MN)",
+    "mn_BP(hypomax)",
+    "mn_MCAL(Hypo Tilt Mean)",
+    "mn_MCAL(Tilt MN)",
+    "mn_MCAR(Hypo Tilt Mean)",
+    "mn_MCAR(Tilt MN)",
+    "mn_RAAR(Hypo Tilt Mean)",
+    "mn_RAAR(Tilt MN)",
+    "sys_BP(Baseline MR)",
+    "sys_BP(HyperMin MN)",
+    "sys_BP(Hypo Mean)",
+    "sys_BP(Hypo Tilt Mean)",
+    "sys_BP(Tilt MN)",
+    "sys_BP(hypomax)",
+    "sys_Bp(HyperMean)",
+    "sys_MCAL(Hypo Tilt Mean)",
+    "sys_MCAL(Tilt MN)",
+    "sys_MCAR(Hypo Tilt Mean)",
+    "sys_MCAR(Tilt MN)",
+    "sys_RAAR(Hypo Tilt Mean)",
+    "sys_RAAR(Tilt MN)"
+  ],
+  "scope": "Structure only. No participant values, no associations."
+}
