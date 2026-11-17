@@ -1,0 +1,173 @@
+{
+ "study": "DIAB-PIP-001",
+ "plan": "docs/DIAB_PIP_001_PLAN.md",
+ "plan_commit": "d033849",
+ "generated_utc": "2026-11-17T07:23:03.371527+00:00",
+ "predictor_table_sha256": "28c31f8b40083b29a09b982a016ccac6e17f71700ba042f8a0a79c771c297946",
+ "record_flow": {
+  "CDED": {
+   "records": 69,
+   "ok": 61,
+   "no_breathing_gap": 5,
+   "etco2_unstable": 1,
+   "ecg_qc_fail": 2
+  },
+  "GE75": {
+   "records": 52,
+   "no_breathing_gap": 5,
+   "ok": 45,
+   "ecg_qc_fail": 2
+  }
+ },
+ "person_flow": {
+  "unique_people": 111,
+  "people_with_records_in_both_datasets": 10,
+  "excluded_also_in_ge71": 2,
+  "analysed": 95,
+  "excluded_no_group_label": 1,
+  "no_record_passed_quality_rules": 13
+ },
+ "quality_selection_by_group": {
+  "control": {
+   "passed": 30,
+   "failed": 2
+  },
+  "diabetes": {
+   "failed": 11,
+   "passed": 65
+  }
+ },
+ "primary": {
+  "n": 95,
+  "n_diabetes": 65,
+  "n_control": 30,
+  "difference": 0.798112954318594,
+  "ci95": [
+   -3.3494667461071743,
+   4.945692654744362
+  ],
+  "p": 0.7031453100561268,
+  "bootstrap_ci95": [
+   -3.7167837135180273,
+   4.828104437483279
+  ],
+  "loo_min": 0.021459305755909333,
+  "loo_max": 1.6542816661055328,
+  "r2": 0.08656883207920085,
+  "difference_in_pooled_sd": 0.0913856649546845,
+  "n_boot": 4000
+ },
+ "primary_passes_frozen_rule": false,
+ "sensitivity": {
+  "S1_without_hr_and_rmssd": {
+   "n": 95,
+   "n_diabetes": 65,
+   "n_control": 30,
+   "difference": 0.5810753271572902,
+   "ci95": [
+    -3.5231623041799507,
+    4.6853129584945306
+   ],
+   "p": 0.7791970197322665,
+   "bootstrap_ci95": [
+    -3.7130291368892943,
+    4.598619863345012
+   ],
+   "loo_min": -0.01716131151246246,
+   "loo_max": 1.3003717125679544,
+   "r2": 0.021464019357640862,
+   "difference_in_pooled_sd": 0.066534385732865,
+   "n_boot": 4000
+  },
+  "S2_cded_only": {
+   "n": 50,
+   "n_diabetes": 26,
+   "n_control": 24,
+   "difference": 2.074220406165227,
+   "ci95": [
+    -3.2109655520589717,
+    7.359406364389426
+   ],
+   "p": 0.4335932729039425,
+   "bootstrap_ci95": [
+    -3.118336040000327,
+    7.224826692090488
+   ],
+   "loo_min": 0.8431914813158029,
+   "loo_max": 3.352584261120184,
+   "r2": 0.017711956297128073,
+   "difference_in_pooled_sd": 0.2409389050847502,
+   "n_boot": 4000
+  },
+  "S3_excluding_beta_blocker_users": {
+   "n": 80,
+   "n_diabetes": 53,
+   "n_control": 27,
+   "difference": 1.372762371050294,
+   "ci95": [
+    -2.9184703473135043,
+    5.663995089414093
+   ],
+   "p": 0.525888246899136,
+   "bootstrap_ci95": [
+    -2.8342195989741414,
+    5.383755382157766
+   ],
+   "loo_min": 0.7549428330685031,
+   "loo_max": 2.016569684062222,
+   "r2": 0.11356106018309264,
+   "difference_in_pooled_sd": 0.16628476114716273,
+   "n_boot": 4000
+  },
+  "S4_adding_age_and_sex_where_available": null
+ },
+ "descriptive": {
+  "diabetes": {
+   "n": 65,
+   "pip_q25_50_75": [
+    52.0,
+    60.294117647058826,
+    64.80836236933798
+   ],
+   "hr_q25_50_75": [
+    61.98080316790772,
+    70.29527473952704,
+    79.16720215910551
+   ],
+   "rmssd_ms_q25_50_75": [
+    11.2517656606977,
+    17.63696402445725,
+    23.696098513168252
+   ],
+   "from_ge75": 39,
+   "from_cded": 26,
+   "beta_blocker_users": 12
+  },
+  "control": {
+   "n": 30,
+   "pip_q25_50_75": [
+    53.193177980412024,
+    59.938225616191716,
+    64.82409713574097
+   ],
+   "hr_q25_50_75": [
+    54.66087262889194,
+    62.32771294422251,
+    67.95280956203163
+   ],
+   "rmssd_ms_q25_50_75": [
+    13.578085936135082,
+    18.103981153017795,
+    34.75115769971974
+   ],
+   "from_ge75": 6,
+   "from_cded": 24,
+   "beta_blocker_users": 3
+  }
+ },
+ "spearman_pip_vs_log_rmssd": [
+  -0.16791189717240101,
+  0.10384175125209584
+ ],
+ "s4_subset_n": 45
+}
