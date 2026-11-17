@@ -48,4 +48,6 @@ Routes that can answer the question:
 
 **Founder go-ahead received 2026-11-17** (he expected the search to keep running). Next and last open-data test, plan to be frozen before any outcome is computed: **DIAB-PIP-001**, resting PIP in type 2 diabetes vs controls pooled over CDED visit 2 and GE-75 (about 120 people), prompted by the post hoc difference noted above. Diabetes status is an at-risk label, not autonomic dysfunction.
 
+**DIAB-PIP-001 plan frozen 2026-11-17** (`docs/DIAB_PIP_001_PLAN.md`) before any ECG was read. Structure checks first (`reports/explore/DIAB_PREP.md`, `DIAB_PREP2.md`) found two things that weaken the test: CDED publishes no age or sex, and GE-75 has only 6 controls among its 52 lab records. The model therefore cannot adjust for age and sex, and a passing result will be logged as *a lead, not adjusted for age and sex*, never as a candidate.
+
 After DIAB-PIP-001 the open data is spent: further tests on 30–50 people would only raise the odds of a chance hit. The search then waits on NSRR access or a clinic cohort.
