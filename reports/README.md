@@ -2,7 +2,7 @@
 
 ## Latest run
 
-- Date (UTC): 20261116T192100Z
+- Date (UTC): 20261117T181351Z
 - Publications retrieved: 46
 - Newly discovered: 0
 - Total unique publications archived: 46
@@ -11,6 +11,7 @@
 
 | Run (UTC) | Retrieved | New | Total unique |
 |---|---:|---:|---:|
+| 20261117T181351Z | 46 | 0 | 46 |
 | 20261116T192100Z | 46 | 0 | 46 |
 | 20261115T140608Z | 46 | 0 | 46 |
 | 20261115T132826Z | 46 | 0 | 46 |
