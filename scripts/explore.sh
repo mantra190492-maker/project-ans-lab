@@ -7,3 +7,4 @@ for attempt in 1 2; do
   echo "attempt $attempt failed; retrying in 60 s"; sleep 60
 done
 exit 1
+

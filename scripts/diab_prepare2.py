@@ -90,7 +90,7 @@ def linkage(a, b):
         for f in ("race", "group"):
             if a[k].get(f) and b[k].get(f):
                 res[f + "_comparable"] += 1
-                res[f + "_same"] += int(a[k][f][:2] == b[k][f][:2])
+                res[f + "_same"] += int(a[k][f][:1] == b[k][f][:1])
     return res
 
 
