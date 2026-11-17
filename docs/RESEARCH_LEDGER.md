@@ -46,4 +46,6 @@ Routes that can answer the question:
 1. **NSRR (SHHS, MrOS):** thousands of people, overnight ECG, two visits. Founder to apply.
 2. **A clinic cohort with a full reflex battery** (and a sweat test): the only way to test early detection of confirmed dysfunction, and the three-domain idea.
 
-Not run, needs the founder's go-ahead under the stopping rule: **DIAB-PIP-001**, resting PIP in type 2 diabetes vs controls pooled over CDED visit 2 and GE-75 (about 120 people), prompted by the post hoc difference noted above. Diabetes status is an at-risk label, not autonomic dysfunction.
+**Founder go-ahead received 2026-11-17** (he expected the search to keep running). Next and last open-data test, plan to be frozen before any outcome is computed: **DIAB-PIP-001**, resting PIP in type 2 diabetes vs controls pooled over CDED visit 2 and GE-75 (about 120 people), prompted by the post hoc difference noted above. Diabetes status is an at-risk label, not autonomic dysfunction.
+
+After DIAB-PIP-001 the open data is spent: further tests on 30–50 people would only raise the odds of a chance hit. The search then waits on NSRR access or a clinic cohort.
