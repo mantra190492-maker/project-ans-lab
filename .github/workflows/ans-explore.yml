@@ -28,7 +28,7 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         with:
           python-version: '3.11'
-      - run: python -m pip install -r requirements.txt pytest
+      - run: python -m pip install -r requirements.txt pytest 'neurokit2>=0.2.10,<0.3'
         if: steps.gate.outputs.run == 'true'
       - run: python -m pytest -q
         if: steps.gate.outputs.run == 'true'
