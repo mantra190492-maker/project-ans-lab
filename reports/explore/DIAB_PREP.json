@@ -1,0 +1,67 @@
+{
+ "CDED": {
+  "records": 69,
+  "records_in_tables": 67,
+  "group_counts": {
+   "control": 29,
+   "dm": 38
+  },
+  "sex_counts": {
+   "(blank)": 67
+  },
+  "with_age": 0,
+  "rest_window": {
+   "status": {
+    "window_found": 69
+   },
+   "start_s_p10_25_50_75_90": [
+    30.0,
+    30.0,
+    30.0,
+    30.0,
+    30.0
+   ]
+  }
+ },
+ "GE75": {
+  "records": 52,
+  "records_in_tables": 52,
+  "group_counts": {
+   "dm": 46,
+   "control": 6
+  },
+  "sex_counts": {
+   "(blank)": 52
+  },
+  "with_age": 52,
+  "rest_window": {
+   "status": {
+    "window_found": 52
+   },
+   "start_s_p10_25_50_75_90": [
+    30.0,
+    30.0,
+    30.0,
+    30.0,
+    30.0
+   ]
+  }
+ },
+ "id_overlap": {
+  "CDED_vs_GE75": {
+   "shared_ids": 11,
+   "comparable": 0,
+   "same_sex_and_age_within_3y": 0
+  },
+  "CDED_vs_GE71": {
+   "shared_ids": 4,
+   "comparable": 0,
+   "same_sex_and_age_within_3y": 0
+  },
+  "GE75_vs_GE71": {
+   "shared_ids": 0,
+   "comparable": 0,
+   "same_sex_and_age_within_3y": 0
+  }
+ }
+}
