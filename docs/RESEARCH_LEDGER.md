@@ -14,8 +14,9 @@ Purpose: one honest list of what has been tested, so a later "hit" can be judged
 | 7 | NAT-BREATH-001 | Heart-rate response to spontaneous large breaths as a passive deep-breathing test | **Dropped before any test** | Prior art: heart-rate variation with deep breathing is the established cardiovagal test, and respiratory sinus arrhythmia in diabetic neuropathy has been studied since the 1980s. With ~4 minutes of rest in ~35 people it could not show added value over RMSSD |
 | 8 | FUSION-001 | Do two autonomic domains together separate diabetes from controls better than one? (founder request, 2026-11-15) | **Done — no demonstrated gain** | n = 46 (25 diabetes, 21 control), lab-scored values. Leave-one-out AUC: Valsalva 0.36, tilt pressure 0.56, both 0.52 (95% CI 0.35–0.69). Gain −0.05. The two domains are uncorrelated (ρ = −0.08) but neither separates diabetes from controls here. Report: `wearable/reports/FUSION_001.md` |
 | 9 | TILT-001 | Resting PIP vs lab-computed heart-rate response to tilt, beyond age, sex, diabetes, resting HR, RMSSD | **Done — null** | β = +0.4 bpm per SD (95% CI −3.7 to +4.4), p = 0.85, n = 29. Report: `reports/explore/TILT_001_RESULT.md` |
+| 10 | DIAB-PIP-001 | Is resting PIP higher in type 2 diabetes than controls, beyond dataset, HR, RMSSD (CDED visit 2 + GE-75)? | **Done — null** | +0.8 PIP points (95% CI −3.4 to +5.0), p = 0.70, n = 95 (65 diabetes, 30 control). Medians 60.3 vs 59.9. The GE-71 post hoc gap (69 vs 61) did not replicate. Not adjusted for age or sex (CDED does not publish them). Report: `reports/explore/DIAB_PIP_001_RESULT.md` |
 
-Outcome-level hypothesis tests run so far: **3** (GE71-ANS-001, FUSION-001, TILT-001). Candidates found: **0**.
+Outcome-level hypothesis tests run so far: **4** (GE71-ANS-001, FUSION-001, TILT-001, DIAB-PIP-001). Candidates found: **0**.
 
 Practical note: physionet.org timed out from GitHub runners for ~45 minutes on 2026-11-15; open-access files are also served from `https://physionet-open.s3.amazonaws.com/<project>/<version>/...`.
 
@@ -51,3 +52,12 @@ Routes that can answer the question:
 **DIAB-PIP-001 plan frozen 2026-11-17** (`docs/DIAB_PIP_001_PLAN.md`) before any ECG was read. Structure checks first (`reports/explore/DIAB_PREP.md`, `DIAB_PREP2.md`) found two things that weaken the test: CDED publishes no age or sex, and GE-75 has only 6 controls among its 52 lab records. The model therefore cannot adjust for age and sex, and a passing result will be logged as *a lead, not adjusted for age and sex*, never as a candidate.
 
 After DIAB-PIP-001 the open data is spent: further tests on 30–50 people would only raise the odds of a chance hit. The search then waits on NSRR access or a clinic cohort.
+
+## Open data closed — 2026-11-17
+
+DIAB-PIP-001 was null with the largest sample in this project (n = 95). It also showed that the post hoc PIP gap seen in GE-71 was noise: the median difference shrank from 8 points to 0.4. Quality control held up better here than in GE-71 (106 of 121 records passed).
+
+Descriptive only, not a test and not new: resting heart rate was higher in diabetes (median 70 vs 62 bpm), a long-known finding.
+
+Four outcome tests, zero candidates. The open-data queue is closed. No further test on these datasets. The next experiment needs NSRR (SHHS/MrOS) access or a clinic cohort with a full reflex battery.
+
