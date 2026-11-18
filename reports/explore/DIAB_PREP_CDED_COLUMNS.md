@@ -1,0 +1,1350 @@
+# CDED summary-table columns (names and non-missing counts only)
+
+## Data_Description/GE-79_Summary_Table-Cognitive-Testing.csv (121 rows)
+
+- 0 | patient ID | 121
+- 1 | Visit | 121
+- 2 | DS: # digits correct forward | 117
+- 3 | DS: backward # digits correct | 118
+- 4 | DS: Total | 117
+- 5 | DS: Scaled Score | 117
+- 6 | HVLT: Trial 1 | 121
+- 7 | HVLT: Trial 2 | 121
+- 8 | HVLT: Trial 3 | 121
+- 9 | HVLT: Trial 4 | 75
+- 10 | HVLT: True-Positive | 110
+- 11 | HVLT: Sem-Rel False-Pos | 110
+- 12 | HVLT: Sem-Unrel False-Pos | 110
+- 13 | HVLT: Total False-Pos | 110
+- 14 | HVLT: Total Recall | 121
+- 15 | HVLT: Delayed Recall | 120
+- 16 | HVLT: Delayed Recall T-score | 120
+- 17 | HVLT: Retention % | 120
+- 18 | HVLT: Retention % T-score | 120
+- 19 | HVLT: RDI | 118
+- 20 | HVLT: RDI T-score | 118
+- 21 | RCFT: Copy-Raw | 120
+- 22 | RCFT: Copy Time (sec) | 119
+- 23 | RCFT: I.R.-Raw | 121
+- 24 | RCFT: I.R. Time (sec) | 117
+- 25 | RCFT: I.R. T-score | 119
+- 26 | RCFT: I.R. Percentile | 119
+- 27 | RCFT: D.R.-Raw | 119
+- 28 | RCFT: D.R. Time (sec) | 111
+- 29 | RCFT: D.R. T-score | 117
+- 30 | RCFT: D.R. Percentile Range = 1-16 | 117
+- 31 | RCFT: True Positive | 113
+- 32 | RCFT: True Pos %ile Range = 1-16 | 111
+- 33 | RCFT: False Pos | 113
+- 34 | RCFT: False Pos %ile Range = 1-16 | 111
+- 35 | RCFT: True Neg | 113
+- 36 | RCFT: True Neg %ile Range = 1-16 | 111
+- 37 | RCFT: False Neg | 113
+- 38 | RCFT: False Neg %ile Range = 1-16 | 111
+- 39 | RCFT: Total Correct | 113
+- 40 | VF: #F words | 121
+- 41 | VF: #A words | 121
+- 42 | VF: #S words | 121
+- 43 | VF: FAS Total | 121
+- 44 | VF: Scaled score | 121
+- 45 | VF:T-score | 118
+- 46 | VF: # Animals | 121
+- 47 | VF: # animals scaled-score | 121
+- 48 | VF: # animals t-score | 118
+- 49 | VF: # supermarket | 121
+- 50 | TM: Part A Time (sec) | 117
+- 51 | TM: Part B Time (sec) | 116
+- 52 | TM: Scaled Score | 116
+- 53 | TM: T-score | 113
+- 54 | Clock: Memory | 120
+- 55 | Clock: Ex Funct. | 121
+- 56 | Clock: Total Score | 120
+- 57 | Clock: Standard Score | 0
+- 58 | WTAR: Raw Score | 115
+- 59 | WTAR: Std Score | 103
+- 60 | NIS Self-Report Form Total Response | 92
+- 61 | BADS Total Responses | 116
+- 62 | GDS Total Response | 108
+- 63 | IADL | 104
+- 64 | MMSE Total | 118
+- 65 | MMSE: Comp Norms | 116
+
+## Data_Description/GE-79_Summary_Table-Demographics-MRI-Part1.csv (121 rows)
+
+- 0 | Patient ID | 121
+- 1 | study | 121
+- 2 | Visit | 121
+- 3 | Group | 121
+- 4 | Diabetes Duration | 64
+- 5 | HTN or not | 117
+- 6 | Race | 121
+- 7 | DM, Non-DM, STROKE | 121
+- 8 | HEIGHT (M) | 121
+- 9 | MASS (KG) | 121
+- 10 | BMI | 121
+- 11 | global GM vol | 115
+- 12 | global GM vol covered in template | 115
+- 13 | L superior frontal gyrus (#21) GM | 115
+- 14 | R superior frontal gyrus (#22) GM | 115
+- 15 | L middle frontal gyrus (#23) GM | 115
+- 16 | R middle frontal gyrus (#24) GM | 115
+- 17 | L inferior frontal gyrus (#25) GM | 115
+- 18 | R inferior frontal gyrus (#26) GM | 115
+- 19 | L precentral gyrus (#27) GM | 115
+- 20 | R precentral gyrus (#28) GM | 115
+- 21 | L middle orbitofrontal gyrus (#29) GM | 115
+- 22 | R middle orbitofrontal gyrus (#30) GM | 115
+- 23 | L lateral orbitofrontal gyrus (#31) GM | 115
+- 24 | R lateral orbitofrontal gyrus (#32) GM | 115
+- 25 | L gyrus rectus (#33) GM | 115
+- 26 | R gyrus rectus (#34) GM | 115
+- 27 | L postcentral gyrus (#41) GM | 115
+- 28 | R postcentral gyrus (#42) GM | 115
+- 29 | L superior parietal gyrus (#43) GM | 115
+- 30 | R superior parietal gyrus (#44) GM | 115
+- 31 | L supramarginal gyrus (#45) GM | 115
+- 32 | R supramarginal gyurs (#46) GM | 115
+- 33 | L angular gyrus (#47) GM | 115
+- 34 | R angular gyrus (#48) GM | 115
+- 35 | L precuneus (#49) GM | 115
+- 36 | R precuneus (#50) GM | 115
+- 37 | L superior occipital gyrus (#61) GM | 115
+- 38 | R superior occipital gyrus (#62) GM | 115
+- 39 | L middle occipital gyrus (#63) GM | 115
+- 40 | R middle occipital gyrus (#64) GM | 115
+- 41 | L inferior occipital gyrus (#65) GM | 115
+- 42 | R inferior occipital gyrus (#66) GM | 115
+- 43 | L cuneus (#67) GM | 115
+- 44 | R cuneus (#68) GM | 115
+- 45 | L superior temporal gyrus (#81) GM | 115
+- 46 | R superior temporal gyrus (#82) GM | 115
+- 47 | L middle temporal gyrus (#83) GM | 115
+- 48 | R middle temporal gyrus (#84) GM | 115
+- 49 | L inferior temporal gyrus (#85) GM | 115
+- 50 | R inferior temporal gyrus (#86) GM | 115
+- 51 | L parahippocampal gyrus (#87) GM | 115
+- 52 | R parahippocampal gyrus (#88) GM | 115
+- 53 | L lingual gyrus (#89) GM | 115
+- 54 | R lingual gyrus (#90) GM | 115
+- 55 | L fusiform gyrus (#91) GM | 115
+- 56 | R fusiform gyrus (#92) GM | 115
+- 57 | L insular cortex (#101) GM | 115
+- 58 | R insular cortex (#102) GM | 115
+- 59 | L cingulate gyrus (#121) GM | 115
+- 60 | R cingulate gyrus (#122) GM | 115
+- 61 | L caudate (#161) GM | 115
+- 62 | R caudate (#162) GM | 115
+- 63 | L putamen (#163) GM | 115
+- 64 | R putamen (#164) GM | 115
+- 65 | L hippocampus (#165) GM | 115
+- 66 | R hippocampus (#166) GM | 115
+- 67 | cerebellum (#181) GM | 115
+- 68 | brain stem (#182) GM | 115
+- 69 | global WM vol | 115
+- 70 | global WM vol covered in template | 115
+- 71 | L superior frontal gyrus (#21) WM | 115
+- 72 | R superior frontal gyrus (#22) WM | 115
+- 73 | L middle frontal gyrus (#23) WM | 115
+- 74 | R middle frontal gyrus (#24) WM | 115
+- 75 | L inferior frontal gyrus (#25) WM | 115
+- 76 | R inferior frontal gyrus (#26) WM | 115
+- 77 | L precentral gyrus (#27) WM | 115
+- 78 | R precentral gyrus (#28) WM | 115
+- 79 | L middle orbitofrontal gyrus (#29) WM | 115
+- 80 | R middle orbitofrontal gyrus (#30) WM | 115
+- 81 | L lateral orbitofrontal gyrus (#31) WM | 115
+- 82 | R lateral orbitofrontal gyrus (#32) WM | 115
+- 83 | L gyrus rectus (#33) WM | 115
+- 84 | R gyrus rectus (#34) WM | 115
+- 85 | L postcentral gyrus (#41) WM | 115
+- 86 | R postcentral gyrus (#42) WM | 115
+- 87 | L superior parietal gyrus (#43) WM | 115
+- 88 | R superior parietal gyrus (#44) WM | 115
+- 89 | L supramarginal gyrus (#45) WM | 115
+- 90 | R supramarginal gyurs (#46) WM | 115
+- 91 | L angular gyrus (#47) WM | 115
+- 92 | R angular gyrus (#48) WM | 115
+- 93 | L precuneus (#49) WM | 115
+- 94 | R precuneus (#50) WM | 115
+- 95 | L superior occipital gyrus (#61) WM | 115
+- 96 | R superior occipital gyrus (#62) WM | 115
+- 97 | L middle occipital gyrus (#63) WM | 115
+- 98 | R middle occipital gyrus (#64) WM | 115
+- 99 | L inferior occipital gyrus (#65) WM | 115
+- 100 | R inferior occipital gyrus (#66) WM | 115
+- 101 | L cuneus (#67) WM | 115
+- 102 | R cuneus (#68) WM | 115
+- 103 | L superior temporal gyrus (#81) WM | 115
+- 104 | R superior temporal gyrus (#82) WM | 115
+- 105 | L middle temporal gyrus (#83) WM | 115
+- 106 | R middle temporal gyrus (#84) WM | 115
+- 107 | L inferior temporal gyrus (#85)  WM | 115
+- 108 | R inferior temporal gyrus (#86) WM | 115
+- 109 | L parahippocampal gyrus (#87) WM | 115
+- 110 | R parahippocampal gyrus (#88) WM | 115
+- 111 | L lingual gyrus (#89) WM | 115
+- 112 | R lingual gyrus (#90) WM | 115
+- 113 | L fusiform gyrus (#91) WM | 115
+- 114 | R fusiform gyrus (#92) WM | 115
+- 115 | L insular cortex (#101) WM | 115
+- 116 | R insular cortex (#102) WM | 115
+- 117 | L cingulate gyrus (#121) WM | 115
+- 118 | R cingulate gyrus (#122) WM | 115
+- 119 | L caudate (#161) WM | 115
+- 120 | R caudate (#162) WM | 115
+- 121 | L putamen (#163) WM | 115
+- 122 | R putamen (#164) WM | 115
+- 123 | L hippocampus (#165) WM | 115
+- 124 | R hippocampus (#166) WM | 115
+- 125 | cerebellum (#181) WM | 115
+- 126 | brain stem (#182) WM | 115
+- 127 | global CSF vol | 115
+- 128 | global CSF vol covered in template | 115
+- 129 | L superior frontal gyrus (#21) CSF | 115
+- 130 | R superior frontal gyrus (#22) CSF | 115
+- 131 | L middle frontal gyrus (#23) CSF | 115
+- 132 | R middle frontal gyrus (#24) CSF | 115
+- 133 | L inferior frontal gyrus (#25) CSF | 115
+- 134 | R inferior frontal gyrus (#26) CSF | 115
+- 135 | L precentral gyrus (#27) CSF | 115
+- 136 | R precentral gyrus (#28) CSF | 115
+- 137 | L middle orbitofrontal gyrus (#29) CSF | 115
+- 138 | R middle orbitofrontal gyrus (#30) CSF | 115
+- 139 | L lateral orbitofrontal gyrus (#31) CSF | 115
+- 140 | R lateral orbitofrontal gyrus (#32) CSF | 115
+- 141 | L gyrus rectus (#33) CSF | 115
+- 142 | R gyrus rectus (#34) CSF | 115
+- 143 | L postcentral gyrus (#41) CSF | 115
+- 144 | R postcentral gyrus (#42) CSF | 115
+- 145 | L superior parietal gyrus (#43) CSF | 115
+- 146 | R superior parietal gyrus (#44) CSF | 115
+- 147 | L supramarginal gyrus (#45) CSF | 115
+- 148 | R supramarginal gyurs (#46) CSF | 115
+- 149 | L angular gyrus (#47) CSF | 115
+- 150 | R angular gyrus (#48) CSF | 115
+- 151 | L precuneus (#49) CSF | 115
+- 152 | R precuneus (#50) CSF | 115
+- 153 | L superior occipital gyrus (#61) CSF | 115
+- 154 | R superior occipital gyrus (#62) CSF | 115
+- 155 | L middle occipital gyrus (#63) CSF | 115
+- 156 | R middle occipital gyrus (#64) CSF | 115
+- 157 | L inferior occipital gyrus (#65) CSF | 115
+- 158 | R inferior occipital gyrus (#66) CSF | 115
+- 159 | L cuneus (#67) CSF | 115
+- 160 | R cuneus (#68) CSF | 115
+- 161 | L superior temporal gyrus (#81) CSF | 115
+- 162 | R superior temporal gyrus (#82) CSF | 115
+- 163 | L middle temporal gyrus (#83) CSF | 115
+- 164 | R middle temporal gyrus (#84) CSF | 115
+- 165 | L inferior temporal gyrus (#85) CSF | 115
+- 166 | R inferior temporal gyrus (#86) CSF | 115
+- 167 | L parahippocampal gyrus (#87) CSF | 115
+- 168 | R parahippocampal gyrus (#88) CSF | 115
+- 169 | L lingual gyrus (#89) CSF | 115
+- 170 | R lingual gyrus (#90) CSF | 115
+- 171 | L fusiform gyrus (#91) CSF | 115
+- 172 | R fusiform gyrus (#92) CSF | 115
+- 173 | L insular cortex (#101) CSF | 115
+- 174 | R insular cortex (#102) CSF | 115
+- 175 | L cingulate gyrus (#121) CSF | 115
+- 176 | R cingulate gyrus (#122) CSF | 115
+- 177 | L caudate (#161) CSF | 115
+- 178 | R caudate (#162) CSF | 115
+- 179 | L putamen (#163) CSF | 115
+- 180 | R putamen (#164) CSF | 115
+- 181 | L hippocampus (#165) CSF | 115
+- 182 | R hippocampus (#166) CSF | 115
+- 183 | cerebellum (#181) CSF | 115
+- 184 | brain stem (#182) CSF | 115
+- 185 | L ventricle (#1) | 73
+- 186 | R ventricle (#2) | 73
+- 187 | L superior frontal gyrus (#21) GM / ICV | 73
+- 188 | R superior frontal gyrus (#22) GM / ICV | 73
+- 189 | L middle frontal gyrus (#23) GM / ICV | 73
+- 190 | R middle frontal gyrus (#24) GM / ICV | 73
+- 191 | L inferior frontal gyrus (#25) GM / ICV | 73
+- 192 | R inferior frontal gyrus (#26) GM / ICV | 73
+- 193 | L precentral gyrus (#27) GM / ICV | 73
+- 194 | R precentral gyrus (#28) GM / ICV | 73
+- 195 | L middle orbitofrontal gyrus (#29) GM / ICV | 73
+- 196 | R middle orbitofrontal gyrus (#30) GM / ICV | 73
+- 197 | L lateral orbitofrontal gyrus (#31) GM / ICV | 73
+- 198 | R lateral orbitofrontal gyrus (#32) GM / ICV | 73
+- 199 | L gyrus rectus (#33) GM / ICV | 73
+- 200 | R gyrus rectus (#34) GM / ICV | 73
+- 201 | L postcentral gyrus (#41) GM / ICV | 73
+- 202 | R postcentral gyrus (#42) GM / ICV | 73
+- 203 | L superior parietal gyrus (#43) GM / ICV | 73
+- 204 | R superior parietal gyrus (#44) GM / ICV | 73
+- 205 | L supramarginal gyrus (#45) GM / ICV | 73
+- 206 | R supramarginal gyrus (#46) GM / ICV | 73
+- 207 | L angular gyrus (#47) GM / ICV | 73
+- 208 | R angular gyrus (#48) GM / ICV | 73
+- 209 | L precuneus (#49) GM / ICV | 73
+- 210 | R precuneus (#50) GM / ICV | 73
+- 211 | L superior occipital gyrus (#61) GM / ICV | 73
+- 212 | R superior occipital gyrus (#62) GM / ICV | 73
+- 213 | L middle occipital gyrus (#63) GM / ICV | 73
+- 214 | R middle occipital gyrus (#64) GM / ICV | 73
+- 215 | L inferior occipital gyrus (#65) GM / ICV | 73
+- 216 | R inferior occipital gyrus (#66) GM / ICV | 73
+- 217 | L cuneus (#67) GM / ICV | 73
+- 218 | R cuneus (#68) GM / ICV | 73
+- 219 | L superior temporal gyrus (#81) GM / ICV | 73
+- 220 | R superior temporal gyrus (#82) GM / ICV | 73
+- 221 | L middle temporal gyrus (#83) GM / ICV | 73
+- 222 | R middle temporal gyrus (#84) GM / ICV | 73
+- 223 | L inferior temporal gyrus (#85) GM / ICV | 73
+- 224 | R inferior temporal gyrus (#86) GM / ICV | 73
+- 225 | L parahippocampal gyrus (#87) GM / ICV | 73
+- 226 | R parahippocampal gyrus (#88) GM / ICV | 73
+- 227 | L lingual gyrus (#89) GM / ICV | 73
+- 228 | R lingual gyrus (#90) GM / ICV | 73
+- 229 | L fusiform gyrus (#91) GM / ICV | 73
+- 230 | R fusiform gyrus (#92) GM / ICV | 73
+- 231 | L insular cortex (#101) GM / ICV | 73
+- 232 | R insular cortex (#102) GM / ICV | 73
+- 233 | L cingulate gyrus (#121) GM / ICV | 73
+- 234 | R cingulate gyrus (#122) GM / ICV | 73
+- 235 | L caudate (#161) GM / ICV | 73
+- 236 | R caudate (#162) GM / ICV | 73
+- 237 | L putamen (#163) GM / ICV | 73
+- 238 | R putamen (#164) GM / ICV | 73
+- 239 | L hippocampus (#165) GM / ICV | 73
+- 240 | R hippocampus (#166) GM / ICV | 73
+- 241 | cerebellum (#181) GM / ICV | 73
+- 242 | brainstem (#182) GM / ICV | 73
+- 243 | L Frontal Lobe GM | 73
+- 244 | R Frontal Lobe GM | 73
+- 245 | L Parietal Lobe GM | 73
+- 246 | R Parietal Lobe GM | 73
+- 247 | L Occipital Lobe GM | 73
+- 248 | R Occipital Lobe GM | 73
+- 249 | L Temporal Lobe GM | 73
+- 250 | R Temporal Lobe GM | 73
+- 251 | global GM covered in template/ICV | 73
+- 252 | L superior frontal gyrus (#21) WM / ICV | 73
+- 253 | R superior frontal gyrus (#22) WM / ICV | 73
+
+## Data_Description/GE-79_Summary_Table-Labs-BP-Ophthalmogic-Walk.csv (121 rows)
+
+- 0 | patient ID | 121
+- 1 | Visit | 121
+- 2 | PREVIOUS TOBACCO USE | 107
+- 3 | CURRENT TOBACCO USE | 121
+- 4 | PackYears | 53
+- 5 | Years | 53
+- 6 | PREVIOUS ALCOHOL USE | 104
+- 7 | CURRENT ALCOHOL USE | 120
+- 8 | ALCOHOL Dose/Week | 115
+- 9 | Dizziness AUTONOMIC SYMPTOMS | 121
+- 10 | Numbness AUTONOMIC SYMPTOMS | 119
+- 11 | Painful feet AUTONOMIC SYMPTOMS | 121
+- 12 | Syncope AUTONOMIC SYMPTOMS | 120
+- 13 | OH AUTONOMIC SYMPTOMS | 121
+- 14 | cancer,# FAMILY HISTORY | 121
+- 15 | cancSpec FAMILY HISTORY | 121
+- 16 | HeartDisease FAMILY HISTORY | 121
+- 17 | Hdspecific FAMILY HISTORY | 119
+- 18 | HTN FAMILY HISTORY | 120
+- 19 | HTNspecific FAMILY HISTORY | 120
+- 20 | DM FAMILY HISTORY | 121
+- 21 | Dmspecific FAMILY HISTORY | 121
+- 22 | StrokeFAMILY HISTORY | 121
+- 23 | StrokeSpecific FAMILY HISTORY | 121
+- 24 | HTN YRS PATIENT MEDICAL HISTORY | 98
+- 25 | CANCER PATIENT MEDICAL HISTORY | 120
+- 26 | STROKE PATIENT MEDICAL HISTORY | 121
+- 27 | STROKE YR PATIENT MEDICAL HISTORY | 0
+- 28 | ATRIAL FIBTRILLATION PATIENT MEDICAL HISTORY | 121
+- 29 | HEART FAILURE =CHF /IFARCTION=-MI PATIENT MEDICAL HISTORY | 121
+- 30 | HYPERLIPIDEMIA PATIENT MEDICAL HISTORY | 121
+- 31 | DM PATIENT MEDICAL HISTORY | 121
+- 32 | OTHER | 95
+- 33 | DG2 | 0
+- 34 | Stroke Date 2 | 0
+- 35 | NIHSS 2 | 0
+- 36 | MRS 2 | 0
+- 37 | Stroke Group 2 | 0
+- 38 | Stroke Side 2 | 0
+- 39 | Stroke Etiology 2 | 0
+- 40 | Symptoms 2 | 0
+- 41 | Lesions 2 | 0
+- 42 | Carotids | 0
+- 43 | Visit 2 date | 0
+- 44 | 2nd Stroke 2 | 0
+- 45 | medication_old | 0
+- 46 | Medications | 112
+- 47 | Diabetic Medication Taken | 0
+- 48 | Meds for HTN Tapered | 0
+- 49 | Class of Meds Tapered | 0
+- 50 | Tapered Medications taken during Visit 2 | 0
+- 51 | ANTIPLATELETS | 118
+- 52 | ANTICOAGULANTS | 120
+- 53 | ANTIHYPERLIPIDEMIC | 120
+- 54 | ANTIPARKINSONIAN | 120
+- 55 | STATINS | 120
+- 56 | ESTROGEN | 120
+- 57 | ACE INHIBITORS | 120
+- 58 | ARBS | 120
+- 59 | BETA BLOCKERS | 120
+- 60 | DIURETICS | 120
+- 61 | CA ++ BLOCKERS | 120
+- 62 | INSULIN(Yes_or_No) | 120
+- 63 | ORAL HYPOGLYCEMIC | 120
+- 64 | OTHER 2 | 120
+- 65 | WBC K/uL | 120
+- 66 | RBC m/uL | 120
+- 67 | Hgb g/dL | 120
+- 68 | Hgb<12.5 | 119
+- 69 | Hct % | 120
+- 70 | MCV fL | 120
+- 71 | MCH pg | 120
+- 72 | MCHC % | 120
+- 73 | RDW% | 120
+- 74 | Plt ct K/uL | 120
+- 75 | GLUCOSE mg/dL | 74
+- 76 | Insulin (uIU/mL) | 77
+- 77 | HOMA1_IR | 74
+- 78 | CHOLESTmg/dL | 72
+- 79 | TRIGLYCmg/dL | 72
+- 80 | HDL mg/dL | 72
+- 81 | LDL CALCmg/dL | 71
+- 82 | URINE CREAT mg/dL | 119
+- 83 | URINE ALBUMIN mg/dL | 119
+- 84 | Alb/Cre mg/g (URINE) | 118
+- 85 | ACR <5 | 44
+- 86 | ACR >5 | 74
+- 87 | ACR >10 | 47
+- 88 | MA | 30
+- 89 | Hb A1C% | 120
+- 90 | Fasting Glucose (mg/dL) (Visit 2 for GE-75) | 116
+- 91 | Fasting Cholest (mg/dL) (Visit 2 for GE75) | 119
+- 92 | Fasting Triglyc (mg/dL) (Visit 2 for GE75) | 119
+- 93 | Fasting HDL (mg/dL) (Visit 2 for GE75) | 118
+- 94 | Fasting Chol/HD Ratio (Visit 2 for GE75) | 119
+- 95 | Fasting LDL calc (mg/dL) (Visit 2 for GE75) | 118
+- 96 | Lab_Results_Notes | 4
+- 97 | Cortisol (ug/dL) | 115
+- 98 | IGF-1 (ng/mL) | 77
+- 99 | Leptin (ng/mL) | 77
+- 100 | SICAM (pg/ml) | 121
+- 101 | SVCAM (ng/ml) | 121
+- 102 | CRP (mg/L) | 114
+- 103 | IL-6 (pg/ml) | 77
+- 104 | TNFa (pg/ml) | 120
+- 105 | CRP (mg/L) MGH | 55
+- 106 | E-Selectin (pg/mL) MGH | 38
+- 107 | ICAM-1 (ug/mL) MGH | 55
+- 108 | ICAM-1 (ng/mL) MGH | 55
+- 109 | ICAM-3 (ug/mL) MGH | 38
+- 110 | IFN-gamma (1) pg/mL MGH | 72
+- 111 | IL-10 (pg/mL) MGH | 66
+- 112 | IL-12p70 (pg/mL) MGH | 71
+- 113 | IL-13 (1) (pg/mL) MGH | 69
+- 114 | IL-1b (1) (pg/mL) MGH | 70
+- 115 | IL-2 (1) (pg/mL) MGH | 71
+- 116 | IL-4 (1) (pg/mL) MGH | 70
+- 117 | IL-6 (1) (pg/mL) MGH | 70
+- 118 | IL-8 (1) (pg/mL) MGH | 70
+- 119 | Insulin (uU/mL) MGH | 38
+- 120 | MMP-1 (ng/mL) MGH | 69
+- 121 | MMP-3 (ng/mL) MGH | 70
+- 122 | MMP-9 (ng/mL) MGH | 69
+- 123 | P-Selectin, MSD (pg/mL) MGH | 38
+- 124 | SAA, MSD (ug/mL) MGH | 55
+- 125 | Thrombomodulin (pg/mL) MGH | 38
+- 126 | TNF-alpha (1) (pg/mL) MGH | 70
+- 127 | VCAM-1, MSD (ug/mL) MGH | 55
+- 128 | VCAM-1, MSD (ng/mL) MGH | 55
+- 129 | 24Hour-Daytime-SBP | 108
+- 130 | 24Hour-Nighttime-SBP | 104
+- 131 | 24Hour-Daytime-DBP | 108
+- 132 | 24Hour-Nighttime-DBP | 104
+- 133 | 24Hour-Daytime-MBP | 108
+- 134 | 24Hour-Nightime-MBP | 104
+- 135 | 24Hour-Daytime-HR | 108
+- 136 | 24Hour-Nightime-HR | 104
+- 137 | 24Hour-Daytime-PP | 41
+- 138 | 24Hour-Nightime-PP | 38
+- 139 | 24Hour-SBPDIP | 104
+- 140 | 24Hour-SBPDIP% | 104
+- 141 | 24Hour-DBPDIP | 104
+- 142 | 24Hour-DBPDIP% | 104
+- 143 | 24Hour-MBPDIP | 104
+- 144 | 24Hour-MBPDIP% | 104
+- 145 | 24Hour-HRDIP | 104
+- 146 | 24Hour-HRDIP% | 104
+- 147 | 24Hour-PPDIP | 38
+- 148 | 24Hour-PPDIP% | 38
+- 149 | 24Hour-SBPDIPPER | 104
+- 150 | 24Hour-DBPDIPPER | 104
+- 151 | 24Hour-MBPDIPPER | 104
+- 152 | 24Hour-PPDIPPER | 38
+- 153 | Eye Scan (Y/N) | 121
+- 154 | Right Eye findings | 121
+- 155 | Left Eye findings | 121
+- 156 | Right Eye Diabetic Retinopathy | 121
+- 157 | Left Eye Diabetic Retinopathy | 121
+- 158 | Diabetic Retinopathy (more advanced eye) | 121
+- 159 | Right Eye Macular Edema | 121
+- 160 | Left Eye Macular Edema | 121
+- 161 | Macular Edema (more advanced eye) | 121
+- 162 | GAIT - Walk 1 distance (m) | 44
+- 163 | Gait (Normal) RPE Start (1-10) | 118
+- 164 | Gait (Normal) RPE End (1-10) | 116
+- 165 | Gait (DT) RPE Start (1-10) | 113
+- 166 | Gait (DT) RPE End (1-10) | 111
+- 167 | GAIT - Walk 1 speed (m/s) | 114
+- 168 | Gait (Dual Task) - Distance (m) | 114
+- 169 | Gait (Dual Task) - Speed (m/s) | 114
+
+## Data_Description/GE-79_Summary_Table-MRI-Part2.csv (121 rows)
+
+- 0 | patient ID | 121
+- 1 | Visit | 121
+- 2 | R middle frontal gyrus (#24) WM / ICV | 73
+- 3 | L inferior frontal gyrus (#25) WM / ICV | 73
+- 4 | R inferior frontal gyrus (#26) WM / ICV | 73
+- 5 | L precentral gyrus (#27) WM / ICV | 73
+- 6 | R precentral gyrus (#28) WM / ICV | 73
+- 7 | L middle orbitofrontal gyrus (#29) WM / ICV | 73
+- 8 | R middle orbitofrontal gyrus (#30) WM / ICV | 73
+- 9 | L lateral orbitofrontal gyrus (#31) WM / ICV | 73
+- 10 | R lateral orbitofrontal gyrus (#32) WM / ICV | 73
+- 11 | L gyrus rectus (#33) WM / ICV | 73
+- 12 | R gyrus rectus (#34) WM / ICV | 73
+- 13 | L postcentral gyrus (#41) WM / ICV | 73
+- 14 | R postcentral gyrus (#42) WM / ICV | 73
+- 15 | L superior parietal gyrus (#43) WM / ICV | 73
+- 16 | R superior parietal gyrus (#44) WM / ICV | 73
+- 17 | L supramarginal gyrus (#45) WM / ICV | 73
+- 18 | R supramarginal gyrus (#46) WM / ICV | 73
+- 19 | L angular gyrus (#47) WM / ICV | 73
+- 20 | R angular gyrus (#48) WM / ICV | 73
+- 21 | L precuneus (#49) WM / ICV | 73
+- 22 | R precuneus (#50) WM / ICV | 73
+- 23 | L superior occipital gyrus (#61) WM / ICV | 73
+- 24 | R superior occipital gyrus (#62) WM / ICV | 73
+- 25 | L middle occipital gyrus (#63) WM / ICV | 73
+- 26 | R middle occipital gyrus (#64) WM / ICV | 73
+- 27 | L inferior occipital gyrus (#65) WM / ICV | 73
+- 28 | R inferior occipital gyrus (#66) WM / ICV | 73
+- 29 | L cuneus (#67) WM / ICV | 73
+- 30 | R cuneus (#68) WM / ICV | 73
+- 31 | L superior temporal gyrus (#81) WM / ICV | 73
+- 32 | R superior temporal gyrus (#82) WM / ICV | 73
+- 33 | L middle temporal gyrus (#83) WM / ICV | 73
+- 34 | R middle temporal gyrus (#84) WM / ICV | 73
+- 35 | L inferior temporal gyrus (#85) WM / ICV | 73
+- 36 | R inferior temporal gyrus (#86) WM / ICV | 73
+- 37 | L parahippocampal gyrus (#87) WM / ICV | 73
+- 38 | R parahippocampal gyrus (#88) WM / ICV | 73
+- 39 | L lingual gyrus (#89) WM / ICV | 73
+- 40 | R lingual gyrus (#90) WM / ICV | 73
+- 41 | L fusiform gyrus (#91) WM / ICV | 73
+- 42 | R fusiform gyrus (#92) WM / ICV | 73
+- 43 | L insular cortex (#101) WM / ICV | 73
+- 44 | R insular cortex (#102) WM / ICV | 73
+- 45 | L cingulate gyrus (#121) WM / ICV | 73
+- 46 | R cingulate gyrus (#122)WM / ICV | 73
+- 47 | L caudate (#161) WM / ICV | 73
+- 48 | R caudate (#162) WM / ICV | 73
+- 49 | L putamen (#163) WM / ICV | 73
+- 50 | R putamen (#164) WM / ICV | 73
+- 51 | L hippocampus (#165) WM / ICV | 73
+- 52 | R hippocampus (#166) WM / ICV | 73
+- 53 | cerebellum (#181) WM / ICV | 73
+- 54 | brainstem (#182) WM / ICV | 73
+- 55 | L Frontal Lobe WM | 73
+- 56 | R Frontal Lobe WM | 73
+- 57 | L Parietal Lobe WM | 73
+- 58 | R Parietal Lobe WM | 73
+- 59 | L Occipital Lobe WM | 73
+- 60 | R Occipital Lobe WM | 73
+- 61 | L Temporal Lobe WM | 73
+- 62 | R Temporal Lobe WM | 73
+- 63 | global WM covered in template/ICV | 73
+- 64 | L superior frontal gyrus (#21) CSF / ICV | 73
+- 65 | R superior frontal gyrus (#22) CSF / ICV | 73
+- 66 | L middle frontal gyrus (#23) CSF / ICV | 73
+- 67 | R middle frontal gyrus (#24) CSF / ICV | 73
+- 68 | L inferior frontal gyrus (#25) CSF / ICV | 73
+- 69 | R inferior frontal gyrus (#26) CSF / ICV | 73
+- 70 | L precentral gyrus (#27) CSF / ICV | 73
+- 71 | R precentral gyrus (#28) CSF / ICV | 73
+- 72 | L middle orbitofrontal gyrus (#29) CSF / ICV | 73
+- 73 | R middle orbitofrontal gyrus (#30) CSF / ICV | 73
+- 74 | L lateral orbitofrontal gyrus (#31) CSF / ICV | 73
+- 75 | R lateral orbitofrontal gyrus (#32) CSF / ICV | 73
+- 76 | L gyrus rectus (#33) CSF / ICV | 73
+- 77 | R gyrus rectus (#34) CSF / ICV | 73
+- 78 | L postcentral gyrus (#41) CSF / ICV | 73
+- 79 | R postcentral gyrus (#42) CSF / ICV | 73
+- 80 | L superior parietal gyrus (#43) CSF / ICV | 73
+- 81 | R superior parietal gyrus (#44) CSF / ICV | 73
+- 82 | L supramarginal gyrus (#45) CSF / ICV | 73
+- 83 | R supramarginal gyrus (#46) CSF / ICV | 73
+- 84 | L angular gyrus (#47) CSF / ICV | 73
+- 85 | R angular gyrus (#48) CSF / ICV | 73
+- 86 | L precuneus (#49) CSF / ICV | 73
+- 87 | R precuneus (#50) CSF / ICV | 73
+- 88 | L superior occipital gyrus (#61) CSF / ICV | 73
+- 89 | R superior occipital gyrus (#62) CSF / ICV | 73
+- 90 | L middle occipital gyrus (#63) CSF / ICV | 73
+- 91 | R middle occipital gyrus (#64) CSF / ICV | 73
+- 92 | L inferior occipital gyrus (#65) CSF / ICV | 73
+- 93 | R inferior occipital gyrus (#66) CSF / ICV | 73
+- 94 | L cuneus (#67) CSF / ICV | 73
+- 95 | R cuneus (#68) CSF / ICV | 73
+- 96 | L superior temporal gyrus (#81) CSF / ICV | 73
+- 97 | R superior temporal gyrus (#82) CSF / ICV | 73
+- 98 | L middle temporal gyrus (#83) CSF / ICV | 73
+- 99 | R middle temporal gyrus (#84) CSF / ICV | 73
+- 100 | L inferior temporal gyrus (#85) CSF / ICV | 73
+- 101 | R inferior temporal gyrus (#86) CSF / ICV | 73
+- 102 | L parahippocampal gyrus (#87) CSF / ICV | 73
+- 103 | R parahippocampal gyrus (#88) CSF / ICV | 73
+- 104 | L lingual gyrus (#89) CSF / ICV | 73
+- 105 | R lingual gyrus (#90) CSF / ICV | 73
+- 106 | L fusiform gyrus (#91) CSF / ICV | 73
+- 107 | R fusiform gyrus (#92) CSF / ICV | 73
+- 108 | L insular cortex (#101) CSF / ICV | 73
+- 109 | R insular cortex (#102) CSF / ICV | 73
+- 110 | L cingulate gyrus (#121) CSF / ICV | 73
+- 111 | R cingulate gyrus (#122)  CSF / ICV | 73
+- 112 | L caudate (#161) CSF / ICV | 73
+- 113 | R caudate (#162) CSF / ICV | 73
+- 114 | L putamen (#163) CSF / ICV | 73
+- 115 | R putamen (#164) CSF / ICV | 73
+- 116 | L hippocampus (#165) CSF / ICV | 73
+- 117 | R hippocampus (#166) CSF / ICV | 73
+- 118 | cerebellum (#181) CSF / ICV | 73
+- 119 | brainstem (#182) CSF / ICV | 73
+- 120 | L Frontal Lobe CSF | 73
+- 121 | R Frontal Lobe CSF | 73
+- 122 | L Parietal Lobe CSF | 73
+- 123 | R Parietal Lobe CSF | 73
+- 124 | L Occipital Lobe CSF | 73
+- 125 | R Occipital Lobe CSF | 73
+- 126 | L Temporal Lobe CSF | 73
+- 127 | R Temporal Lobe CSF | 73
+- 128 | global CSF covered in template/ICV | 73
+- 129 | global intracranial vol (unit: ml) | 73
+- 130 | global GM / ICV | 73
+- 131 | global WM / ICV | 73
+- 132 | global CSF / ICV | 73
+- 133 | L Frontal Lobe GM / ICV | 73
+- 134 | R Frontal Lobe GM / ICV | 73
+- 135 | L Parietal Lobe GM / ICV | 73
+- 136 | R Parietal Lobe GM / ICV | 73
+- 137 | L Occipital Lobe GM / ICV | 73
+- 138 | R Occipital Lobe GM / ICV | 73
+- 139 | L Temporal Lobe GM / ICV | 73
+- 140 | R Temporal Lobe GM / ICV | 73
+- 141 | L Frontal Lobe WM / ICV | 73
+- 142 | R Frontal Lobe WM / ICV | 73
+- 143 | L Parietal Lobe WM / ICV | 73
+- 144 | R Parietal Lobe WM / ICV | 73
+- 145 | L Occipital Lobe WM / ICV | 73
+- 146 | R Occipital Lobe WM / ICV | 73
+- 147 | L Temporal Lobe WM / ICV | 73
+- 148 | R Temporal Lobe WM / ICV | 73
+- 149 | L Frontal Lobe CSF / ICV | 73
+- 150 | R Frontal Lobe CSF / ICV | 73
+- 151 | L Parietal Lobe CSF / ICV | 73
+- 152 | R Parietal Lobe CSF / ICV | 73
+- 153 | L Occipital Lobe CSF / ICV | 73
+- 154 | R Occipital Lobe CSF / ICV | 73
+- 155 | L Temporal Lobe CSF / ICV | 73
+- 156 | R Temporal Lobe CSF / ICV | 73
+- 157 | L Ventricle (#1) / ICV | 73
+- 158 | R Ventricle (#2) / ICV | 73
+- 159 | wmh unregistered | 70
+- 160 | L Frontal Lobe WMHs / ICV | 69
+- 161 | R Frontal Lobe WMHs / ICV | 68
+- 162 | L Parietal Lobe WMHs / ICV | 70
+- 163 | R Parietal Lobe WMHs / ICV | 70
+- 164 | L Occipital Lobe WMHs / ICV | 70
+- 165 | R Occipital Lobe WMHs / ICV | 70
+- 166 | L Temporal Lobe WMHs / ICV | 70
+- 167 | R Temporal Lobe WMHs / ICV | 70
+- 168 | global intracranial vol (cm^3) | 70
+- 169 | wmh registered | 70
+- 170 | wmh registered masked | 70
+- 171 | L superior frontal gyrus (#21) WMHs | 50
+- 172 | R superior frontal gyrus (#22) WMHs | 38
+- 173 | L middle frontal gyrus (#23) WMHs | 67
+- 174 | R middle frontal gyrus (#24) WMHs | 67
+- 175 | L inferior frontal gyrus (#25) WMHs | 49
+- 176 | R inferior frontal gyrus (#26) WMHs | 42
+- 177 | L precentral gyrus (#27) WMHs | 51
+- 178 | R precentral gyrus (#28) WMHs | 44
+- 179 | L middle orbitofrontal gyrus (#29) WMHs | 6
+- 180 | R middle orbitofrontal gyrus (#30) WMHs | 6
+- 181 | L lateral orbitofrontal gyrus (#31) WMHs | 4
+- 182 | R lateral orbitofrontal gyrus (#32) WMHs | 5
+- 183 | L gyrus rectus (#33) WMHs | 1
+- 184 | R gyrus rectus (#34) WMHs | 0
+- 185 | L cingulate gyrus (#121) WMHs | 65
+- 186 | R cingulate gyrus (#122) WMHs | 68
+- 187 | L postcentral gyrus (#41) WMHs | 70
+- 188 | R postcentral gyrus (#42) WMHs | 68
+- 189 | L superior parietal gyrus (#43) WMHs | 69
+- 190 | R superior parietal gyrus (#44) WMHs | 69
+- 191 | L supramarginal gyrus (#45) WMHs | 45
+- 192 | R supramarginal gyurs (#46) WMHs | 38
+- 193 | L angular gyrus (#47) WMHs | 67
+- 194 | R angular gyrus (#48) WMHs | 66
+- 195 | L precuneus (#49) WMHs | 24
+- 196 | R precuneus (#50) WMHs | 22
+- 197 | L superior occipital gyrus (#61) WMHs | 67
+- 198 | R superior occipital gyrus (#62) WMHs | 70
+- 199 | L middle occipital gyrus (#63) WMHs | 70
+- 200 | R middle occipital gyrus (#64) WMHs | 68
+- 201 | L inferior occipital gyrus (#65) WMHs | 49
+- 202 | R inferior occipital gyrus (#66) WMHs | 43
+- 203 | L cuneus (#67) WMHs | 38
+- 204 | R cuneus (#68) WMHs | 40
+- 205 | L superior temporal gyrus (#81) WMHs | 37
+- 206 | R superior temporal gyrus (#82) WMHs | 34
+- 207 | L middle temporal gyrus (#83) WMHs | 60
+- 208 | R middle temporal gyrus (#84) WMHs | 59
+- 209 | L inferior temporal gyrus (#85) WMHs | 10
+- 210 | R inferior temporal gyrus (#86) WMHs | 5
+- 211 | L parahippocampal gyrus (#87) WMHs | 37
+- 212 | R parahippocampal gyrus (#88) WMHs | 38
+- 213 | L lingual gyrus (#89) WMHs | 70
+- 214 | R lingual gyrus (#90) WMHs | 68
+- 215 | L fusiform gyrus (#91) WMHs | 41
+- 216 | R fusiform gyrus (#92) WMHs | 8
+- 217 | L insular cortex (#101) WMHs | 46
+- 218 | R insular cortex (#102) WMHs | 41
+- 219 | L hippocampus (#165) WMHs | 43
+- 220 | R hippocampus (#166) WMHs | 37
+- 221 | L caudate (#161) WMHs | 69
+- 222 | R caudate (#162) WMHs | 70
+- 223 | L putamen (#163) WMHs | 31
+- 224 | R putamen (#164) WMHs | 44
+- 225 | cerebellum (#181) WMHs | 60
+- 226 | brain stem (#182) WMHs | 68
+- 227 | L superior frontal gyrus (#21) WMHs / ICV | 50
+- 228 | R superior frontal gyrus (#22) WMHs / ICV | 38
+- 229 | L middle frontal gyrus (#23) WMHs / ICV | 67
+- 230 | R middle frontal gyrus (#24) WMHs / ICV | 67
+- 231 | L inferior frontal gyrus (#25) WMHs / ICV | 48
+- 232 | R inferior frontal gyrus (#26) WMHs / ICV | 42
+- 233 | L precentral gyrus (#27) WMHs / ICV | 51
+- 234 | R precentral gyrus (#28) WMHs / ICV | 45
+- 235 | L middle orbitofrontal gyrus (#29) WMHs / ICV | 6
+- 236 | R middle orbitofrontal gyrus (#30) WMHs / ICV | 6
+- 237 | L lateral orbitofrontal gyrus (#31) WMHs / ICV | 4
+- 238 | R lateral orbitofrontal gyrus (#32) WMHs / ICV | 5
+- 239 | L gyrus rectus (#33) WMHs / ICV | 1
+- 240 | R gyrus rectus (#34) WMHs / ICV | 0
+- 241 | L postcentral gyrus (#41) WMHs/ ICV | 70
+- 242 | R postcentral gyrus (#42) WMHs / ICV | 68
+- 243 | L superior parietal gyrus (#43) WMHs / ICV | 69
+- 244 | R superior parietal gyrus (#44) WMHs / ICV | 69
+- 245 | L supramarginal gyrus (#45) WMHs / ICV | 45
+- 246 | R supramarginal gyrus (#46) WMHs / ICV | 38
+- 247 | L angular gyrus (#47) WMHs / ICV | 67
+- 248 | R angular gyrus (#48) WMHs / ICV | 66
+- 249 | L precuneus (#49) WMHs / ICV | 25
+- 250 | R precuneus (#50) WMHs / ICV | 22
+- 251 | L superior occipital gyrus (#61) WMHs / ICV | 67
+- 252 | R superior occipital gyrus (#62) WMHs / ICV | 70
+- 253 | L middle occipital gyrus (#63) WMHs / ICV | 70
+- 254 | R middle occipital gyrus (#64) WMHs / ICV | 68
+- 255 | L inferior occipital gyrus (#65) WMHs / ICV | 49
+
+## Data_Description/GE-79_Summary_Table-MRI-Part3.csv (121 rows)
+
+- 0 | patient ID | 121
+- 1 | Visit | 121
+- 2 | L cuneus (#67) WMHs / ICV | 35
+- 3 | R cuneus (#68) WMHs / ICV | 40
+- 4 | L superior temporal gyrus (#81) WMHs / ICV | 37
+- 5 | R superior temporal gyrus (#82) WMHs / ICV | 34
+- 6 | L middle temporal gyrus (#83) WMHs / ICV | 60
+- 7 | R middle temporal gyrus (#84) WMHs / ICV | 59
+- 8 | L inferior temporal gyrus (#85) WMHs / ICV | 9
+- 9 | R inferior temporal gyrus (#86) WMHs / ICV | 5
+- 10 | L parahippocampal gyrus (#87) WMHs / ICV | 37
+- 11 | R parahippocampal gyrus (#88) WMHs / ICV | 37
+- 12 | L lingual gyrus (#89) WMHs / ICV | 70
+- 13 | R lingual gyrus (#90) WMHs / ICV | 68
+- 14 | L fusiform gyrus (#91) WMHs / ICV | 41
+- 15 | R fusiform gyrus (#92) WMHs / ICV | 8
+- 16 | L insular cortex (#101) WMHs / ICV | 46
+- 17 | R insular cortex (#102) WMHs / ICV | 41
+- 18 | L cingulate gyrus (#121) WMHs / ICV | 64
+- 19 | R cingulate gyrus (#122) WMHs / ICV | 66
+- 20 | L caudate (#161) WMHs / ICV | 69
+- 21 | R caudate (#162) WMHs / ICV | 70
+- 22 | L putamen (#163) WMHs / ICV | 31
+- 23 | R putamen (#164) WMHs / ICV | 44
+- 24 | L hippocampus (#165) WMHs / ICV | 43
+- 25 | R hippocampus (#166) WMHs / ICV | 36
+- 26 | cerebellum (#181) WMHs / ICV | 59
+- 27 | brainstem (#182) WMHs / ICV | 68
+- 28 | L Frontal Lobe WMHs | 70
+- 29 | R Frontal Lobe WMHs | 70
+- 30 | L Parietal Lobe WMHs | 70
+- 31 | R Parietal Lobe WMHs | 70
+- 32 | L Occipital Lobe WMHs | 70
+- 33 | R Occipital Lobe WMHs | 70
+- 34 | L Temporal Lobe WMHs | 70
+- 35 | R Temporal Lobe WMHs | 70
+- 36 | whole brain-FA | 65
+- 37 | L superior frontal gyrus-FA | 65
+- 38 | R superior frontal gyrus-FA | 65
+- 39 | L middle frontal gyrus-FA | 65
+- 40 | R middle frontal gyrus-FA | 65
+- 41 | L inferior frontal gyrus-FA | 65
+- 42 | R inferior frontal gyrus-FA | 65
+- 43 | L precentral gyrus-FA | 65
+- 44 | R precentral gyrus-FA | 65
+- 45 | L middle orbitofrontal gyrus-FA | 65
+- 46 | R middle orbitofrontal gyrus-FA | 65
+- 47 | L lateral orbitofrontal gyrus-FA | 65
+- 48 | R lateral orbitofrontal gyrus-FA | 65
+- 49 | L gyrus rectus-FA | 65
+- 50 | R gyrus rectus-FA | 0
+- 51 | L postcentral gyrus-FA | 65
+- 52 | R postcentral gyrus-FA | 65
+- 53 | L superior parietal gyrus-FA | 65
+- 54 | R superior parietal gyrus-FA | 65
+- 55 | L supramarginal gyrus-FA | 65
+- 56 | R supramarginal gyrus-FA | 65
+- 57 | L angular gyrus-FA | 65
+- 58 | R angular gyrus-FA | 65
+- 59 | L precuneus-FA | 65
+- 60 | R precuneus-FA | 65
+- 61 | L superior occipital gyrus-FA | 65
+- 62 | R superior occipital gyrus-FA | 65
+- 63 | L middle occipital gyrus-FA | 65
+- 64 | R middle occipital gyrus-FA | 65
+- 65 | L inferior occipital gyrus-FA | 65
+- 66 | R inferior occipital gyrus-FA | 65
+- 67 | L cuneus-FA | 65
+- 68 | R cuneus-FA | 65
+- 69 | L superior temporal gyrus-FA | 65
+- 70 | R superior temporal gyrus-FA | 65
+- 71 | L middle temporal gyrus-FA | 65
+- 72 | R middle temporal gyrus-FA | 65
+- 73 | L inferior temporal gyrus-FA | 65
+- 74 | R inferior temporal gyrus-FA | 65
+- 75 | L parahippocampal gyrus-FA | 65
+- 76 | R parahippocampal gyrus-FA | 65
+- 77 | L lingual gyrus-FA | 65
+- 78 | R lingual gyrus-FA | 65
+- 79 | L fusiform gyrus-FA | 65
+- 80 | R fusiform gyrus-FA | 65
+- 81 | L insular cortex-FA | 65
+- 82 | R insular cortex-FA | 65
+- 83 | L cingulate gyrus-FA | 0
+- 84 | R cingulate gyrus-FA | 0
+- 85 | L caudate-FA | 65
+- 86 | R caudate-FA | 65
+- 87 | L putamen-FA | 65
+- 88 | R putamen-FA | 65
+- 89 | L hippocampus-FA | 65
+- 90 | R hippocampus-FA | 65
+- 91 | cerebellum-FA | 65
+- 92 | brainstem-FA | 65
+- 93 | whole brain-MD | 65
+- 94 | L superior frontal gyrus-MD | 65
+- 95 | R superior frontal gyrus-MD | 65
+- 96 | L middle frontal gyrus-MD | 65
+- 97 | R middle frontal gyrus-MD | 65
+- 98 | L inferior frontal gyrus-MD | 65
+- 99 | R inferior frontal gyrus-MD | 65
+- 100 | L precentral gyrus-MD | 65
+- 101 | R precentral gyrus-MD | 65
+- 102 | L middle orbitofrontal gyrus-MD | 65
+- 103 | R middle orbitofrontal gyrus-MD | 65
+- 104 | L lateral orbitofrontal gyrus-MD | 65
+- 105 | R lateral orbitofrontal gyrus-MD | 65
+- 106 | L gyrus rectus-MD | 65
+- 107 | R gyrus rectus-MD | 0
+- 108 | L postcentral gyrus-MD | 65
+- 109 | R postcentral gyrus-MD | 65
+- 110 | L superior parietal gyrus-MD | 65
+- 111 | R superior parietal gyrus-MD | 65
+- 112 | L supramarginal gyrus-MD | 65
+- 113 | R supramarginal gyrus-MD | 65
+- 114 | L angular gyrus-MD | 65
+- 115 | R angular gyrus-MD | 65
+- 116 | L precuneus-MD | 65
+- 117 | R precuneus-MD | 65
+- 118 | L superior occipital gyrus-MD | 65
+- 119 | R superior occipital gyrus-MD | 65
+- 120 | L middle occipital gyrus-MD | 65
+- 121 | R middle occipital gyrus-MD | 65
+- 122 | L inferior occipital gyrus-MD | 65
+- 123 | R inferior occipital gyrus-MD | 65
+- 124 | L cuneus-MD | 65
+- 125 | R cuneus-MD | 65
+- 126 | L superior temporal gyrus-MD | 65
+- 127 | R superior temporal gyrus-MD | 65
+- 128 | L middle temporal gyrus-MD | 65
+- 129 | R middle temporal gyrus-MD | 65
+- 130 | L inferior temporal gyrus-MD | 65
+- 131 | R inferior temporal gyrus-MD | 65
+- 132 | L parahippocampal gyrus-MD | 65
+- 133 | R parahippocampal gyrus-MD | 65
+- 134 | L lingual gyrus-MD | 65
+- 135 | R lingual gyrus-MD | 65
+- 136 | L fusiform gyrus-MD | 65
+- 137 | R fusiform gyrus-MD | 65
+- 138 | L insular cortex-MD | 65
+- 139 | R insular cortex-MD | 65
+- 140 | L cingulate gyrus-MD | 0
+- 141 | R cingulate gyrus-MD | 0
+- 142 | L caudate-MD | 65
+- 143 | R caudate-MD | 65
+- 144 | L putamen-MD | 65
+- 145 | R putamen-MD | 65
+- 146 | L hippocampus-MD | 65
+- 147 | R hippocampus-MD | 65
+- 148 | cerebellum-MD | 65
+- 149 | brainstem-MD | 65
+- 150 | whole brain-L1 | 65
+- 151 | L superior frontal gyrus-L1 | 65
+- 152 | R superior frontal gyrus-L1 | 65
+- 153 | L middle frontal gyrus-L1 | 65
+- 154 | R middle frontal gyrus-L1 | 65
+- 155 | L inferior frontal gyrus-L1 | 65
+- 156 | R inferior frontal gyrus-L1 | 65
+- 157 | L precentral gyrus-L1 | 65
+- 158 | R precentral gyrus-L1 | 65
+- 159 | L middle orbitofrontal gyrus-L1 | 65
+- 160 | R middle orbitofrontal gyrus-L1 | 65
+- 161 | L lateral orbitofrontal gyrus-L1 | 65
+- 162 | R lateral orbitofrontal gyrus-L1 | 65
+- 163 | L gyrus rectus-L1 | 65
+- 164 | R gyrus rectus-L1 | 0
+- 165 | L postcentral gyrus-L1 | 65
+- 166 | R postcentral gyrus-L1 | 65
+- 167 | L superior parietal gyrus-L1 | 65
+- 168 | R superior parietal gyrus-L1 | 65
+- 169 | L supramarginal gyrus-L1 | 65
+- 170 | R supramarginal gyrus-L1 | 65
+- 171 | L angular gyrus-L1 | 65
+- 172 | R angular gyrus-L1 | 65
+- 173 | L precuneus-L1 | 65
+- 174 | R precuneus-L1 | 65
+- 175 | L superior occipital gyrus-L1 | 65
+- 176 | R superior occipital gyrus-L1 | 65
+- 177 | L middle occipital gyrus-L1 | 65
+- 178 | R middle occipital gyrus-L1 | 65
+- 179 | L inferior occipital gyrus-L1 | 65
+- 180 | R inferior occipital gyrus-L1 | 65
+- 181 | L cuneus-L1 | 65
+- 182 | R cuneus-L1 | 65
+- 183 | L superior temporal gyrus-L1 | 65
+- 184 | R superior temporal gyrus-L1 | 65
+- 185 | L middle temporal gyrus-L1 | 65
+- 186 | R middle temporal gyrus-L1 | 65
+- 187 | L inferior temporal gyrus-L1 | 65
+- 188 | R inferior temporal gyrus-L1 | 65
+- 189 | L parahippocampal gyrus-L1 | 65
+- 190 | R parahippocampal gyrus-L1 | 65
+- 191 | L lingual gyrus-L1 | 65
+- 192 | R lingual gyrus-L1 | 65
+- 193 | L fusiform gyrus-L1 | 65
+- 194 | R fusiform gyrus-L1 | 65
+- 195 | L insular cortex-L1 | 65
+- 196 | R insular cortex-L1 | 65
+- 197 | L cingulate gyrus-L1 | 0
+- 198 | R cingulate gyrus-L1 | 0
+- 199 | L caudate-L1 | 65
+- 200 | R caudate-L1 | 65
+- 201 | L putamen-L1 | 65
+- 202 | R putamen-L1 | 65
+- 203 | L hippocampus-L1 | 65
+- 204 | R hippocampus-L1 | 65
+- 205 | cerebellum-L1 | 65
+- 206 | brainstem-L1 | 65
+- 207 | whole brain-RD | 65
+- 208 | L superior frontal gyrus-RD | 65
+- 209 | R superior frontal gyrus-RD | 65
+- 210 | L middle frontal gyrus-RD | 65
+- 211 | R middle frontal gyrus-RD | 65
+- 212 | L inferior frontal gyrus-RD | 65
+- 213 | R inferior frontal gyrus-RD | 65
+- 214 | L precentral gyrus-RD | 65
+- 215 | R precentral gyrus-RD | 65
+- 216 | L middle orbitofrontal gyrus-RD | 65
+- 217 | R middle orbitofrontal gyrus-RD | 65
+- 218 | L lateral orbitofrontal gyrus-RD | 65
+- 219 | R lateral orbitofrontal gyrus-RD | 65
+- 220 | L gyrus rectus-RD | 65
+- 221 | R gyrus rectus-RD | 0
+- 222 | L postcentral gyrus-RD | 65
+- 223 | R postcentral gyrus-RD | 65
+- 224 | L superior parietal gyrus-RD | 65
+- 225 | R superior parietal gyrus-RD | 65
+- 226 | L supramarginal gyrus-RD | 65
+- 227 | R supramarginal gyrus-RD | 65
+- 228 | L angular gyrus-RD | 65
+- 229 | R angular gyrus-RD | 65
+- 230 | L precuneus-RD | 65
+- 231 | R precuneus-RD | 65
+- 232 | L superior occipital gyrus-RD | 65
+- 233 | R superior occipital gyrus-RD | 65
+- 234 | L middle occipital gyrus-RD | 65
+- 235 | R middle occipital gyrus-RD | 65
+- 236 | L inferior occipital gyrus-RD | 65
+- 237 | R inferior occipital gyrus-RD | 65
+- 238 | L cuneus-RD | 65
+- 239 | R cuneus-RD | 65
+- 240 | L superior temporal gyrus-RD | 65
+- 241 | R superior temporal gyrus-RD | 65
+- 242 | L middle temporal gyrus-RD | 65
+- 243 | R middle temporal gyrus-RD | 65
+- 244 | L inferior temporal gyrus-RD | 65
+- 245 | R inferior temporal gyrus-RD | 65
+- 246 | L parahippocampal gyrus-RD | 65
+- 247 | R parahippocampal gyrus-RD | 65
+- 248 | L lingual gyrus-RD | 65
+- 249 | R lingual gyrus-RD | 65
+- 250 | L fusiform gyrus-RD | 65
+- 251 | R fusiform gyrus-RD | 65
+- 252 | L insular cortex-RD | 65
+- 253 | R insular cortex-RD | 65
+- 254 | L cingulate gyrus-RD | 0
+- 255 | R cingulate gyrus-RD | 0
+
+## Data_Description/GE-79_Summary_Table-MRI-Part4.csv (121 rows)
+
+- 0 | patient ID | 121
+- 1 | Visit | 121
+- 2 | R caudate-RD | 65
+- 3 | L putamen-RD | 65
+- 4 | R putamen-RD | 65
+- 5 | L hippocampus-RD | 65
+- 6 | R hippocampus-RD | 65
+- 7 | cerebellum-RD | 65
+- 8 | brainstem-RD | 65
+- 9 | ASL_CO2_mean_baseline (mmHg) | 109
+- 10 | ASL_CO2_mean_rebreathing | 108
+- 11 | ASL_CO2_mean_hyperventilation | 108
+- 12 | ASL_CO2_mean_Counting | 106
+- 13 | Global Vasoreactivity | 105
+- 14 | Perfusion Anatomical - frontal - baseline 1 Left (unit: ml/100g/min) 6 min | 113
+- 15 | Perfusion Anatomical - temporal - baseline 1 Left 6 min | 111
+- 16 | Perfusion Anatomical - parietal - baseline 1 Left 6 min | 112
+- 17 | Perfusion Anatomical - occipital - baseline 1 Left 6 min | 111
+- 18 | Perfusion Anatomical - cerebellum - baseline 1 Left 6 min | 111
+- 19 | Perfusion Anatomical - insular cortex - baseline 1 Left 6 min | 112
+- 20 | Perfusion Anatomical - brainstem - baseline 1 Left 6 min | 111
+- 21 | Perfusion Anatomical - frontal - baseline 1 Right 6 min | 113
+- 22 | Perfusion Anatomical - temporal - baseline 1 Right 6 min | 112
+- 23 | Perfusion Anatomical - parietal baseline 1 Right 6 min | 112
+- 24 | Perfusion Anatomical - occipital - baseline 1 Right 6 min | 112
+- 25 | Perfusion Anatomical - cerebellum - baseline 1 Right 6 min | 111
+- 26 | Perfusion Anatomical -  insular cortex - baseline 1 Right 6 min | 113
+- 27 | Perfusion Anatomical -  brainstem - baseline 1 Right 6 min | 111
+- 28 | Perfusion Anatomical - frontal - baseline 1 whole 6 min | 113
+- 29 | Perfusion Anatomical - temporal - baseline 1 whole 6 min | 112
+- 30 | Perfusion Anatomical -  parietal - baseline 1 whole 6 min | 112
+- 31 | Perfusion Anatomical - occipital - baseline 1 whole 6 min | 112
+- 32 | Perfusion Anatomical -  cerebellum - baseline 1 whole 6 min | 111
+- 33 | Perfusion Anatomical - insular cortex - baseline 1 whole 6 min | 113
+- 34 | Perfusion Anatomical -  brainstem - baseline 1 whole 6 min | 111
+- 35 | Perfusion Anatomical - frontal - baseline 1 Left 2min | 114
+- 36 | Perfusion Anatomical -  temporal - baseline 1 Left 2min | 112
+- 37 | Perfusion Anatomical -  parietal - baseline 1 Left 2min | 113
+- 38 | Perfusion Anatomical -  occipital - baseline 1 Left 2min | 112
+- 39 | Perfusion Anatomical -  cerebellum - baseline 1 Left 2min | 112
+- 40 | Perfusion Anatomical - insular cortex - baseline 1 Left 2min | 113
+- 41 | Perfusion Anatomical - brainstem - baseline 1 Left 2min | 112
+- 42 | Perfusion Anatomical - frontal - baseline 1 Right 2 min | 114
+- 43 | Perfusion Anatomical - temporal - baseline 1 Right 2 min | 113
+- 44 | Perfusion Anatomical -  parietal - baseline 1 Right 2 min | 113
+- 45 | Perfusion Anatomical - occipital - baseline 1 Right 2 min | 113
+- 46 | Perfusion Anatomical - cerebellum - baseline 1 Right 2 min | 112
+- 47 | Perfusion Anatomical - insular cortex - baseline 1 Right 2 min | 114
+- 48 | Perfusion Anatomical - brainstem - baseline 1 Right 2 min | 112
+- 49 | Perfusion Anatomical - frontal - baseline 1 whole 2 min | 114
+- 50 | Perfusion Anatomical - temporal - baseline 1 whole 2 min | 113
+- 51 | Perfusion Anatomical - parietal - baseline 1 whole 2 min | 113
+- 52 | Perfusion Anatomical - occipital - baseline 1 whole 2 min | 113
+- 53 | Perfusion Anatomical - cerebellum - baseline 1 whole 2 min | 112
+- 54 | Perfusion Anatomical - insular cortex - baseline 1 whole 2 min | 114
+- 55 | Perfusion Anatomical - brainstem - baseline 1 whole 2 min | 112
+- 56 | Perfusion Anatomical - frontal - rebreathing 1 Left | 110
+- 57 | Perfusion Anatomical -  temporal - rebreathing 1 Left | 108
+- 58 | Perfusion Anatomical - parietal - rebreathing 1 Left | 109
+- 59 | Perfusion Anatomical - occipital - rebreathing 1 Left | 108
+- 60 | Perfusion Anatomical - cerebellum - rebreathing 1 Left | 108
+- 61 | Perfusion Anatomical - insular cortex - rebreathing 1 Left | 109
+- 62 | Perfusion Anatomical - brainstem - rebreathing 1 Left | 108
+- 63 | Perfusion Anatomical - frontal - rebreathing 1 Right | 112
+- 64 | Perfusion Anatomical - temporal - rebreathing 1 Right | 111
+- 65 | Perfusion Anatomical - parietal - rebreathing 1 Right | 111
+- 66 | Perfusion Anatomical - occipital - rebreathing 1 Right | 111
+- 67 | Perfusion Anatomical - cerebellum - rebreathing 1 Right | 110
+- 68 | Perfusion Anatomical - insular cortex - rebreathing 1 Right | 112
+- 69 | Perfusion Anatomical - brainstem - rebreathing 1 Right | 110
+- 70 | Perfusion Anatomical - frontal - rebreathing 1 whole | 112
+- 71 | Perfusion Anatomical - temporal - rebreathing 1 whole | 111
+- 72 | Perfusion Anatomical - parietal - rebreathing 1 whole | 111
+- 73 | Perfusion Anatomical - occipital - rebreathing 1 whole | 111
+- 74 | Perfusion Anatomical - cerebellum - rebreathing 1 whole | 110
+- 75 | Perfusion Anatomical - insular cortex - rebreathing 1 whole | 112
+- 76 | Perfusion Anatomical - brainstem - rebreathing 1 whole | 110
+- 77 | Perfusion Anatomical - frontal - rebreathing 2 Left | 2
+- 78 | Perfusion Anatomical - temporal - rebreathing 2 Left | 2
+- 79 | Perfusion Anatomical - parietal - rebreathing 2 Left | 2
+- 80 | Perfusion Anatomical - occipital - rebreathing 2 Left | 2
+- 81 | Perfusion Anatomical - cerebellum - rebreathing 2 Left | 2
+- 82 | Perfusion Anatomical - insular cortex - rebreathing 2 Left | 2
+- 83 | Perfusion Anatomical - brainstem - rebreathing 2 Left | 2
+- 84 | Perfusion Anatomical - frontal - rebreathing 2 Right | 0
+- 85 | Perfusion Anatomical - temporal - rebreathing 2 Right | 0
+- 86 | Perfusion Anatomical - parietal - rebreathing 2 Right | 0
+- 87 | Perfusion Anatomical - occipital - rebreathing 2 Right | 0
+- 88 | Perfusion Anatomical - cerebellum - rebreathing 2 Right | 0
+- 89 | Perfusion Anatomical - insular cortex - rebreathing 2 Right | 0
+- 90 | Perfusion Anatomical - brainstem - rebreathing 2 Right | 0
+- 91 | Perfusion Anatomical - frontal - rebreathing 2 whole | 0
+- 92 | Perfusion Anatomical - temporal - rebreathing 2 whole | 0
+- 93 | Perfusion Anatomical - parietal - rebreathing 2 whole | 0
+- 94 | Perfusion Anatomical - occipital - rebreathing 2 whole | 0
+- 95 | Perfusion Anatomical - cerebellum - rebreathing 2 whole | 0
+- 96 | Perfusion Anatomical - insular cortex - rebreathing 2 whole | 0
+- 97 | Perfusion Anatomical - brainstem - rebreathing 2 whole | 0
+- 98 | Perfusion Anatomical - frontal - hyperventialtion 1 Left | 112
+- 99 | Perfusion Anatomical - temporal - hyperventialtion 1 Left | 110
+- 100 | Perfusion Anatomical - parietal - hyperventialtion 1 Left | 111
+- 101 | Perfusion Anatomical - occipital - hyperventialtion 1 Left | 110
+- 102 | Perfusion Anatomical - cerebellum - hyperventialtion 1 Left | 110
+- 103 | Perfusion Anatomical - insular cortex - hyperventialtion 1 Left | 111
+- 104 | Perfusion Anatomical - brainstem - hyperventialtion 1 Left | 110
+- 105 | Perfusion Anatomical - frontal - hyperventialtion 1 Right | 112
+- 106 | Perfusion Anatomical - temporal - hyperventialtion 1 Right | 111
+- 107 | Perfusion Anatomical - parietal - hyperventialtion 1 Right | 111
+- 108 | Perfusion Anatomical - occipital - hyperventialtion 1 Right | 111
+- 109 | Perfusion Anatomical - cerebellum - hyperventialtion 1 Right | 110
+- 110 | Perfusion Anatomical - insular cortex - hyperventialtion 1 Right | 112
+- 111 | Perfusion Anatomical - brainstem - hyperventialtion 1 Right | 110
+- 112 | Perfusion Anatomical - frontal - hyperventialtion 1 Whole | 112
+- 113 | Perfusion Anatomical - temporal - hyperventialtion 1 Whole | 111
+- 114 | Perfusion Anatomical - parietal - hyperventialtion 1 Whole | 111
+- 115 | Perfusion Anatomical - occipital - hyperventialtion 1 Whole | 111
+- 116 | Perfusion Anatomical - cerebellum - hyperventialtion 1 Whole | 110
+- 117 | Perfusion Anatomical - insular cortex - hyperventialtion 1 Whole | 112
+- 118 | Perfusion Anatomical - brainstem - hyperventialtion 1 Whole | 110
+- 119 | Perfusion Anatomical - frontal - counting 1 Left 2 min | 111
+- 120 | Perfusion Anatomical - temporal - counting 1 Left 2 min | 110
+- 121 | Perfusion Anatomical - parietal - counting 1 Left 2 min | 110
+- 122 | Perfusion Anatomical - occipital - counting 1 Left 2 min | 110
+- 123 | Perfusion Anatomical - cerebellum - counting 1 Left 2 min | 110
+- 124 | Perfusion Anatomical - insular cortex - counting 1 Left 2 min | 111
+- 125 | Perfusion Anatomical - brainstem - counting 1 Left 2 min | 110
+- 126 | Perfusion Anatomical - frontal - counting 1 Right 2 min | 110
+- 127 | Perfusion Anatomical - temporal - counting 1 Right 2 min | 110
+- 128 | Perfusion Anatomical - parietal - counting 1 Right 2 min | 110
+- 129 | Perfusion Anatomical - occipital - counting 1 Right 2 min | 110
+- 130 | Perfusion Anatomical - cerebellum - counting 1 Right 2 min | 110
+- 131 | Perfusion Anatomical - insular cortex - counting 1 Right 2 min | 111
+- 132 | Perfusion Anatomical - brainstem - counting 1 Right 2 min | 110
+- 133 | Perfusion Anatomical - frontal - counting 1 whole 2 min | 111
+- 134 | Perfusion Anatomical - temporal - counting 1 whole 2 min | 110
+- 135 | Perfusion Anatomical - parietal - counting 1 whole 2 min | 110
+- 136 | Perfusion Anatomical - occipital - counting 1 whole 2 min | 110
+- 137 | Perfusion Anatomical - cerebellum - counting 1 whole 2 min | 110
+- 138 | Perfusion Anatomical - insular cortex - counting 1 whole 2 min | 111
+- 139 | Perfusion Anatomical - brainstem - counting 1 whole 2 min | 110
+- 140 | Perfusion Vascular (whole brain) - baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 112
+- 141 | Perfusion Vascular (ACA Perf) - baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 112
+- 142 | Perfusion Vascular (ACHA) -  baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 112
+- 143 | Perfusion Vascular (Lepto ACA) -  baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 112
+- 144 | Perfusion Vascular (Lepto MCA) -  baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 112
+- 145 | Perfusion Vascular (Lepto PCA) -  baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 110
+- 146 | Perfusion Vascular (MCA Perf) - baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 111
+- 147 | Perfusion Vascular (POCA) - baseline 1 Left Brain - 6 min (unit: ml/100g/min) | 112
+- 148 | Perfusion Vascular (whole brain) - baseline 1 Right - 6 min | 112
+- 149 | Perfusion Vascular (ACA Perf) - baseline 1 Right - 6 min | 112
+- 150 | Perfusion Vascular (ACHA) -  baseline 1 Right - 6 min | 112
+
+## Data_Description/GE-79_Summary_Table-MRI-Part5-History.csv (121 rows)
+
+- 0 | patient ID | 121
+- 1 | Visit | 121
+- 2 | Perfusion Vascular (Lepto MCA) -  baseline 1 Right - 6 min | 112
+- 3 | Perfusion Vascular (Lepto PCA) -  baseline 1 Right - 6 min | 111
+- 4 | Perfusion Vascular (MCA Perf) - baseline 1 Right - 6 min | 112
+- 5 | Perfusion Vascular (POCA) - baseline 1 Right - 6 min | 112
+- 6 | Perfusion Vascular (whole brain) - baseline 1 whole - 6 min | 112
+- 7 | Perfusion Vascular (ACA Perf) -  baseline 1 whole - 6 min | 112
+- 8 | Perfusion Vascular (ACHA) -  baseline 1 whole - 6 min | 112
+- 9 | Perfusion Vascular (Lepto ACA) -  baseline 1 whole - 6 min | 112
+- 10 | Perfusion Vascular (Lepto MCA) -  baseline 1 whole - 6 min | 112
+- 11 | Perfusion Vascular (Lepto PCA) -  baseline 1 whole - 6 min | 111
+- 12 | Perfusion Vascular (MCA Perf) - baseline 1 whole - 6 min | 112
+- 13 | Perfusion Vascular (POCA) - baseline 1 whole - 6 min | 112
+- 14 | Perfusion Vascular (whole brain) - baseline 1 Left Brain (unit: ml/100g/min) | 113
+- 15 | Perfusion Vascular (ACA Perf) -  baseline 1 Left Brain (unit: ml/100g/min) | 113
+- 16 | Perfusion Vascular (ACHA) -  baseline 1 Left Brain (unit: ml/100g/min) | 113
+- 17 | Perfusion Vascular (Lepto ACA) -  baseline 1 Left Brain (unit: ml/100g/min) | 113
+- 18 | Perfusion Vascular (Lepto MCA) -  baseline 1 Left Brain (unit: ml/100g/min) | 113
+- 19 | Perfusion Vascular (Lepto PCA) -  baseline 1 Left Brain (unit: ml/100g/min) | 111
+- 20 | Perfusion Vascular (MCA Perf) - baseline 1 Left Brain (unit: ml/100g/min) | 112
+- 21 | Perfusion Vascular (POCA) - baseline 1 Left Brain (unit: ml/100g/min) | 113
+- 22 | Perfusion Vascular (whole brain) - baseline 1 Right | 113
+- 23 | Perfusion Vascular (ACA Perf) -  baseline 1 Right | 113
+- 24 | Perfusion Vascular (ACHA) -  baseline 1 Right | 113
+- 25 | Perfusion Vascular (Lepto ACA) -  baseline 1 Right | 113
+- 26 | Perfusion Vascular (Lepto MCA) -  baseline 1 Right | 113
+- 27 | Perfusion Vascular (Lepto PCA) -  baseline 1 Right | 113
+- 28 | Perfusion Vascular (MCA Perf) - baseline 1 Right | 113
+- 29 | Perfusion Vascular (POCA) - baseline 1 Right | 113
+- 30 | Perfusion Vascular (whole brain) - baseline 1 whole | 113
+- 31 | Perfusion Vascular (ACA Perf) -  baseline 1 whole | 113
+- 32 | Perfusion Vascular (ACHA) -  baseline 1 whole | 113
+- 33 | Perfusion Vascular (Lepto ACA) -  baseline 1 whole | 113
+- 34 | Perfusion Vascular (Lepto MCA) -  baseline 1 whole | 113
+- 35 | Perfusion Vascular (Lepto PCA) -  baseline 1 whole | 112
+- 36 | Perfusion Vascular (MCA Perf) - baseline 1 whole | 113
+- 37 | Perfusion Vascular (POCA) - baseline 1 whole | 113
+- 38 | Perfusion Vascular (whole brain) - rebreathing 1 Left | 111
+- 39 | Perfusion Vascular (ACA Perf) -  rebreathing 1 Left | 111
+- 40 | Perfusion Vascular (ACHA) -  rebreathing 1 Left | 111
+- 41 | Perfusion Vascular (Lepto ACA) -  rebreathing 1 Left | 111
+- 42 | Perfusion Vascular (Lepto MCA) -  rebreathing 1 Left | 111
+- 43 | Perfusion Vascular (Lepto PCA) -  rebreathing 1 Left | 109
+- 44 | Perfusion Vascular (MCA Perf) - rebreathing 1 Left | 110
+- 45 | Perfusion Vascular (POCA) - rebreathing 1 Left | 111
+- 46 | Perfusion Vascular (whole brain) - rebreathing 1 Right | 111
+- 47 | Perfusion Vascular (ACA Perf) -  rebreathing 1 Right | 111
+- 48 | Perfusion Vascular (ACHA) - rebreathing 1 Right | 111
+- 49 | Perfusion Vascular (Lepto ACA) -  rebreathing 1 Right | 111
+- 50 | Perfusion Vascular (Lepto MCA) -  rebreathing 1 Right | 111
+- 51 | Perfusion Vascular (Lepto PCA) -  rebreathing 1 Right | 110
+- 52 | Perfusion Vascular (MCA Perf) - rebreathing 1 Right | 111
+- 53 | Perfusion Vascular (POCA) - rebreathing 1 Right | 111
+- 54 | Perfusion Vascular (whole brain) - rebreathing 1 whole | 111
+- 55 | Perfusion Vascular (ACA Perf) -  rebreathing 1 whole | 111
+- 56 | Perfusion Vascular (ACHA) -  rebreathing 1 whole | 111
+- 57 | Perfusion Vascular (Lepto ACA) -  rebreathing 1 whole | 111
+- 58 | Perfusion Vascular (Lepto MCA) -  rebreathing 1 whole | 111
+- 59 | Perfusion Vascular (Lepto PCA) -  rebreathing 1 whole | 110
+- 60 | Perfusion Vascular (MCA Perf) - rebreathing 1 whole | 111
+- 61 | Perfusion Vascular (POCA) - rebreathing 1 whole | 111
+- 62 | Perfusion Vascular (whole brain) - hyperventialtion 1 Left | 111
+- 63 | Perfusion Vascular (ACA Perf) -  hyperventialtion 1 Left | 111
+- 64 | Perfusion Vascular (ACHA) -  hyperventialtion 1 Left | 111
+- 65 | Perfusion Vascular (Lepto ACA) -  hyperventialtion 1 Left | 111
+- 66 | Perfusion Vascular (Lepto MCA) -  hyperventialtion 1 Left | 111
+- 67 | Perfusion Vascular (Lepto PCA) -  hyperventialtion 1 Left | 109
+- 68 | Perfusion Vascular (MCA Perf) - hyperventialtion 1 Left | 110
+- 69 | Perfusion Vascular (POCA) - hyperventialtion 1 Left | 111
+- 70 | Perfusion Vascular (whole brain) - hyperventialtion 1 Right | 111
+- 71 | Perfusion Vascular (ACA Perf) -  hyperventialtion 1 Right | 111
+- 72 | Perfusion Vascular (ACHA) -  hyperventialtion 1 Right | 111
+- 73 | Perfusion Vascular (Lepto ACA) -  hyperventialtion 1 Right | 111
+- 74 | Perfusion Vascular (Lepto MCA) -  hyperventialtion 1 Right | 111
+- 75 | Perfusion Vascular (Lepto PCA) -  hyperventialtion 1 Right | 110
+- 76 | Perfusion Vascular (MCA Perf) - hyperventialtion 1 Right | 111
+- 77 | Perfusion Vascular (POCA) - hyperventialtion 1 Right | 111
+- 78 | Perfusion Vascular (whole brain) - hyperventialtion 1 Whole | 111
+- 79 | Perfusion Vascular (ACA Perf) -  hyperventialtion 1 Whole | 111
+- 80 | Perfusion Vascular (ACHA) -  hyperventialtion 1 Whole | 111
+- 81 | Perfusion Vascular (Lepto ACA) -  hyperventialtion 1 Whole | 111
+- 82 | Perfusion Vascular (Lepto MCA) -  hyperventialtion 1 Whole | 111
+- 83 | Perfusion Vascular (Lepto PCA) - hyperventialtion 1 Whole | 110
+- 84 | Perfusion Vascular (MCA Perf) - hyperventialtion 1 Whole | 111
+- 85 | Perfusion Vascular (POCA) - hyperventialtion 1 Whole | 111
+- 86 | Perfusion Vascular (whole brain) - counting 1 left - 2 min | 109
+- 87 | Perfusion Vascular (ACA Perf) - counting 1 left - 2 min | 109
+- 88 | Perfusion Vascular (ACHA) -  counting 1 left - 2 min | 109
+- 89 | Perfusion Vascular (Lepto ACA) -  counting 1 left - 2 min | 109
+- 90 | Perfusion Vascular (Lepto MCA) -  counting 1 left - 2 min | 109
+- 91 | Perfusion Vascular (Lepto PCA) -  counting 1 left - 2 min | 108
+- 92 | Perfusion Vascular (MCA Perf) - counting 1 left - 2 min | 109
+- 93 | Perfusion Vascular (POCA) - counting 1 left - 2 min | 109
+- 94 | Perfusion Vascular (whole brain) - counting 1 right - 2 min | 109
+- 95 | Perfusion Vascular (ACA Perf) -  counting 1 right - 2 min | 109
+- 96 | Perfusion Vascular (ACHA) -  counting 1 right - 2 min | 109
+- 97 | Perfusion Vascular (Lepto ACA) -  counting 1 right - 2 min | 109
+- 98 | Perfusion Vascular (Lepto MCA) -  counting 1 right - 2 min | 109
+- 99 | Perfusion Vascular (Lepto PCA) -  counting 1 right - 2 min | 108
+- 100 | Perfusion Vascular (MCA Perf) - counting 1 right - 2 min | 109
+- 101 | Perfusion Vascular (POCA) - counting 1 right - 2 min | 109
+- 102 | Perfusion Vascular (whole brain) - counting 1 whole - 2 min | 109
+- 103 | Perfusion Vascular (ACA Perf) -  counting 1 whole - 2 min | 109
+- 104 | Perfusion Vascular (ACHA) -  counting 1 whole - 2 min | 109
+- 105 | Perfusion Vascular (Lepto ACA) -  counting 1 whole - 2 min | 109
+- 106 | Perfusion Vascular (Lepto MCA) -  counting 1 whole - 2 min | 109
+- 107 | Perfusion Vascular (Lepto PCA) -  counting 1 whole - 2 min | 108
+- 108 | Perfusion Vascular (MCA Perf) - counting 1 whole - 2 min | 109
+- 109 | Perfusion Vascular (POCA) - counting 1 whole - 2 min | 109
+- 110 |  | 0
+- 111 | PREVIOUS TOBACCO USE | 107
+- 112 | CURRENT TOBACCO USE | 121
+- 113 | PackYears | 53
+- 114 | Years | 53
+- 115 | PREVIOUS ALCOHOL USE | 104
+- 116 | CURRENT ALCOHOL USE | 120
+- 117 | ALCOHOL Dose/Week | 115
+- 118 | Dizziness AUTONOMIC SYMPTOMS | 121
+- 119 | Numbness AUTONOMIC SYMPTOMS | 119
+- 120 | Painful feet AUTONOMIC SYMPTOMS | 121
+- 121 | Syncope AUTONOMIC SYMPTOMS | 120
+- 122 | OH AUTONOMIC SYMPTOMS | 121
+- 123 | cancer,# FAMILY HISTORY | 121
+- 124 | cancSpec FAMILY HISTORY | 121
+- 125 | HeartDisease FAMILY HISTORY | 121
+- 126 | Hdspecific FAMILY HISTORY | 119
+- 127 | HTN FAMILY HISTORY | 120
+- 128 | HTNspecific FAMILY HISTORY | 120
+- 129 | DM FAMILY HISTORY | 121
+- 130 | Dmspecific FAMILY HISTORY | 121
+- 131 | StrokeFAMILY HISTORY | 121
+- 132 | StrokeSpecific FAMILY HISTORY | 121
+- 133 | HTN YRS PATIENT MEDICAL HISTORY | 98
+- 134 | CANCER PATIENT MEDICAL HISTORY | 120
+- 135 | STROKE PATIENT MEDICAL HISTORY | 121
+- 136 | STROKE YR PATIENT MEDICAL HISTORY | 0
+- 137 | ATRIAL FIBTRILLATION PATIENT MEDICAL HISTORY | 121
+- 138 | HEART FAILURE =CHF /IFARCTION=-MI PATIENT MEDICAL HISTORY | 121
+- 139 | HYPERLIPIDEMIA PATIENT MEDICAL HISTORY | 121
+- 140 | DM PATIENT MEDICAL HISTORY | 121
+- 141 | OTHER | 95
+- 142 | DG2 | 0
+- 143 | Stroke Date 2 | 0
+- 144 | NIHSS 2 | 0
+- 145 | MRS 2 | 0
+- 146 | Stroke Group 2 | 0
+- 147 | Stroke Side 2 | 0
+- 148 | Stroke Etiology 2 | 0
+- 149 | Symptoms 2 | 0
+- 150 | Lesions 2 | 0
+- 151 | Carotids | 0
+- 152 | Visit 2 date | 0
+- 153 | 2nd Stroke 2 | 0
+- 154 | medication_old | 0
+- 155 | Medications | 112
+- 156 | Diabetic Medication Taken | 0
+- 157 | Meds for HTN Tapered | 0
+- 158 | Class of Meds Tapered | 0
+- 159 | Tapered Medications taken during Visit 2 | 0
+- 160 | ANTIPLATELETS | 118
+- 161 | ANTICOAGULANTS | 120
+- 162 | ANTIHYPERLIPIDEMIC | 120
+- 163 | ANTIPARKINSONIAN | 120
+- 164 | STATINS | 120
+- 165 | ESTROGEN | 120
+- 166 | ACE INHIBITORS | 120
+- 167 | ARBS | 120
+- 168 | BETA BLOCKERS | 120
+- 169 | DIURETICS | 120
+- 170 | CA ++ BLOCKERS | 120
+- 171 | INSULIN(Yes_or_No) | 120
+- 172 | ORAL HYPOGLYCEMIC | 120
+- 173 | OTHER 2 | 120
+
